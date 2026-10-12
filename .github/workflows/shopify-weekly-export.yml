@@ -1,0 +1,44 @@
+name: Shopify weekly order export (매주 월요일)
+
+on:
+  schedule:
+    # 매주 월요일 09:00 미국 태평양 시간 (PDT = 16:00 UTC). 겨울(PST)에는 08:00 에 실행됩니다.
+    - cron: '0 16 * * 1'
+  workflow_dispatch: {}   # Actions 탭에서 "Run workflow" 로 수동 실행 가능
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: shopify-export
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run export
+        env:
+          # `npm run login` 실행 후 출력되는 base64 값을 리포 Settings > Secrets 에 등록
+          SHOPIFY_STORAGE_STATE_B64: ${{ secrets.SHOPIFY_STORAGE_STATE_B64 }}
+        run: npm run export
+
+      - name: Upload CSV / screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shopify-orders-export-${{ github.run_id }}
+          path: |
+            shopify-export/downloads/
+            shopify-export/screenshots/
+          if-no-files-found: warn
+          retention-days: 30

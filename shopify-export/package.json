@@ -1,0 +1,13 @@
+{
+  "name": "shopify-weekly-order-export",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Formuland Shopify 주문 주간(매주 월요일) 자동 export",
+  "scripts": {
+    "login": "node save-login.js",
+    "export": "node export-orders.js"
+  },
+  "dependencies": {
+    "playwright": "1.56.1"
+  }
+}
