@@ -27,7 +27,9 @@ if (raw.trim().startsWith('[')) {
     sameSite: ['Strict', 'Lax', 'None'].includes(c.sameSite) ? c.sameSite : 'Lax',
   }));
 } else {
-  for (const line of raw.split('\n')) {
+  for (let line of raw.split('\n')) {
+    const httpOnly = line.startsWith('#HttpOnly_');
+    if (httpOnly) line = line.slice('#HttpOnly_'.length);
     if (!line.trim() || line.startsWith('#')) continue;
     const [domain, , p, secure, expires, name, value] = line.split('\t');
     if (!name) continue;
@@ -37,7 +39,7 @@ if (raw.trim().startsWith('[')) {
       domain,
       path: p || '/',
       expires: Number(expires) || -1,
-      httpOnly: line.startsWith('#HttpOnly_'),
+      httpOnly,
       secure: secure === 'TRUE',
       sameSite: 'Lax',
     });
