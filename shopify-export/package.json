@@ -5,6 +5,7 @@
   "description": "Formuland Shopify 주문 주간(매주 월요일) 자동 export",
   "scripts": {
     "login": "node save-login.js",
+    "import-cookies": "node import-cookies.js",
     "export": "node export-orders.js"
   },
   "dependencies": {

@@ -55,3 +55,13 @@ GitHub Secret 값을 새 base64 문자열로 교체하세요.
 ## 조건 변경
 
 `config.js` 에서 태그 / 날짜 조건 / 반복 횟수 / 저장된 보기 ID 를 수정합니다.
+
+## 이미 크롬에 로그인되어 있다면 (브라우저 쿠키 가져오기)
+
+`npm run login` 대신, 크롬 확장 **Get cookies.txt LOCALLY** 로 `admin.shopify.com` 페이지에서 쿠키를 내보낸 뒤:
+
+```bash
+node import-cookies.js ~/Downloads/admin.shopify.com_cookies.txt
+```
+
+출력되는 base64 값을 GitHub Secret `SHOPIFY_STORAGE_STATE_B64` 에 넣으면 됩니다.
