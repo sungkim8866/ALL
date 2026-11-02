@@ -1,0 +1,9 @@
+# Raw fetched HTML and crawl dumps are large and reproducible; keep them local.
+raw/pages/
+raw/home.html
+raw/crawl.jsonl
+raw/crawl-retry.jsonl
+raw/crawl.log
+raw/psi/
+tmp-*/
+homepage-render.*

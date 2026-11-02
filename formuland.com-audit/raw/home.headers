@@ -1,0 +1,42 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/2 103 
+link: <https://cdn.shopify.com>; rel=preconnect, <https://cdn.shopify.com>; crossorigin; rel=preconnect, <//formuland.com/cdn/shop/t/177/assets/font-settings.css?v=174818880105579272951793376094>; as=style; rel=preload, <//formuland.com/cdn/shop/t/177/assets/theme.css?v=55081099539222476411793376032>; as=style; rel=preload, <https://cdn.shopify.com/extensions/01a182df-3f68-70df-b00f-b684a106c8e3/klaviyo-email-marketing-80/assets/app.css>; as=style; rel=preload, <https://cdn.shopify.com/extensions/01a0f0a6-b994-7ee8-ba0c-d1013bc49ea1/formuland-gwp-78-leakfix/assets/gwp.css>; as=style; rel=preload, <https://formuland.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css>; as=style; crossorigin; rel=preload
+
+HTTP/2 200 
+date: Mon, 02 Nov 2026 18:45:29 GMT
+content-type: text/html; charset=utf-8
+product-filtering-backend: bitset_roaring
+cf-cache-status: DYNAMIC
+set-cookie: localization=<redacted>; path=/; expires=Tue, 02 Nov 2027 18:45:29 GMT; SameSite=Lax
+set-cookie: cart_currency=<redacted>; path=/; expires=Mon, 16 Nov 2026 18:45:29 GMT; SameSite=Lax
+set-cookie: _shopify_essential=<redacted>; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_analytics=<redacted>; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+set-cookie: _shopify_marketing=<redacted>; Max-Age=31536000; Path=/; HttpOnly; Secure; Priority=High; SameSite=Lax
+link: <https://cdn.shopify.com>; rel="preconnect", <https://cdn.shopify.com>; rel="preconnect"; crossorigin, <//formuland.com/cdn/shop/t/177/assets/font-settings.css?v=174818880105579272951793376094>; as="style"; rel="preload", <//formuland.com/cdn/shop/t/177/assets/theme.css?v=55081099539222476411793376032>; as="style"; rel="preload", <https://cdn.shopify.com/extensions/01a0f0a6-b994-7ee8-ba0c-d1013bc49ea1/formuland-gwp-78-leakfix/assets/gwp.css>; as="style"; rel="preload", <https://cdn.shopify.com/extensions/01a182df-3f68-70df-b00f-b684a106c8e3/klaviyo-email-marketing-80/assets/app.css>; as="style"; rel="preload", <https://formuland.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css>; as="style"; rel="preload"; crossorigin, </.well-known/ucp>; rel="ucp"; version="2026-08-25"
+x-permitted-cross-domain-policies: none
+etag: W/"page_cache:64774930651:IndexController:5b4210fa6df0fa1fb2c012534f672658:bba3bf77db05cc4b576d4c1ec1d7a16e"
+nel: {"report_to":"cf-nel","success_fraction":0.01,"max_age":604800}
+shopify-complexity-score: 179
+shopify-complexity-score-v2: 179
+x-frame-options: DENY
+content-security-policy: block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;
+strict-transport-security: max-age=7889238
+vary: Accept
+vary: accept-encoding
+cdn-cache-control: no-cache, no-store
+content-language: en-US
+accept-ch: Sec-CH-Viewport-Width
+cache-control: private, max-age=0, must-revalidate
+powered-by: Shopify
+server-timing: processing;dur=183;desc="gc:33", db;dur=39, db_async;dur=84.217, render;dur=100, asn;desc="396982", edge;desc="IAD", country;desc="US", theme;desc="168377417947", pageType;desc="index", servedBy;desc="smld", requestID;desc="e8383fe5-b525-41e7-a2e9-beeb50ca3540-1793645129", _y;desc="c7e7032f-325a-43c1-ac20-2b4739c3e4a3", _s;desc="5b169f87-3125-44ef-bbae-276075dadaa8", _cmp;desc="3.AMPS_US_f_f_nLCaZRMqTtmJXcB84xCaFw", _ye;desc="1825202729", _se;desc="1793646929", compressionLevel;desc="5", compressionTime;dur=12.516, earlyhints
+x-dc: gcp-us-east1,gcp-us-east1,gcp-us-east1
+x-xss-protection: 1; mode=block
+alt-svc: h3=":443"; ma=86400
+server: cloudflare
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=3zfPIdCObOxRLXtwk%2F0LuBuwZrdOnDJl5UjBXHm83Zvt8sAbfKGjkT56uqS7yNBiDETDnGQaKZbCJsI6K1F60wsvc82YQTzOrBc1lpHESxjiyre6C%2F0l3C3ueqBv%2Fwk%3D"}]}
+x-content-type-options: nosniff
+x-download-options: noopen
+x-request-id: e8383fe5-b525-41e7-a2e9-beeb50ca3540-1793645129
+cf-ray: a5454bea3b4c7bbc-IAD
+

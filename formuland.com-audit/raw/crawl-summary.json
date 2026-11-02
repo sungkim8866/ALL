@@ -1,0 +1,2335 @@
+{
+ "total": 500,
+ "by_type": {
+  "other": 1,
+  "articles": 142,
+  "blogs": 1,
+  "collections": 74,
+  "pages": 32,
+  "home": 1,
+  "products": 249
+ },
+ "errors": [],
+ "non_200": [
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/when-to-switch-formula-because-of-gas",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/when-to-switch-formula-because-of-gas"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/feeding-your-baby-cold-formula-here-s-what-you-need-to-know",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/feeding-your-baby-cold-formula-here-s-what-you-need-to-know"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/why-european-baby-formula-comes-in-stages",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/why-european-baby-formula-comes-in-stages"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/hipp-baby-formula-german-vs-dutch-vs-uk",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/hipp-baby-formula-german-vs-dutch-vs-uk"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/3-tips-for-storing-your-supply-of-baby-formula",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/3-tips-for-storing-your-supply-of-baby-formula"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-common-reasons-your-baby-has-an-upset-stomach",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/5-common-reasons-your-baby-has-an-upset-stomach"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/debunking-6-common-myths-about-baby-formula",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/debunking-6-common-myths-about-baby-formula"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/4-tips-for-preparing-a-formula-bottle-on-the-go",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/4-tips-for-preparing-a-formula-bottle-on-the-go"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-pros-and-cons-of-formula-feeding-your-baby",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/the-pros-and-cons-of-formula-feeding-your-baby"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/feeding-the-young-the-history-of-baby-formula",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/feeding-the-young-the-history-of-baby-formula"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/why-fathers-should-spend-time-bonding-with-their-baby",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/why-fathers-should-spend-time-bonding-with-their-baby"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-brezza-settings-for-formula",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/baby-brezza-settings-for-formula"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/gut-health-skin-health-connection",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/gut-health-skin-health-connection"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/organic-cotton-vs-bamboo-for-babies",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/organic-cotton-vs-bamboo-for-babies"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-formula-for-sensitive-stomach",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/best-formula-for-sensitive-stomach"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-feeding-chart",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/baby-feeding-chart"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-diaper-brands-sensitive-skin",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/best-non-toxic-diaper-brands-sensitive-skin"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-soap-for-baby",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-soap-for-baby"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/eco-friendly-nursery-checklist",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/eco-friendly-nursery-checklist"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/hipp-vs-kendamil",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/hipp-vs-kendamil"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-sunscreen",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-sunscreen"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-formula-for-colic-guide",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/best-formula-for-colic-guide"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-organic-baby-lotions-guide",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/best-organic-baby-lotions-guide"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-skin-microbiome-care-guide",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/baby-skin-microbiome-care-guide"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-gum-care-and-early-oral-habits",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/baby-gum-care-and-early-oral-habits"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/probiotic-skincare-for-babies",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/probiotic-skincare-for-babies"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-travel-essentials",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/baby-travel-essentials"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/global-lessons-in-postpartum-care",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/global-lessons-in-postpartum-care"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/kendamil-organic-vs-kendamil-bio-nature",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/kendamil-organic-vs-kendamil-bio-nature"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/kendamil-vs-enfamil-formula",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/kendamil-vs-enfamil-formula"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/formuland-international-shipping",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips/formuland-international-shipping"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips",
+   "status": 429,
+   "final": "https://formuland.com/blogs/parenting-tips"
+  }
+ ],
+ "noindex": [],
+ "canonical_mismatch": [
+  {
+   "url": "https://formuland.com/products/%F0%9F%8D%BC-aptamil-profutura-duoadvance-pre-infant-formula-ready-from-birth-800g",
+   "canonical": "https://formuland.com/products/%f0%9f%8d%bc-aptamil-profutura-duoadvance-pre-infant-formula-ready-from-birth-800g"
+  }
+ ],
+ "missing_canonical": [
+  "https://formuland.com/products/hipp-baby-soft-milk-lotion-350ml-gentle-skin-care",
+  "https://formuland.com/products/hipp-baby-soft-face-body-cream-75ml",
+  "https://formuland.com/products/hipp-baby-soft-children-s-bath-300ml",
+  "https://formuland.com/products/hipp-baby-soft-washing-gel-400ml",
+  "https://formuland.com/products/hipp-baby-soft-2in1-shampoo-shower-200ml-gentle-care",
+  "https://formuland.com/products/hipp-baby-soft-care-balm-intensive-300ml-gentle-skin-care",
+  "https://formuland.com/products/hipp-baby-soft-care-oil-sensitive-200ml-gentle-skin-oil",
+  "https://formuland.com/products/hipp-baby-soft-sensitive-wound-protection-cream-75ml",
+  "https://formuland.com/products/hipp-baby-soft-sensitive-baby-shampoo-200ml-gentle-care",
+  "https://formuland.com/products/organic-baby-face-nose-cheek-balm-by-earth-mama-60ml-natural-skin-care",
+  "https://formuland.com/products/organic-diaper-balm-by-earth-mama-60ml-natural-diaper-rash-solution",
+  "https://formuland.com/products/earth-mama-nipple-butter-60ml",
+  "https://formuland.com/products/organic-castile-baby-wash-by-earth-mama-160ml-non-scents-gentle-bath-care",
+  "https://formuland.com/products/organic-baby-lotion-by-earth-mama-240ml-non-scents-gentle-care",
+  "https://formuland.com/products/calendula-baby-oil-by-earth-mama-120ml-gentle-skin-care",
+  "https://formuland.com/products/earth-mama-organic-raspberry-leaf-tea-16-tea-bags-of-wellness",
+  "https://formuland.com/products/earth-mama-organic-elderberry-immune-tea-16-tea-bags-of-wellness",
+  "https://formuland.com/products/earth-mama-baby-mineral-sunscreen-spf-40-84g-natural-protection",
+  "https://formuland.com/products/hipp-baby-soft-sun-face-cream-spf-50-ultra-sensitive-skin-protection-30ml",
+  "https://formuland.com/products/hipp-sun-protection-lotion-spray-spf50-ultra-sensitive-safe-for-newborns-150ml",
+  "https://formuland.com/products/hipp-baby-soft-shampoo-conditioner-200ml",
+  "https://formuland.com/products/hipp-extra-soft-diapers-size-1",
+  "https://formuland.com/products/hipp-extra-soft-diapers-size-2",
+  "https://formuland.com/products/hipp-extra-soft-diapers-size-3",
+  "https://formuland.com/products/weleda-comforting-body-lotion-calendula-6-8-fl-oz",
+  "https://formuland.com/products/weleda-nourishing-body-cream-calendula-2-5-fl-oz",
+  "https://formuland.com/products/weleda-2in1-gentle-shampoo-body-wash-calendula-6-8-fl-oz",
+  "https://formuland.com/products/weleda-childrens-tooth-gel-1-7-fl-oz",
+  "https://formuland.com/products/weleda-calendula-nappy-change-cream-75ml",
+  "https://formuland.com/products/weleda-calendula-cream-bath-200ml",
+  "https://formuland.com/products/weleda-calendula-face-cream-50-ml",
+  "https://formuland.com/products/weleda-baby-calendula-oil-fragrance-free-200ml",
+  "https://formuland.com/products/weleda-calendula-body-wash-shampoo-200ml",
+  "https://formuland.com/products/weleda-calendula-wind-weather-balm-30ml",
+  "https://formuland.com/products/weleda-white-mallow-face-cream-50ml",
+  "https://formuland.com/products/weleda-kids-2in1-shower-shampoo-zesty-lime-150ml",
+  "https://formuland.com/products/weleda-kids-2in1-shower-shampoo-fruity-orange-150ml",
+  "https://formuland.com/products/weleda-baby-tummy-oil-50ml",
+  "https://formuland.com/products/weleda-calendula-all-purpose-balm-25g",
+  "https://formuland.com/products/weleda-gel-toothpaste-for-children-50ml",
+  "https://formuland.com/products/weleda-kids-toothpaste-50ml",
+  "https://formuland.com/products/weleda-junior-toothpaste-50ml",
+  "https://formuland.com/products/weleda-baby-derma-white-mallow-body-lotion-200ml",
+  "https://formuland.com/products/weleda-baby-derma-white-mallow-nappy-change-cream-50ml",
+  "https://formuland.com/products/weleda-baby-calendula-calming-bath-200ml-1",
+  "https://formuland.com/products/littleoak-natural-goat-milk-infant-formula-with-olive-oil-stage-1-800g",
+  "https://formuland.com/products/littleoak-natural-goat-milk-follow-on-formula-with-olive-oil-stage-2-800g",
+  "https://formuland.com/products/littleoak-natural-goat-milk-toddler-milk-with-olive-oil-stage-3-800g",
+  "https://formuland.com/products/littleoak-natural-goat-milk-infant-formula-with-olive-oil-stage-1-travel-sachets-6x30g",
+  "https://formuland.com/products/littleoak-natural-goat-milk-follow-on-formula-with-olive-oil-stage-2-travel-sachets-6x30g"
+ ],
+ "missing_title": [],
+ "missing_meta_description": [
+  "https://formuland.com/pages/contact",
+  "https://formuland.com/pages/compare",
+  "https://formuland.com/pages/collab",
+  "https://formuland.com/pages/byob",
+  "https://formuland.com/pages/froonze-new-customer-account",
+  "https://formuland.com/pages/hipp-byob-bundle",
+  "https://formuland.com/pages/customer-portal",
+  "https://formuland.com/pages/about-us",
+  "https://formuland.com/pages/nara-organics-formula-recall",
+  "https://formuland.com/pages/formuland-quiz",
+  "https://formuland.com/pages/quiz-results",
+  "https://formuland.com/pages/choose-your-free-gift",
+  "https://formuland.com/products/shipping-protection-formula"
+ ],
+ "title_too_long_gt60": [
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/parents-guide-to-healthy-food-on-baby-s-first-year",
+   "len": 63,
+   "title": "Parents’ Guide to Healthy Food on Baby’s First Year\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/8-mom-tips-for-work-life-balance",
+   "len": 67,
+   "title": "8 Essential Tips Every Mom Needs for Work-Life Balance \n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/parenting-tips-from-generation-to-generation-are-you-ready",
+   "len": 74,
+   "title": "Parenting tips, from generation to generation – Are You Ready?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-organic-baby-formula-which-is-safest-for-your-child",
+   "len": 70,
+   "title": "Best Organic Baby Formula: Which Is Safest for Your Child?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-formula-6-ways-to-know-it-s-the-best-for-your-baby",
+   "len": 68,
+   "title": "Best Formula: 6 Ways to Know It’s the Best for Your Baby\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-baby-formula-practices-your-do-s-and-don-ts-list",
+   "len": 66,
+   "title": "Best Baby Formula Practices: Your Do’s and Don’ts List\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/breast-and-formula-feeding-should-you-combine-the-two",
+   "len": 67,
+   "title": "Breast and Formula Feeding: Should You Combine the Two?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/what-to-do-when-your-baby-always-wants-to-be-held",
+   "len": 61,
+   "title": "What to Do When Your Baby Always Wants to Be Held\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/organic-infant-formula-and-breastmilk-why-the-controversy",
+   "len": 71,
+   "title": "Organic Infant Formula and Breastmilk: Why the Controversy?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/european-formula-vs-american-formula",
+   "len": 68,
+   "title": "Comparing European Formula vs American Formula Standards\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-bottle-feeding-tips-to-move-away-from-snack-feeding",
+   "len": 70,
+   "title": "5 Bottle Feeding Tips to Move Baby Away from Snack Feeding\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/what-your-baby-not-eating-means-and-how-to-fix-it",
+   "len": 61,
+   "title": "What Your Baby Not Eating Means and How to Fix it\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/know-your-baby-s-teething-stages-and-what-to-do-for-each",
+   "len": 68,
+   "title": "Know Your Baby’s Teething Stages and What to Do For Each\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/kabrita-goat-milk-formula-review",
+   "len": 66,
+   "title": "Kabrita Goat Milk Formula: What to Know Before You Buy\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/importance-of-baby-formula-for-women-with-health-issues-and-other-concerns",
+   "len": 82,
+   "title": "Importance of Baby Formula for Women with Health Issues And Other Conc\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-european-organic-baby-formula-guide-for-new-moms",
+   "len": 64,
+   "title": "The European Organic Baby Formula Guide for New Moms\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-ultimate-guide-to-baby-nutrition-the-do-s-and-don-ts-of-feeding-your-baby",
+   "len": 82,
+   "title": "The Ultimate Guide to Baby Nutrition: The Do’s and Don’ts of Feeding Y\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/how-to-feed-a-newborn-baby-safely-how-to-avoid-feeding-dangers",
+   "len": 75,
+   "title": "How to Feed a Newborn Baby Safely: How to Avoid Feeding Dangers\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-new-parent-s-guide-how-to-organize-baby-feeding-products",
+   "len": 73,
+   "title": "The New Parent’s Guide: How to Organize Baby Feeding Products\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-safer-baby-formula-brands-that-every-parent-should-know",
+   "len": 71,
+   "title": "The Safer Baby Formula Brands That Every Parent Should Know\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/ultimate-guide-to-finding-the-best-baby-formula-10-ingredients-to-avoid",
+   "len": 82,
+   "title": "Ultimate Guide to Finding the Best Baby Formula: 10 Ingredients to Avo\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/how-to-master-safe-co-sleeping-with-your-infant-child",
+   "len": 65,
+   "title": "How to Master Safe Co Sleeping with Your Infant Child\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/11-reasons-why-your-baby-fights-sleep",
+   "len": 75,
+   "title": "The Top 11 Reasons Why Your Baby Fights Sleep and How to Fix it\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/how-to-switch-from-breastmilk-to-formula",
+   "len": 72,
+   "title": "Step-by-Step Guide: How to Switch from Breastmilk to Formula\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/cloth-or-disposable-which-is-the-best-diaper-for-your-baby",
+   "len": 71,
+   "title": "Cloth or Disposable: Which is the Best Diaper for Your Baby\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/what-to-do-when-your-baby-is-spitting-up-more-than-normal",
+   "len": 69,
+   "title": "What to Do When Your Baby is Spitting Up More than Normal\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-great-things-you-didn-t-know-about-holle-formula",
+   "len": 62,
+   "title": "5 Great Things You Didn’t Know about Holle Formula\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/cow-s-milk-baby-formula-shows-no-increased-diabetes-risk",
+   "len": 68,
+   "title": "Cow’s Milk Baby Formula Shows No Increased Diabetes Risk\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-ultimate-guide-to-choosing-the-best-baby-bottles",
+   "len": 64,
+   "title": "The Ultimate Guide to Choosing The Best Baby Bottles\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-importance-of-establishing-a-newborn-sleep-schedule",
+   "len": 67,
+   "title": "The Importance of Establishing a Newborn Sleep Schedule\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/what-s-the-best-water-for-baby-formula-preparation",
+   "len": 63,
+   "title": "What’s the Best Water For Baby Formula Preparation?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/top-5-essential-baby-nutrients-for-optimal-health-and-well-being",
+   "len": 76,
+   "title": "Top 5 Essential Baby Nutrients for Optimal Health and Well-Being\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/7-common-mistakes-most-parents-make-when-starting-solids",
+   "len": 68,
+   "title": "7 Common Mistakes Most Parents Make When Starting Solids\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-signs-you-re-dealing-with-a-gassy-baby-and-what-to-do-about-it",
+   "len": 76,
+   "title": "5 Signs You’re Dealing with a Gassy Baby and What to Do about It\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/relieve-constipation-in-formula-fed-babies",
+   "len": 74,
+   "title": "Constipation in Formula-Fed Babies: A Parent's Guide to Relief\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/how-to-make-the-best-baby-formula-in-7-simple-steps",
+   "len": 63,
+   "title": "How to Make the Best Baby Formula in 7 Simple Steps\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/why-is-your-baby-vomiting-and-how-to-provide-relief",
+   "len": 64,
+   "title": "Why Is Your Baby Vomiting and How to Provide Relief?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/7-reasons-to-consider-hypoallergenic-formula-for-your-baby",
+   "len": 70,
+   "title": "7 Reasons to Consider Hypoallergenic Formula for Your Baby\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/melatonin-for-babies-everything-you-need-to-know",
+   "len": 67,
+   "title": "Melatonin for Babies: What Pediatricians Advise Parents\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/protecting-your-child-against-allergies-at-school",
+   "len": 61,
+   "title": "Protecting Your Child Against Allergies at School\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-tips-for-choosing-the-best-organic-baby-formula-for-your-baby",
+   "len": 75,
+   "title": "5 Tips for Choosing the Best Organic Baby Formula for Your Baby\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/goat-milk-formula-vs-cow-milk-what-s-the-difference-for-my-baby",
+   "len": 78,
+   "title": "Goat Milk Formula vs. Cow Milk: What’s the Difference for My Baby?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/loulouka-baby-formula-why-your-baby-needs-the-best-swiss-organic-milk",
+   "len": 82,
+   "title": "Loulouka Baby Formula: Why Your Baby Needs the Best Swiss Organic Milk\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-care-choosing-the-best-non-family-caregiver-6-helpful-tips",
+   "len": 77,
+   "title": "Baby Care: Choosing the Best Non-Family Caregiver: 6 Helpful Tips\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/11-gifts-for-new-parents-for-a-healthy-happy-baby",
+   "len": 61,
+   "title": "11 Gifts for New Parents for a Healthy Happy Baby\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/preparing-for-baby-checklist-everything-needed-to-make-baby-comfortable-at-home",
+   "len": 82,
+   "title": "Preparing for Baby Checklist: Everything Needed to Make Baby Comfortab\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/taking-a-look-at-the-top-baby-formula-options-on-the-market",
+   "len": 71,
+   "title": "Taking A Look At The Top Baby Formula Options On the Market\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-benefits-of-using-organic-baby-formula-for-newborns",
+   "len": 65,
+   "title": "5 Benefits of Using Organic Baby Formula for Newborns\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/stop-the-crying-7-tips-for-soothing-colic-in-your-baby",
+   "len": 67,
+   "title": "Stop the Crying: 7 Tips for Soothing Colic in Your Baby\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/tips-for-new-to-formula-moms-to-feed-their-babies-the-optimal-amount-of-formula",
+   "len": 82,
+   "title": "Tips for New-To-Formula Moms to Feed Their Babies the Optimal Amount o\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/organic-baby-formula-is-it-good-for-little-ones-the-answer-is-yes",
+   "len": 82,
+   "title": "Organic Baby Formula: Is It Good for Little Ones? (The Answer Is Yes!)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/7-questions-to-ask-before-choosing-baby-formula-for-parents",
+   "len": 71,
+   "title": "7 Questions to Ask Before Choosing Baby Formula for Parents\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-tips-to-develop-the-perfect-formula-feeding-schedule-for-your-infant",
+   "len": 82,
+   "title": "5 Tips to Develop the Perfect Formula Feeding Schedule for Your Infant\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/key-aspects-of-infant-nutrition-new-mom-s-need-to-know",
+   "len": 66,
+   "title": "Key Aspects of Infant Nutrition New Mom’s Need to Know\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-cluster-feeding-managing-baby-s-routine-with-the-best-formula",
+   "len": 79,
+   "title": "Baby Cluster Feeding: Managing Baby’s Routine With the Best Formula\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/what-to-look-for-when-choosing-the-best-european-baby-formula",
+   "len": 73,
+   "title": "What to Look for When Choosing the Best European Baby Formula\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/five-baby-formula-alternatives-you-should-consider-for-your-child",
+   "len": 77,
+   "title": "Five Baby Formula Alternatives You Should Consider for Your Child\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-formula-vs-breast-milk-what-are-the-differences",
+   "len": 67,
+   "title": "Baby Formula vs. Breast Milk: What Are the Differences?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/should-you-opt-for-soy-free-formula-for-your-baby-with-g6pdd",
+   "len": 73,
+   "title": "Should You Opt For Soy-Free Formula for Your Baby With G6PDD?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/what-s-the-best-organic-formula-for-breastfed-babies",
+   "len": 65,
+   "title": "What’s the Best Organic Formula for Breastfed Babies?\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/what-to-know-about-the-current-baby-formula-shortage",
+   "len": 64,
+   "title": "What to Know About the Current Baby Formula Shortage\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-different-european-types-of-baby-formula-and-what-s-best-in-2022",
+   "len": 80,
+   "title": "The Different European Types of Baby Formula and What’s Best in 2022\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/everything-you-need-to-know-about-goat-milk-formula",
+   "len": 63,
+   "title": "Everything You Need to Know About Goat Milk Formula\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/tips-for-seamlessly-switching-baby-formula-brands",
+   "len": 61,
+   "title": "Tips for Seamlessly Switching Baby Formula Brands\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/bottle-refusal-why-it-happens-what-to-do-about-it",
+   "len": 64,
+   "title": "Bottle Refusal: Why It Happens & What To Do About It\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/unpacking-the-issue-dented-formula-cans-creased-boxes-explained",
+   "len": 78,
+   "title": "Unpacking the Issue: Dented Formula Cans & Creased Boxes Explained\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/can-baby-formula-go-bad-in-heat",
+   "len": 72,
+   "title": "Can Baby Formula Go Bad in Heat? Everything You Need to Know\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-hypoallergenic-baby-formula",
+   "len": 87,
+   "title": "The Best Hypoallergenic Formula | Find the Best Hypoallergenic Baby Formula - Formuland"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/calm-child-tantrum-tips",
+   "len": 79,
+   "title": "How to Calm a Child Having a Tantrum: Simple Strategies for Parents\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/collections/lowenzahn-formula",
+   "len": 61,
+   "title": "Lowenzahn Baby Formula – Clean, Organic Nutrition\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/affiliate-program",
+   "len": 66,
+   "title": "Baby Products Affiliate Program - High Paying Affilate | Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/no-surprises-we-handle-tariffs-so-you-don-t-have-to",
+   "len": 64,
+   "title": "No Surprises: We Handle Tariffs So You Don’t Have To\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/",
+   "len": 107,
+   "title": "European Baby Formula | Shop Organic European Formula Brands & Baby Formula From Europe Online  - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-formula-stage-1",
+   "len": 86,
+   "title": "HiPP UK Stage 1 Organic Infant Formula (800g) | Order HiPP Formula Stage 1 - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-formula-stage-1",
+   "len": 82,
+   "title": "Holle Stage 1 Organic Formula Cow (400g) | Order Holle Formula Stage 1 - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-stage-2-organic-baby-formula",
+   "len": 66,
+   "title": "Holle Stage 2 | Buy Holle Formula Stage 2 - Cow (600g) - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-goat-milk-formula-stage-1",
+   "len": 83,
+   "title": "Holle Goat Milk Formula Stage 1 (400g) | Order Holle Goats Milk Stage 1 - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/nannycare-stage-1",
+   "len": 87,
+   "title": "Nannycare Stage 1 Goat Milk Formula (800g) | Order Nannycare Infant Formula - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-ha-stage-1",
+   "len": 77,
+   "title": "HiPP HA 1 - Hypoallergenic Formula (600g) | Order HiPP HA Stage 1 - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-formula-bio-combiotik-first-milk",
+   "len": 91,
+   "title": "HiPP German Stage 1 Organic Combiotik Formula (600g) | Order HiPP Bio Combiotik - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-dutch-stage-1",
+   "len": 98,
+   "title": "HiPP Dutch Stage 1 Organic Combiotic Formula (800g) | Order HiPP Stage 1 Dutch Formula - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/no-starch-version-hipp-organic-combiotik-infant-formula-stage-2-from-6-months-usa-seller-600g-german-version",
+   "len": 69,
+   "title": "HiPP German Stage 2 Organic Combiotik Formula (No starch) | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-goat-milk-formula-stage-1-dutch",
+   "len": 94,
+   "title": "Holle Goat Milk Formula Stage 1 | Order Holle Stage 1 Goat Milk Can - Dutch (800g) - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-a2-stage-1",
+   "len": 68,
+   "title": "Holle A2 Formula Stage 1 (400g) | Order Holle A2 Stage 1 - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/premiriz-plant-based-nondairy-formula",
+   "len": 82,
+   "title": "Premibio Primerice Plant Based Nondairy Formula from Birth to 36 Month\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-infant-formula-stage-1",
+   "len": 81,
+   "title": "Premibio Primemilk Stage 1 Organic Cow Milk Formula from birth (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-infant-formula-stage-2",
+   "len": 82,
+   "title": "Premibio Primemilk Stage 2 Organic Cow Milk Formula from 6 months (600\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-infant-formula-stage-3",
+   "len": 82,
+   "title": "Premibio Primemilk Stage 3 Organic Cow Milk Formula from 12 months (60\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-goat-milk-formula-stage-1",
+   "len": 82,
+   "title": "Premibio Primegoat Stage 1 Organic Goat Milk Formula from birth (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-goat-milk-formula-stage-2",
+   "len": 82,
+   "title": "Premibio Primegoat Stage 2 Organic Goat Milk Formula from 6 months (60\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-goat-milk-formula-stage-3",
+   "len": 82,
+   "title": "Premibio Primegoat Stage 3 Organic Goat Milk Formula from 12 months (6\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/bebe-m-organic-rice-formula-stage-3",
+   "len": 72,
+   "title": "Bebe M Organic Rice AR Formula Stage 3 from 10 Months (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-good-night-cereal-fine-apple-from-4-months-250g",
+   "len": 82,
+   "title": "HiPP Organic Good Night Milk & Cereal - Fine Apple from 4 months (250g\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-good-night-cereal-oat-apple-from-6-months-250g",
+   "len": 82,
+   "title": "HiPP Organic Good Night Milk & Cereal - Oat Apple from 6 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-5-grain-with-prune-cereal-from-6-months-250g",
+   "len": 78,
+   "title": "HiPP Organic 5-Grain with Prune Milk & Cereal from 6 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-forest-fruits-cereal-from-6-months-250g",
+   "len": 73,
+   "title": "HiPP Organic Forest Fruits Milk & Cereal from 6 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-fruit-yoghurt-cereal-from-8-months-250g",
+   "len": 73,
+   "title": "HiPP Organic Fruit Yoghurt Milk & Cereal from 8 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-corn-with-fruits-cereal-from-6-months-250g",
+   "len": 76,
+   "title": "HiPP Organic Corn with Fruits Milk & Cereal from 6 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-100-multi-grain-cereal-from-6-months-200g",
+   "len": 69,
+   "title": "HiPP Organic 100% Multi Grain Cereal from 6 months (200g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-ready-to-feed-german-stage-1",
+   "len": 66,
+   "title": "HiPP German Stage 1 Ready to Feed From Birth (200mlx6)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-ready-to-feed-german-stage-2",
+   "len": 69,
+   "title": "HiPP German Stage 2 Ready to Feed From 6 Months (200mlx6)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-100-rice-cereal-from-4-months-200g",
+   "len": 62,
+   "title": "HiPP Organic 100% Rice Cereal from 5 months (200g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-100-oat-cereal-from-4-months-200g",
+   "len": 61,
+   "title": "HiPP Organic 100% Oat Cereal from 4 months (200g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-ready-to-feed-german-stage-pre",
+   "len": 68,
+   "title": "HiPP German Stage PRE Ready to Feed From Birth (200mlx6)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-stage-2-classic-formula-900g-cow",
+   "len": 74,
+   "title": "Kendamil Stage 2 | Order Kendamil Formula Stage 2 - Cow (800g) - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-multi-grain-with-buckwheat-cereal",
+   "len": 79,
+   "title": "HiPP Organic Multi Grain with Buckwheat Cereal from 4 months (200g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-oat-baby-porridge",
+   "len": 64,
+   "title": "Holle Organic Oat Baby Porridge from 5 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-wholegrain-cereal-oat-from-5-months-german-250g",
+   "len": 75,
+   "title": "Holle Organic Wholegrain Cereal Oat from 5 months (German) 250g\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/bebe-m-organic-rice-formula-stage-1",
+   "len": 80,
+   "title": "Bebe M Organic Rice AR Formula Stage 1 from birth to 6 Months (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/bebe-m-organic-rice-formula-stage-2",
+   "len": 71,
+   "title": "Bebe M Organic Rice AR Formula Stage 2 from 6 Months (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-peach-apricot-cereal-from-4-months-250g",
+   "len": 65,
+   "title": "HiPP Peach Apricot Milk & Cereal from 4 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-dutch-ha-1-hypoallergenic-formula-from-birth-800g",
+   "len": 70,
+   "title": "HiPP Dutch HA 1 - Hypoallergenic Formula from Birth (800g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-dutch-ha-2-hypoallergenic-formula-from-6-months-800g",
+   "len": 73,
+   "title": "HiPP Dutch HA 2 - Hypoallergenic Formula from 6 Months (800g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-ready-to-feed-german-ha-pre",
+   "len": 71,
+   "title": "HiPP German HA Stage PRE Ready to Feed From Birth (200mlx6)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-formula-stage-1-ready-to-feed",
+   "len": 65,
+   "title": "Aptamil Formula Stage 1 Ready To Feed 400ml (2X200ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-formula-stage-2-ready-to-feed",
+   "len": 65,
+   "title": "Aptamil Formula Stage 2 Ready To Feed 400ml (2X200ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/topfer-organic-lactana-formula-stage-1",
+   "len": 68,
+   "title": "Topfer Organic Lactana Formula Stage 1 From birth (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/topfer-organic-lactana-formula-stage-pre",
+   "len": 62,
+   "title": "Topfer Organic Formula Stage PRE From birth (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/topfer-organic-lactana-formula-stage-2",
+   "len": 71,
+   "title": "Topfer Organic Lactana Formula Stage 2 From 6 Months (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/topfer-organic-lactana-formula-stage-3",
+   "len": 72,
+   "title": "Topfer Organic Lactana Formula Stage 3 From 10 Months (600g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/topfer-organic-lactana-formula-kinder",
+   "len": 73,
+   "title": "Topfer Organic Formula Kinder Follow-On From 12 Months (500g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/topfer-organic-lactana-goat-formula-stage-2",
+   "len": 76,
+   "title": "Topfer Organic Lactana Goat Formula Stage 2 From 6 Months (400g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-milk-cereal-with-spelt-from-6-months-250g",
+   "len": 61,
+   "title": "Holle Organic Wholegrain Cereal with Spelt (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-milk-lotion-350ml-gentle-skin-care",
+   "len": 65,
+   "title": "HiPP Baby Soft Milk Lotion - Gentle Skin Care (350ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-face-body-cream-75ml",
+   "len": 74,
+   "title": "HiPP Baby Soft Sensitive Face & Body Moisturizing Cream (75ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-washing-gel-400ml",
+   "len": 64,
+   "title": "HiPP Baby Soft Washing Gel for Head and Skin (400ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-2in1-shampoo-shower-200ml-gentle-care",
+   "len": 70,
+   "title": "HiPP Baby Soft 2in1 Shampoo + Shower – Gentle Care (200ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-care-balm-intensive-300ml-gentle-skin-care",
+   "len": 66,
+   "title": "HiPP Baby Soft Body Milk - Intensive Care Balm (300ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-care-oil-sensitive-200ml-gentle-skin-oil",
+   "len": 71,
+   "title": "HiPP Baby Soft Care Oil Sensitive - Gentle Skin Oil (200ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-sensitive-wound-protection-cream-75ml",
+   "len": 65,
+   "title": "HiPP Baby Soft Sensitive Nappy Rash Care Cream (75ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-sensitive-baby-shampoo-200ml-gentle-care",
+   "len": 71,
+   "title": "HiPP Baby Soft Sensitive Baby Shampoo - Gentle Care (200ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/organic-baby-face-nose-cheek-balm-by-earth-mama-60ml-natural-skin-care",
+   "len": 82,
+   "title": "Earth Mama Organic Baby Face Nose & Cheek Balm (60ml) - Natural Skin C\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/organic-diaper-balm-by-earth-mama-60ml-natural-diaper-rash-solution",
+   "len": 73,
+   "title": "Earth Mama Organic Diaper Balm - Natural Diaper Rash Solution\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-nipple-butter-60ml",
+   "len": 78,
+   "title": "Earth Mama Nipple Butter (60ml) | Organic Nipple Butter Earth Mama - Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/organic-castile-baby-wash-by-earth-mama-160ml-non-scents-gentle-bath-care",
+   "len": 71,
+   "title": "Earth Mama Castile Baby Wash - Non-Scents, Gentle Bath Care\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/organic-baby-lotion-by-earth-mama-240ml-non-scents-gentle-care",
+   "len": 68,
+   "title": "Earth Mama Baby Lotion (240ml) - Non-Scents, Gentle Care\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/calendula-baby-oil-by-earth-mama-120ml-gentle-skin-care",
+   "len": 68,
+   "title": "Earth Mama Calendula Baby Oil (120ml) - Gentle Skin Care\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-organic-raspberry-leaf-tea-16-tea-bags-of-wellness",
+   "len": 75,
+   "title": "Earth Mama Organic Raspberry Leaf Tea - 16 Tea Bags of Wellness\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-organic-elderberry-immune-tea-16-tea-bags-of-wellness",
+   "len": 78,
+   "title": "Earth Mama Organic Elderberry Immune Tea - 16 Tea Bags of Wellness\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-baby-mineral-sunscreen-spf-40-84g-natural-protection",
+   "len": 79,
+   "title": "Earth Mama Baby Mineral Sunscreen SPF 40 (84g) - Natural Protection\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-baby-soft-sun-face-cream-spf-50-ultra-sensitive-skin-protection-30ml",
+   "len": 82,
+   "title": "HiPP Face Sunscreen Cream SPF50+ | Ultra Sensitive | Safe from Birth |\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-sun-protection-lotion-spf50-ultra-sensitive-suitable-from-birth-200ml",
+   "len": 82,
+   "title": "HiPP Sun Protection Lotion SPF50+ | Ultra Sensitive | Suitable from Bi\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-sun-protection-lotion-spray-spf50-ultra-sensitive-safe-for-newborns-150ml",
+   "len": 82,
+   "title": "HiPP Sun Protection Lotion Spray SPF50+ | Ultra Sensitive | Safe for N\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-goat-milk-porridge-raspberry-and-banana-from-6-months-200g",
+   "len": 82,
+   "title": "Holle Organic Goat Milk Porridge with Raspberry & Banana - 6 Months+ (\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-goat-milk-porridge-with-blueberry-banana-6-months-200g",
+   "len": 82,
+   "title": "Holle Organic Goat Milk Porridge with Blueberry & Banana - 6 Months+ (\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-baby-bircher-muesli-from-6-months-250g",
+   "len": 65,
+   "title": "HiPP Organic Baby Bircher Muesli From 6 Months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-good-night-milk-cereal-baby-biscuit-from-6-months-250g",
+   "len": 82,
+   "title": "HiPP Organic Good Night Milk & Cereal - Baby Biscuit from 6 months (25\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-milk-porridge-with-forest-fruits-150g",
+   "len": 61,
+   "title": "Kendamil Milk Porridge with Berry Porridge (150g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-milk-porridge-with-cauliflower-broccoli-tomato-from-6-months-150g",
+   "len": 82,
+   "title": "Kendamil Milk Porridge with Cauliflower, Broccoli & Tomato Bake From 6\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-buckwheat-cereal-from-4-months-250g",
+   "len": 61,
+   "title": "HiPP Buckwheat Milk & Cereal from 4 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-good-night-organic-milk-porridge-biscuit-and-apple-from-6-months-250g",
+   "len": 82,
+   "title": "Holle Good Night Organic Milk Porridge Biscuit and Apple from 6 months\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-milk-porridge-oat-strawberry-with-apple-from-6-months-250g",
+   "len": 82,
+   "title": "Holle Organic Milk Porridge Oat Strawberry with Apple from 6 Months (2\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-wheat-and-milk-baby-biscuit-from-6-months-180g",
+   "len": 73,
+   "title": "HiPP Organic Wheat and Milk Baby Biscuit from 6 Months (180g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-classic-stage-1-ready-to-feed-from-birth-250ml",
+   "len": 69,
+   "title": "Kendamil Classic Stage 1 Ready To Feed from Birth (250ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-classic-stage-2-ready-to-feed-from-birth-250ml",
+   "len": 72,
+   "title": "Kendamil Classic Stage 2 Ready To Feed from 6 Months (250ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-wholegrain-bircher-muesli-from-1-year-200g",
+   "len": 70,
+   "title": "Holle Organic Wholegrain Bircher muesli from 1 year (200g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-porridge-otter-oats-with-apples-bananas-and-plums-from-1-year",
+   "len": 82,
+   "title": "Holle Organic Otter Oats Porridge with Apples, Bananas, & Plums (200g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-purple-panther-porridge-with-blueberries-bananas-and-apples-200g",
+   "len": 82,
+   "title": "Holle Organic Purple Panther Porridge with Blueberries, Bananas, & App\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-comforting-body-lotion-calendula-6-8-fl-oz",
+   "len": 68,
+   "title": "Weleda Calendula Body Lotion 200ml | Organic Baby Lotion\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-nourishing-body-cream-calendula-2-5-fl-oz",
+   "len": 64,
+   "title": "Weleda Nourishing Body Cream - Calendula (2.5 fl oz)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-2in1-gentle-shampoo-body-wash-calendula-6-8-fl-oz",
+   "len": 74,
+   "title": "Weleda 2in1 Gentle Shampoo + Body Wash - Calendula (6.8 fl oz)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/uber-sensitive-mineral-sunscreen-lotion-spf-40-by-earth-mama-3-oz",
+   "len": 78,
+   "title": "Earth Mama Uber-Sensitive Mineral Sunscreen Lotion - SPF 40 (3 oz)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-calendula-body-wash-shampoo-200ml",
+   "len": 66,
+   "title": "Weleda Calendula Baby Wash & Shampoo 200ml – Soap-Free | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-calendula-wind-weather-balm-30ml",
+   "len": 71,
+   "title": "Weleda Calendula Wind & Weather Balm 30ml | Baby Cold Cream\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-kids-2in1-shower-shampoo-zesty-lime-150ml",
+   "len": 64,
+   "title": "Weleda KIDS 2in1 Shower & Shampoo Zesty Lime (150ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-kids-2in1-shower-shampoo-fruity-orange-150ml",
+   "len": 67,
+   "title": "Weleda KIDS 2in1 Shower & Shampoo Fruity Orange (150ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-gel-toothpaste-for-children-50ml",
+   "len": 67,
+   "title": "Weleda Gel Toothpaste for Children Fluoride-free (50ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-baby-cereal-apple-biscuit-from-8-months-250g",
+   "len": 71,
+   "title": "HiPP Organic Baby Cereal Apple Biscuit from 8 months (250g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-good-night-milk-cereal-banana-rusk-from-4-months-250g",
+   "len": 82,
+   "title": "HiPP Organic Good Night Milk & Cereal - Banana Rusk from 4 months (250\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-baby-derma-white-mallow-body-lotion-200ml",
+   "len": 62,
+   "title": "Weleda Baby Derma White Mallow Body Lotion – 200ml\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/weleda-baby-derma-white-mallow-nappy-change-cream-50ml",
+   "len": 68,
+   "title": "Weleda Baby Derma White Mallow Nappy Change Cream (50ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-babysanft-ultra-sensitive-baby-wipes-5-48-240-wipes",
+   "len": 72,
+   "title": "HiPP Babysanft Ultra Sensitive Baby Wipes – 5×48 (240 Wipes)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/bambo-nature-bath-buddy-baby-hair-body-wash-150ml",
+   "len": 66,
+   "title": "Bambo Nature Bath Buddy Baby Hair & Body Wash (150 ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/new-zealand-goat-milk-infused-wipes",
+   "len": 61,
+   "title": "Manukind New Zealand Goat Milk Infused Baby Wipes\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-100-corn-organic-baby-cereal-from-4-months-200-g",
+   "len": 70,
+   "title": "HiPP 100% Corn Organic Baby Cereal – From 4 Months (200 g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-bio-pre-1-ready-to-feed-organic-first-infant-milk-200ml",
+   "len": 79,
+   "title": "Holle Organic PRE/1 Ready-to-Feed Organic First Infant Milk (200ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/holle-organic-stage-3-ready-to-feed-organic-toddler-drink-250ml",
+   "len": 77,
+   "title": "Holle Organic Stage 3 Ready-to-Feed Organic Toddler Drink (250ml)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-combiotic-stage-1-lithuania-formula-800g",
+   "len": 72,
+   "title": "HiPP 1 Organic COMBIOTIC Formula 800g | EU Made | From Birth\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-stage-2-lt-organic-combiotic-infant-formula-800g-from-6-months",
+   "len": 70,
+   "title": "HiPP 2 Organic COMBIOTIC Formula 800g | From 6 Months (EU)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/hipp-stage-3-junior-combiotic-growing-up-milk-500g-from-1-year",
+   "len": 75,
+   "title": "HiPP 3 Junior COMBIOTIC Growing-Up Milk 500g | From 1 Year (EU)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-profutura-stage-1-infant-formula-from-birth-800g",
+   "len": 61,
+   "title": "Aptamil Profutura DUOADVANCE Stage 1 Formula 800g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-profutura-stage-2-follow-on-formula-from-6-months-800g",
+   "len": 72,
+   "title": "Aptamil Profutura DUOADVANCE Stage 2 Follow-On Formula 800 g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-ha-pre-hypoallergenic-infant-formula-from-birth-800g",
+   "len": 61,
+   "title": "Aptamil HA PRE Hypoallergenic Infant Formula 800g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-ha-stage-2-hypoallergenic-follow-on-formula-800g",
+   "len": 62,
+   "title": "Aptamil HA 2 Hypoallergenic Follow-On Formula 800g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-booby-soothe-cabbage-cream-60ml",
+   "len": 94,
+   "title": "Earth Mama Booby Soothe Cabbage Cream | Breast Engorgement Relief for Nursing Moms\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-organic-all-over-balm-120ml",
+   "len": 91,
+   "title": "Earth Mama Organic All Over Balm | Baby Dry Skin & Postpartum Multipurpose Balm\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-cradle-cap-cream-60ml",
+   "len": 74,
+   "title": "Earth Mama Cradle Cap Cream | Gentle Baby Scalp & Flake Relief\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-organic-perineal-balm-60ml",
+   "len": 84,
+   "title": "Earth Mama Organic Perineal Balm | Postpartum Recovery & Cooling Comfort\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/earth-mama-herbal-perineal-spray-120ml",
+   "len": 72,
+   "title": "Earth Mama Herbal Perineal Spray | Organic Postpartum Relief | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-oat-cereal-with-goat-milk-baby-oatmeal-with-goat-milk-180g",
+   "len": 71,
+   "title": "Kabrita Oat Baby Cereal with Goat Milk from 5 months (180g)\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-oat-cereal-with-banana-prune-goat-milk-from-6-months-180g",
+   "len": 65,
+   "title": "Kabrita Oat Cereal with Banana & Prune Goat Milk 180g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-7-grains-baby-cereal-with-pumpkin-goat-milk-from-6-months-180g",
+   "len": 68,
+   "title": "Kabrita 7 Grains Pumpkin Baby Cereal with Goat Milk 180g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-rice-cereal-with-prune-apple-and-goat-milk-from-5-months-180g",
+   "len": 65,
+   "title": "Kabrita Rice Cereal with Prune & Apple Goat Milk 180g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-wheat-cereal-with-pear-apple-peach-and-goat-milk-from-5-months-180g",
+   "len": 69,
+   "title": "Kabrita Wheat Cereal with Pear Apple Peach Goat Milk 180g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-wheat-cereal-with-banana-apricot-apple-and-goat-milk-from-6-months-180g",
+   "len": 68,
+   "title": "Kabrita Wheat Cereal Banana Apricot Apple Goat Milk 180g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-7-grains-baby-cereal-with-banana-and-goat-milk-from-6-months-180g",
+   "len": 62,
+   "title": "Kabrita 7 Grains Cereal with Banana Goat Milk 180g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-buckwheat-baby-cereal-with-goat-milk-from-4-months-180g",
+   "len": 61,
+   "title": "Kabrita Buckwheat Baby Cereal with Goat Milk 180g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/kabrita-buckwheat-cereal-with-apple-apricot-and-goat-milk-from-5-months-180g",
+   "len": 65,
+   "title": "Kabrita Buckwheat Cereal Apple Apricot Goat Milk 180g | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/littleoak-natural-goat-milk-infant-formula-with-olive-oil-stage-1-800g",
+   "len": 86,
+   "title": "LittleOak Goat Milk Infant Formula Stage 1 (800g) | Olive Oil Baby Formula | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/littleoak-natural-goat-milk-follow-on-formula-with-olive-oil-stage-2-800g",
+   "len": 89,
+   "title": "LittleOak Goat Milk Follow-On Formula Stage 2 (800g) | Olive Oil Baby Formula | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/littleoak-natural-goat-milk-toddler-milk-with-olive-oil-stage-3-800g",
+   "len": 79,
+   "title": "LittleOak Goat Milk Toddler Milk Stage 3 (800g) | Olive Oil Formula | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/littleoak-natural-goat-milk-infant-formula-with-olive-oil-stage-1-travel-sachets-6x30g",
+   "len": 92,
+   "title": "LittleOak Goat Milk Infant Formula Sachets Stage 1 (6x30g) | Travel Baby Formula | Formuland"
+  },
+  {
+   "url": "https://formuland.com/products/littleoak-natural-goat-milk-follow-on-formula-with-olive-oil-stage-2-travel-sachets-6x30g",
+   "len": 95,
+   "title": "LittleOak Goat Milk Follow-On Formula Sachets Stage 2 (6x30g) | Travel Baby Formula | Formuland"
+  }
+ ],
+ "title_too_short_lt30": [
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/when-to-switch-formula-because-of-gas",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/feeding-your-baby-cold-formula-here-s-what-you-need-to-know",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/why-european-baby-formula-comes-in-stages",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/hipp-baby-formula-german-vs-dutch-vs-uk",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/3-tips-for-storing-your-supply-of-baby-formula",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-common-reasons-your-baby-has-an-upset-stomach",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/debunking-6-common-myths-about-baby-formula",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/4-tips-for-preparing-a-formula-bottle-on-the-go",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-pros-and-cons-of-formula-feeding-your-baby",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/feeding-the-young-the-history-of-baby-formula",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/why-fathers-should-spend-time-bonding-with-their-baby",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-brezza-settings-for-formula",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/gut-health-skin-health-connection",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/organic-cotton-vs-bamboo-for-babies",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-formula-for-sensitive-stomach",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-feeding-chart",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-diaper-brands-sensitive-skin",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-soap-for-baby",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/eco-friendly-nursery-checklist",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/hipp-vs-kendamil",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-sunscreen",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-formula-for-colic-guide",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-organic-baby-lotions-guide",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-skin-microbiome-care-guide",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-gum-care-and-early-oral-habits",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/probiotic-skincare-for-babies",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-travel-essentials",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/global-lessons-in-postpartum-care",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/kendamil-organic-vs-kendamil-bio-nature",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/kendamil-vs-enfamil-formula",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/formuland-international-shipping",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips",
+   "title": "Verifying your connection..."
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-uk-formula",
+   "title": "HiPP UK Formula | Formuland"
+  },
+  {
+   "url": "https://formuland.com/collections/weleda-baby-care-natural-organic-skincare-for-your-little-one",
+   "title": "Weleda Baby Care | Formuland"
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-pur-organic-baby-formula",
+   "title": "HiPP PUR Formula | Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/contact",
+   "title": "Contact Us\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/our-company",
+   "title": "About Company\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/points-rewards",
+   "title": "Points & Rewards\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap",
+   "title": "HTML sitemap\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/formuland-website-faqs",
+   "title": "Formuland Website How-To"
+  },
+  {
+   "url": "https://formuland.com/pages/accessibility",
+   "title": "Accessibility\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/compare",
+   "title": "Compare products\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/collab",
+   "title": "Collabs\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/customer-portal",
+   "title": "Customer Portal\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/about-us",
+   "title": "About Us\n– Formuland"
+  },
+  {
+   "url": "https://formuland.com/pages/formuland-quiz",
+   "title": "Formuland Quiz"
+  },
+  {
+   "url": "https://formuland.com/pages/quiz-results",
+   "title": "quiz results\n– Formuland"
+  }
+ ],
+ "meta_desc_too_long_gt160": 338,
+ "meta_desc_too_short_lt70": [
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-blogs",
+   "md": "Blogs News"
+  }
+ ],
+ "duplicate_title": [
+  {
+   "value": "verifying your connection...",
+   "urls": [
+    "https://formuland.com/blogs/parenting-tips/when-to-switch-formula-because-of-gas",
+    "https://formuland.com/blogs/parenting-tips/feeding-your-baby-cold-formula-here-s-what-you-need-to-know",
+    "https://formuland.com/blogs/parenting-tips/why-european-baby-formula-comes-in-stages",
+    "https://formuland.com/blogs/parenting-tips/hipp-baby-formula-german-vs-dutch-vs-uk",
+    "https://formuland.com/blogs/parenting-tips/3-tips-for-storing-your-supply-of-baby-formula",
+    "https://formuland.com/blogs/parenting-tips/5-common-reasons-your-baby-has-an-upset-stomach",
+    "https://formuland.com/blogs/parenting-tips/debunking-6-common-myths-about-baby-formula",
+    "https://formuland.com/blogs/parenting-tips/4-tips-for-preparing-a-formula-bottle-on-the-go",
+    "https://formuland.com/blogs/parenting-tips/the-pros-and-cons-of-formula-feeding-your-baby",
+    "https://formuland.com/blogs/parenting-tips/feeding-the-young-the-history-of-baby-formula",
+    "https://formuland.com/blogs/parenting-tips/why-fathers-should-spend-time-bonding-with-their-baby",
+    "https://formuland.com/blogs/parenting-tips/baby-brezza-settings-for-formula",
+    "https://formuland.com/blogs/parenting-tips/gut-health-skin-health-connection",
+    "https://formuland.com/blogs/parenting-tips/organic-cotton-vs-bamboo-for-babies",
+    "https://formuland.com/blogs/parenting-tips/best-formula-for-sensitive-stomach",
+    "https://formuland.com/blogs/parenting-tips/baby-feeding-chart",
+    "https://formuland.com/blogs/parenting-tips/best-non-toxic-diaper-brands-sensitive-skin",
+    "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-soap-for-baby",
+    "https://formuland.com/blogs/parenting-tips/eco-friendly-nursery-checklist",
+    "https://formuland.com/blogs/parenting-tips/hipp-vs-kendamil",
+    "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-sunscreen",
+    "https://formuland.com/blogs/parenting-tips/best-formula-for-colic-guide",
+    "https://formuland.com/blogs/parenting-tips/best-organic-baby-lotions-guide",
+    "https://formuland.com/blogs/parenting-tips/baby-skin-microbiome-care-guide",
+    "https://formuland.com/blogs/parenting-tips/baby-gum-care-and-early-oral-habits",
+    "https://formuland.com/blogs/parenting-tips/probiotic-skincare-for-babies",
+    "https://formuland.com/blogs/parenting-tips/baby-travel-essentials",
+    "https://formuland.com/blogs/parenting-tips/global-lessons-in-postpartum-care",
+    "https://formuland.com/blogs/parenting-tips/kendamil-organic-vs-kendamil-bio-nature",
+    "https://formuland.com/blogs/parenting-tips/kendamil-vs-enfamil-formula",
+    "https://formuland.com/blogs/parenting-tips/formuland-international-shipping",
+    "https://formuland.com/blogs/parenting-tips"
+   ]
+  }
+ ],
+ "duplicate_meta_description": [
+  {
+   "value": "products shipping hipp dutch goat formula stage 3 (400g) hipp dutch goat formula stage 2 (400g) hipp dutch goat formula stage 1 (400g) kabrita stage 2 goat milk",
+   "urls": [
+    "https://formuland.com/pages/avada-sitemap",
+    "https://formuland.com/pages/avada-sitemap-products"
+   ]
+  }
+ ],
+ "h1_missing": [
+  "https://formuland.com/pages/contact",
+  "https://formuland.com/pages/formuland-faqs",
+  "https://formuland.com/pages/customer-portal",
+  "https://formuland.com/pages/about-us",
+  "https://formuland.com/pages/nara-organics-formula-recall",
+  "https://formuland.com/pages/choose-your-free-gift"
+ ],
+ "h1_multiple": [
+  {
+   "url": "https://formuland.com/pages/our-company",
+   "h1": [
+    "Caring for Families, One Little One at a Time",
+    "Contact Us"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/holle-stage-2-organic-baby-formula",
+   "h1": [
+    "Holle Stage 2 Formula Organic (Cow) (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/holle-stage-3-organic-formula",
+   "h1": [
+    "Holle Stage 3 Organic Formula (Cow) (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/holle-goat-stage-2-organic-baby-milk-formula",
+   "h1": [
+    "Holle Goat Milk Formula Stage 2 (400g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/lebenswert-stage-1",
+   "h1": [
+    "Lebenswert Stage 1 Bio Formula (500g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/lebenswert-formula-bio-stage-2",
+   "h1": [
+    "Lebenswert Stage 2 Bio Formula (500g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/lebenswert-formula-bio-stage-3",
+   "h1": [
+    "Lebenswert Stage 3 Bio Formula (475g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/holle-stage-4-organic-formula",
+   "h1": [
+    "Holle Stage 4 Organic Formula (Cow) (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/nannycare-growing-up-goat-milk-1-3-years-900g-uk",
+   "h1": [
+    "Nanny Care Stage 3 Goat Milk Formula (800g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-ha-hypoallergenic-formula-stage-pre",
+   "h1": [
+    "HiPP HA PRE - Hypoallergenic Formula from Birth (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/holle-goat-stage-3-organic-baby-milk-formula",
+   "h1": [
+    "Holle Goat Milk Formula Stage 3 (400g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-dutch-goat-stage-1-formula-400g",
+   "h1": [
+    "HiPP Dutch Goat Formula Stage 1 (400g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-dutch-goat-stage-2-formula-400g",
+   "h1": [
+    "HiPP Dutch Goat Formula Stage 2 (400g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/premiriz-plant-based-nondairy-formula",
+   "h1": [
+    "Premibio Primerice Plant Based Nondairy Formula from Birth to 36 Months (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-infant-formula-stage-1",
+   "h1": [
+    "Premibio Primemilk Stage 1 Organic Cow Milk Formula from birth (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-infant-formula-stage-2",
+   "h1": [
+    "Premibio Primemilk Stage 2 Organic Cow Milk Formula from 6 months (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-infant-formula-stage-3",
+   "h1": [
+    "Premibio Primemilk Stage 3 Organic Cow Milk Formula from 12 months (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-goat-milk-formula-stage-1",
+   "h1": [
+    "Premibio Primegoat Stage 1 Organic Goat Milk Formula from birth (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-goat-milk-formula-stage-2",
+   "h1": [
+    "Premibio Primegoat Stage 2 Organic Goat Milk Formula from 6 months (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/premibio-organic-goat-milk-formula-stage-3",
+   "h1": [
+    "Premibio Primegoat Stage 3 Organic Goat Milk Formula from 12 months (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/bebe-m-organic-rice-formula-stage-3",
+   "h1": [
+    "Bebe M Organic Rice AR Formula Stage 3 from 10 Months (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-classic-stage-3-formula-900g-cow",
+   "h1": [
+    "Kendamil Classic Stage 3 - Formula 800g (Cow)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/bebe-m-organic-rice-formula-stage-1",
+   "h1": [
+    "Bebe M Organic Rice AR Formula Stage 1 from birth to 6 Months (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/bebe-m-organic-rice-formula-stage-2",
+   "h1": [
+    "Bebe M Organic Rice AR Formula Stage 2 from 6 Months (600g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-sun-protection-lotion-spf50-ultra-sensitive-suitable-from-birth-200ml",
+   "h1": [
+    "HiPP Sun Protection Lotion SPF50+ | Ultra Sensitive | Suitable from Birth | 200ml",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-wheat-and-milk-baby-biscuit-from-6-months-180g",
+   "h1": [
+    "HiPP Organic Wheat and Milk Baby Biscuit from 6 Months (180g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-comfort-stage-1-400g",
+   "h1": [
+    "Aptamil Comfort Stage 1 (400g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-comfort-stage-2-400g",
+   "h1": [
+    "Aptamil Comfort Stage 2 (400g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-premium-stage-2-formula-800g-cow",
+   "h1": [
+    "Kendamil Premium Stage 2 - Formula 800g (Cow)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-premium-stage-3-formula-800g-cow",
+   "h1": [
+    "Kendamil Premium Stage 3 - Formula 800g (Cow)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-stage-1-bio-nature-formula-800g-cow",
+   "h1": [
+    "Kendamil Stage 1 - Organic Formula 800g (Cow)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/kendamil-stage-3-bio-nature-formula-800g-cow",
+   "h1": [
+    "Kendamil Stage 3 - Nature Formula 800g (Cow)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-mamasanft-massage-oil-sensitive-100ml",
+   "h1": [
+    "HiPP MamaSanft Massage Oil Sensitive (100ml)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-mamasanft-body-butter-sensitive-200ml",
+   "h1": [
+    "HiPP MamaSanft Body Butter Sensitive (200ml)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-german-goat-formula-stage-pre-400g",
+   "h1": [
+    "HiPP German Goat Formula Stage PRE (400g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-german-goat-formula-stage-2-400g",
+   "h1": [
+    "HiPP German Goat Formula Stage 2 (400g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-100-corn-organic-baby-cereal-from-4-months-200-g",
+   "h1": [
+    "HiPP 100% Corn Organic Baby Cereal – From 4 Months (200 g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/holle-bio-pre-1-ready-to-feed-organic-first-infant-milk-200ml",
+   "h1": [
+    "Holle Organic PRE/1 Ready-to-Feed Organic First Infant Milk (200ml)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-organic-combiotic-stage-1-lithuania-formula-800g",
+   "h1": [
+    "HiPP Stage 1 Organic COMBIOTIC Infant Formula (800g) – International (LT Packaging)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-stage-2-lt-organic-combiotic-infant-formula-800g-from-6-months",
+   "h1": [
+    "HiPP Stage 2 Organic COMBIOTIC Follow-On Formula (800g) – International (LT Packaging)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/hipp-stage-3-junior-combiotic-growing-up-milk-500g-from-1-year",
+   "h1": [
+    "HiPP Stage 3 Junior Organic COMBIOTIC Growing-Up Milk (500g) – International (LT Packaging)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-ha-pre-hypoallergenic-infant-formula-from-birth-800g",
+   "h1": [
+    "Aptamil HA Stage PRE Hypoallergenic Infant Formula – From Birth (800g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-ha-stage-1-hypoallergenic-infant-formula-from-birth-800g",
+   "h1": [
+    "Aptamil HA Stage 1 Hypoallergenic Infant Formula – From Birth (800g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/aptamil-ha-stage-2-hypoallergenic-follow-on-formula-800g",
+   "h1": [
+    "Aptamil HA Stage 2 Hypoallergenic – Follow-On Formula (800g)",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  },
+  {
+   "url": "https://formuland.com/products/shipping-protection-formula",
+   "h1": [
+    "Delivery Guarantee",
+    "Formuland — Product & Purchase Disclaimer"
+   ]
+  }
+ ],
+ "thin_lt300_words": [
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/our-site-has-a-new-look",
+   "words": 266,
+   "type": "articles"
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/now-shipping-to-canada",
+   "words": 85,
+   "type": "articles"
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-comfort-formula",
+   "words": 261,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/collections/lowenzahn-formula",
+   "words": 215,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/collections/baby-food-jars",
+   "words": 246,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/collections/postpartum-recovery-essentials",
+   "words": 256,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/collections/pregnancy-care-for-expectant-moms",
+   "words": 182,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/collections/toddler-care",
+   "words": 215,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/collections/mom-supplements",
+   "words": 278,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/collections/anti-reflux-formula",
+   "words": 121,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/collections/toddler-milk-12-months-international",
+   "words": 248,
+   "type": "collections"
+  },
+  {
+   "url": "https://formuland.com/pages/contact",
+   "words": 57,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/affiliate-program",
+   "words": 79,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/points-rewards",
+   "words": 299,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/european-baby-formula-comparison-chart",
+   "words": 5,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-collections",
+   "words": 44,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-pages",
+   "words": 18,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-blogs",
+   "words": 6,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/accessibility",
+   "words": 236,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/how-to-apply-for-the-formuland-mighty-star-scholarship",
+   "words": 226,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/formuland-reviews",
+   "words": 50,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/compare",
+   "words": 2,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/collab",
+   "words": 13,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/data-sharing-opt-out",
+   "words": 191,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/app",
+   "words": 144,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/byob",
+   "words": 15,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/froonze-new-customer-account",
+   "words": 4,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/hipp-byob-bundle",
+   "words": 22,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/formuland-quiz",
+   "words": 280,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/quiz-results",
+   "words": 280,
+   "type": "pages"
+  },
+  {
+   "url": "https://formuland.com/pages/choose-your-free-gift",
+   "words": 83,
+   "type": "pages"
+  }
+ ],
+ "median_words_by_type": {
+  "articles": 1096,
+  "blogs": 10,
+  "collections": 1822,
+  "pages": 236,
+  "home": 1229,
+  "products": 1977
+ },
+ "schema_types_by_type": {
+  "articles": {
+   "Article": 111,
+   "Organization": 111,
+   "WebSite": 111,
+   "FAQPage": 2
+  },
+  "blogs": {},
+  "collections": {
+   "FAQPage": 48,
+   "Organization": 74,
+   "WebSite": 74,
+   "CollectionPage": 2,
+   "BreadcrumbList": 2
+  },
+  "pages": {
+   "Organization": 32,
+   "WebSite": 32,
+   "ContactPage": 1,
+   "AboutPage": 2,
+   "FAQPage": 1
+  },
+  "home": {
+   "Organization": 1,
+   "WebSite": 1
+  },
+  "products": {
+   "Organization": 249,
+   "WebSite": 249,
+   "Product": 249
+  }
+ },
+ "pages_without_schema": [],
+ "invalid_jsonld": [],
+ "img_missing_alt_total": 0,
+ "img_empty_alt_total": 14206,
+ "img_total": 22743,
+ "pages_with_missing_alt": [],
+ "no_og_image": [],
+ "slow_gt2s": [],
+ "response_time_median_s": 0.349,
+ "html_bytes_median": 671502,
+ "orphan_or_weak_inbound_le1": [
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/food-strategy-for-moms-with-a-toddler",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/newborn-bathing-101-have-a-safe-and-comfy-bath",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-top-10-baby-care-products-you-don-t-need",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/10-best-natural-baby-products-you-should-buy",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/7-baby-myths-you-can-forget-about",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/our-site-has-a-new-look",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/bottle-refusal-why-it-happens-what-to-do-about-it",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/why-european-baby-formula-comes-in-stages",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/hipp-baby-formula-german-vs-dutch-vs-uk",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/3-tips-for-storing-your-supply-of-baby-formula",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/5-common-reasons-your-baby-has-an-upset-stomach",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/4-tips-for-preparing-a-formula-bottle-on-the-go",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/the-pros-and-cons-of-formula-feeding-your-baby",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/feeding-the-young-the-history-of-baby-formula",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/why-fathers-should-spend-time-bonding-with-their-baby",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/unpacking-the-issue-dented-formula-cans-creased-boxes-explained",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/calm-child-tantrum-tips",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/organic-cotton-vs-bamboo-for-babies",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-formula-for-sensitive-stomach",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-feeding-chart",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-diaper-brands-sensitive-skin",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-soap-for-baby",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/eco-friendly-nursery-checklist",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/hipp-vs-kendamil",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-non-toxic-baby-sunscreen",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-formula-for-colic-guide",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/best-organic-baby-lotions-guide",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-skin-microbiome-care-guide",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-gum-care-and-early-oral-habits",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/probiotic-skincare-for-babies",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/baby-travel-essentials",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/blogs/parenting-tips/global-lessons-in-postpartum-care",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/collections/lowenzahn-formula",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-formula-stage-1",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/ready-to-feed",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/baby-food-pouches",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/baby-food-jars",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-hippis-fruit-puree-pouch",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-organic-fruit-vegetable-cereal-puree-jars",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/formuland-bundles",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-formula-stage-2",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-formula-stage-3",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/hipp-formula-stage-4",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/kendamil-organic-formula",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/collections/toddler-milk-12-months-international",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/our-company",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-collections",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-pages",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-products",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-articles",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/avada-sitemap-blogs",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/how-to-apply-for-the-formuland-mighty-star-scholarship",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/compare",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/formuland-coupon-code",
+   "inbound": 1
+  },
+  {
+   "url": "https://formuland.com/pages/collab",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/data-sharing-opt-out",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/app",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/froonze-new-customer-account",
+   "inbound": 0
+  },
+  {
+   "url": "https://formuland.com/pages/quiz-results",
+   "inbound": 0
+  }
+ ],
+ "orphan_or_weak_count": 88,
+ "linked_but_not_in_crawl_sample": [
+  "/collections/baby-formula",
+  "/collections/baby-formula-deals-family-savings-internal",
+  "/collections/holle-ready-to-feed-formula-toddler-milk-organic-liquid-baby-formula",
+  "/collections/all",
+  "/blogs/parenting-tips.atom",
+  "/products/hipp-pur-stage-pre-organic-infant-formula-from-birth-500g",
+  "/products/hipp-pur-stage-2-organic-follow-on-formula-6-months-500g",
+  "/products/hipp-stage-1-pur-organic-infant-formula-milk-powder-from-birth-500g",
+  "/products/hipp-pur-kindermilch-organic-toddler-milk-12-months-500g",
+  "/products/hipp-pur-stage-3-organic-follow-on-formula-10-months-500g",
+  "/products/earth-mama-organic-milkmaid-lactation-bars-chocolate-chip-peanut-butter-5ct-breastfeeding-snack-support",
+  "/products/aptamil-comfort-infant-formula-from-birth-800g",
+  "/products/holle-goat-milk-formula-stage-4-dutch-800g-from-12-months",
+  "/products/manukind-sample-pack",
+  "/products/manukind-tote-bag-kit",
+  "/products/earth-mama-lactaglow-lactation-collagen-drink-mix-4-8-oz",
+  "/products/earth-mama-organic-milkmaid-lactation-bars-cranberry-almond-5ct",
+  "/products/earth-mama-lactahydrate-organic-lactation-electrolyte-drink-mix-15ct",
+  "/blogs/parenting-tips/tagged/buying-guide",
+  "/products/aptamil-anti-reflux-infant-formula-from-birth-800g",
+  "/collections/premade-formula",
+  "/products/holle-goat-oat-bundle",
+  "/products/kabrita-baby-multigrain-biscuits-with-goat-milk-from-6-months-115g",
+  "/products/kabrita-baby-biscuits-with-goat-milk-from-6-months-115g",
+  "/products/kabrita-baby-biscuits-with-banana-and-goat-milk-from-6-months-115g",
+  "/products/hipp-ultra-sensitive-baby-wipes-48-wipes-99-water-fragrance-free",
+  "/products/hipp-soft-pur-baby-wipes-3-x-48-wipes-99-9-water-fragrance-free",
+  "/collections/jovie-formula",
+  "/products/holle-organic-apple-pear-yogurt-pouches",
+  "/products/holle-organic-blue-bird-fruit-grain-puree-pouches",
+  "/products/holle-organic-mango-yogurt-pouches",
+  "/products/holle-fresh-flavors-yogurt-pouches-bundle",
+  "/products/holle-fruit-veggie-pouches-bundle",
+  "/products/holle-organic-power-parrot-fruit-veggie-puree-pouches",
+  "/products/holle-power-greens-pouches-bundle",
+  "/products/holle-tropical-pouches-bundle",
+  "/products/holle-organic-banana-llama-fruit-puree-pouches",
+  "/products/holle-organic-panda-peach-fruit-grain-puree-pouches",
+  "/products/holle-organic-zebra-beet-fruit-veggie-puree-pouches",
+  "/products/holle-organic-veggie-bunny-veggie-puree-pouches"
+ ],
+ "hreflang_counts": {
+  "29": 191,
+  "0": 174,
+  "32": 88,
+  "3": 46
+ }
+}

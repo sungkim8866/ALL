@@ -1,0 +1,68 @@
+[
+ {
+  "url": "https://formuland.com/",
+  "viewport": "desktop",
+  "status": 200,
+  "shot": "screenshots/home-desktop.png",
+  "h1": "Trusted Organic European Formula\nfor a Healthy Start in Life",
+  "h1_top": 199,
+  "vh": 900,
+  "hscroll": false,
+  "title": "European Baby Formula | Shop Organic European Formula Brands & Baby Formula From Europe Online - Formuland"
+ },
+ {
+  "url": "https://formuland.com/products/hipp-formula-stage-1",
+  "viewport": "desktop",
+  "status": 200,
+  "shot": "screenshots/hipp-formula-stage-1-desktop.png",
+  "h1": "HiPP UK Organic Stage 1 from Birth (800g)",
+  "h1_top": 298,
+  "vh": 900,
+  "hscroll": false,
+  "title": "HiPP UK Stage 1 Organic Infant Formula (800g) | Order HiPP Formula Stage 1 - Formuland"
+ },
+ {
+  "url": "https://formuland.com/collections/hipp-formula",
+  "viewport": "desktop",
+  "status": 200,
+  "shot": "screenshots/hipp-formula-desktop.png",
+  "h1": "HiPP Organic Baby Formula",
+  "h1_top": 268,
+  "vh": 900,
+  "hscroll": false,
+  "title": "HiPP Formula: Dutch, German, UK, HA & Goat | Formuland"
+ },
+ {
+  "url": "https://formuland.com/",
+  "viewport": "mobile",
+  "status": 200,
+  "shot": "screenshots/home-mobile.png",
+  "h1": "Trusted Organic European Formula\nfor a Healthy Start in Life",
+  "h1_top": 160,
+  "vh": 844,
+  "hscroll": false,
+  "title": "European Baby Formula | Shop Organic European Formula Brands & Baby Formula From Europe Online - Formuland"
+ },
+ {
+  "url": "https://formuland.com/products/hipp-formula-stage-1",
+  "viewport": "mobile",
+  "status": 200,
+  "shot": "screenshots/hipp-formula-stage-1-mobile.png",
+  "h1": "HiPP UK Organic Stage 1 from Birth (800g)",
+  "h1_top": 860,
+  "vh": 844,
+  "hscroll": false,
+  "title": "HiPP UK Stage 1 Organic Infant Formula (800g) | Order HiPP Formula Stage 1 - Formuland"
+ },
+ {
+  "url": "https://formuland.com/collections/hipp-formula",
+  "viewport": "mobile",
+  "status": 200,
+  "shot": "screenshots/hipp-formula-mobile.png",
+  "h1": "HiPP Organic Baby Formula",
+  "h1_top": 247,
+  "vh": 844,
+  "hscroll": false,
+  "title": "HiPP Formula: Dutch, German, UK, HA & Goat | Formuland"
+ }
+]
