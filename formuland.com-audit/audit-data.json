@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "domain": "formuland.com",
+    "audit_date": "2026-11-02",
+    "tool": "Claude SEO 2.5.0 (claude-seo plugin) in a Claude Code cloud session",
+    "pages_crawled": 500,
+    "pages_blocked": 32,
+    "data_sources": "Sitemap crawl (500 URLs, primary locale), 18 saved representative pages, headless Chromium lab runs, WebSearch SERP sample. No Search Console, CrUX, GA4, Moz or PageSpeed Insights data (PSI keyless quota exhausted).",
+    "limitations": [
+      "32 of 500 crawled URLs (mostly blog articles) returned 429 and later all paths returned 403 'cf-mitigated: challenge' to the audit client; the challenge was not bypassed. Effect on verified Googlebot/Bingbot was not measured.",
+      "Performance numbers are lab measurements from a datacenter with CPU/network throttling, not field data. INP not measured.",
+      "SERP observations are one WebSearch sample on 2026-11-02, not verified Google rankings.",
+      "International sub-folders (/en-intl, /ja-intl, /zh-intl) and the Canada site were not audited in depth."
+    ]
+  },
+  "summary": {
+    "health_score": 55,
+    "business_type": "E-commerce (Shopify) - European infant formula retailer, YMYL",
+    "score_method": "Weighted: Technical 22%, Content 23%, On-Page 20%, Schema 10%, Performance 10%, AI Search Readiness 10% (GEO 60% + agent readiness 40%), Images 5%",
+    "top_findings": [
+      {"title": "Flagship buying guide gives health advice that contradicts EU law and the site's own product pages", "severity": "Critical", "description": "/blogs/parenting-tips/best-organic-baby-formula-which-is-safest-for-your-child tells parents DHA/ARA should be avoided 'whenever possible', while the HiPP Stage 1 PDP states DHA and ARA are required under EU formula regulation. The article also recommends Jovie, which the store does not sell (0 of 317 sitemap products), and /what-to-feed-your-infant advises avoiding allergenic foods."},
+      {"title": "Homepage hero is a 48.5 MB video that keeps the H1 and CTA invisible", "severity": "Critical", "description": "https://cdn.shopify.com/videos/c/o/v/0e80a1164c1044978c48e20afc7ca391.mp4 is 48,543,322 bytes, 1080p60, no poster. H1, value proposition and the only hero CTA stay at opacity 0 until the video ends (about 24.5 s in throttled lab runs)."},
+      {"title": "Conflicting feeding and preparation charts on infant-formula product pages", "severity": "High", "description": "/products/hipp-formula-stage-1 shows HiPP's own chart (0-2 weeks: 2 scoops / 60 ml) and a generic chart with different amounts; the generic block also appears on Holle and Lebenswert pages."},
+      {"title": "No named author or medical reviewer on YMYL content; trust pages contradict each other", "severity": "High", "description": "Articles are 'Posted by Formuland' and Article schema uses a Person named 'Formuland'. About pages disagree (500,000 vs 1M orders, California vs main office in Europe); no address found; /pages/our-company has 0 inbound links."},
+      {"title": "Shipping, duties and return statements contradict each other", "severity": "High", "description": "PDPs, collections and a legacy popup give different free-shipping thresholds, delivery windows (2-4, 2-7, 1-6 days) and origins; the PDP says duties are covered while its disclaimer makes the buyer responsible; the refund policy says formula is non-returnable while the PDP promises a 30-day store-credit guarantee."},
+      {"title": "European baby formula comparison chart is image-only", "severity": "High", "description": "/pages/european-baby-formula-comparison-chart has 5 words of HTML text, 0 tables and 0 product links; competing chart pages use HTML tables and 1,700-4,300 words."}
+    ],
+    "quick_wins": [
+      "Product template: change the 'Product & Purchase Disclaimer' H1 to H2 (44 PDPs) and delete the generic feeding chart block.",
+      "Homepage hero: make the H1/CTA overlay visible at first paint, add a poster image and a <= 2 MB faststart mobile video; point the hero CTA at /collections/organic-baby-formula instead of the redirecting -temp URL.",
+      "Add an H1 and a meta description to /pages/about-us, /pages/nara-organics-formula-recall and /pages/contact; 301 /pages/our-company to /pages/about-us.",
+      "Make the canonical tag unconditional in the product template (50 PDPs have none).",
+      "Add BreadcrumbList and gtin13 to Product JSON-LD; point Article mainEntityOfPage at the article URL.",
+      "Hide utility pages and the 6 stale Avada HTML sitemap pages with seo.hidden and remove the Avada app.",
+      "Lazy-load the 28 header flag images and serve one hero image per viewport (about 210 KB saved on mobile)."
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "score": 72,
+      "weight": 0.22,
+      "what_works": ["HTTPS with HSTS, CSP frame-ancestors, X-Frame-Options and nosniff", "Server-rendered HTML; key pages do not depend on JS for text", "Clean Shopify robots.txt with facet/sort rules and a sitemap index", "No noindex leaks found in 468 crawled 200 pages; TTFB about 250 ms unthrottled"],
+      "findings": [
+        {"title": "Cloudflare bot challenge on non-browser clients", "severity": "Medium", "description": "32 URLs returned 429 'Verifying your connection...' in the crawl; later every path including /robots.txt returned 403 cf-mitigated: challenge for about 7 minutes.", "recommendation": "Review Cloudflare/Shopify bot settings and security events; confirm verified bots (Googlebot, Bingbot, OAI-SearchBot, PerplexityBot) are exempt; check Crawl Stats in Search Console."},
+        {"title": "50 of 249 crawled products have no rel=canonical", "severity": "Medium", "description": "Affected: HiPP Baby Soft, Earth Mama, Weleda, diapers, LittleOak formula products.", "recommendation": "Output {{ canonical_url }} unconditionally in theme.liquid / the product template; verify with view-source on 3 affected URLs."},
+        {"title": "Utility, duplicate and thin pages are indexable and in the sitemap", "severity": "Medium", "description": "customer-portal, quiz-results (duplicates formuland-quiz), shipping-protection product, 6 Avada HTML sitemap pages (120 of 193 links point to formuland.myshopify.com).", "recommendation": "Set the seo.hidden metafield on utility pages, delete the Avada pages and uninstall the app."},
+        {"title": "Sitemap lastmod is unreliable", "severity": "Medium", "description": "All 316 products share one lastmod timestamp; ja-intl/zh-intl lastmod equals request time.", "recommendation": "Find the app bulk-touching products; keep lastmod meaningful so Google trusts it."},
+        {"title": "Duplicate x-default hreflang where two hreflang systems overlap", "severity": "Low", "description": "Theme block (en-US, en-CA, x-default) plus Shopify Markets block (29 tags); 142 US-only products correctly have no Markets block.", "recommendation": "Drop the theme x-default on pages where the Markets block is present."},
+        {"title": "AI-agent robots.txt group does not inherit * rules", "severity": "Low", "description": "/admin, /apps/loyalty and sort_by URLs are allowed for the AI group.", "recommendation": "Copy the Disallow lines into that group."}
+      ]
+    },
+    {
+      "name": "Content Quality",
+      "score": 41,
+      "weight": 0.23,
+      "what_works": ["Long, detailed product pages (median about 1,977 words) and collections (median about 1,822)", "Recall page is well-sourced", "Large blog library (142 articles) on core parent questions"],
+      "findings": [
+        {"title": "Health misinformation in the flagship organic-formula guide", "severity": "Critical", "description": "DHA/ARA 'avoid these whenever possible' contradicts EU 2016/127 and the site's own PDPs; recommends a brand not sold; outdated allergen-avoidance advice in /what-to-feed-your-infant.", "recommendation": "Correct or unpublish the passages now; rewrite with citations and a named, credentialed reviewer (pediatric dietitian/pediatrician)."},
+        {"title": "No identifiable author, credentials or medical review", "severity": "High", "description": "'Posted by Formuland' on every article; no reviewer, no sources section, mismatched dates.", "recommendation": "Create author and reviewer profile pages; add 'Medically reviewed by' with date and credentials; cite primary sources."},
+        {"title": "Conflicting feeding charts on PDPs", "severity": "High", "description": "Generic chart conflicts with the manufacturer chart on HiPP, Holle and Lebenswert pages.", "recommendation": "Show only the manufacturer's chart for each product."},
+        {"title": "Trust pages contradict each other", "severity": "High", "description": "500,000 vs 1M orders/families; California vs Europe office; 10 years vs founded 2014; no address or phone found.", "recommendation": "Merge into one About page with verified facts, address, founders and team; 301 the duplicate."},
+        {"title": "Templated or unsupported product copy", "severity": "Medium", "description": "Holle/Lebenswert copy is generic; Lebenswert copy claims benefits for 'learning difficulties and dyslexia' without support.", "recommendation": "Rewrite with manufacturer-verified facts; remove unsupported health claims."}
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "score": 56,
+      "weight": 0.20,
+      "what_works": ["Every crawled page has a title and canonical-safe URL structure", "Collections have unique, descriptive H1s"],
+      "findings": [
+        {"title": "Meta descriptions are auto-excerpts", "severity": "High", "description": "338 of 468 exceed 160 characters; 146 are cut mid-sentence; 13 missing.", "recommendation": "Write 140-155 character descriptions, starting with top collections, products and the 30 most-visited articles."},
+        {"title": "Trust and YMYL pages lack H1 and meta description", "severity": "High", "description": "/pages/about-us, /pages/nara-organics-formula-recall, /pages/contact, FAQ.", "recommendation": "Add one descriptive H1 and a meta description to each."},
+        {"title": "Second H1 in the product template", "severity": "Medium", "description": "44 PDPs have 'Formuland - Product & Purchase Disclaimer' as an extra H1.", "recommendation": "Change it to H2 or a styled paragraph."},
+        {"title": "Long, keyword-stuffed titles", "severity": "Medium", "description": "196 titles exceed 60 characters; homepage title repeats 'European ... Formula' four times.", "recommendation": "Rewrite templates to 50-60 characters: primary keyword, differentiator, brand."},
+        {"title": "Weak internal linking to commercial collections", "severity": "Medium", "description": "88 crawled URLs have 1 or fewer inbound links; /collections/hipp-formula-stage-1..4 and /collections/kendamil-organic-formula are not linked from crawled pages.", "recommendation": "Link stage and brand collections from navigation, PDP breadcrumbs and related articles."}
+      ]
+    },
+    {
+      "name": "Schema / Structured Data",
+      "score": 62,
+      "weight": 0.10,
+      "what_works": ["All 31 JSON-LD blocks parse; no microdata/RDFa conflicts or deprecated types", "Product with Offer and AggregateRating matching visible reviews (HiPP 4.91 / 107)", "Organization and WebSite on every page"],
+      "findings": [
+        {"title": "Return policy contradiction blocks hasMerchantReturnPolicy", "severity": "High", "description": "/policies/refund-policy says formula is non-returnable; PDP promises a 30-day store-credit guarantee.", "recommendation": "Reconcile the policy text first, then add MerchantReturnPolicy (see findings/schema.md options A/B)."},
+        {"title": "No shippingDetails or GTIN on offers", "severity": "Medium", "description": "Valid EAN-13 barcodes exist in Shopify data; multipack variants reuse the single-can barcode.", "recommendation": "Add OfferShippingDetails and gtin13 from the single-unit variant; give multipacks their own identifiers or omit."},
+        {"title": "Two Product nodes per PDP with the same relative @id", "severity": "Medium", "description": "Theme block carries offers; Judge.me block carries reviews.", "recommendation": "Emit one merged Product node or use an absolute shared @id."},
+        {"title": "BreadcrumbList missing on products and articles", "severity": "Medium", "description": "Present on 2 of 74 collections, 0 of 249 products, 0 articles.", "recommendation": "Use the paste-ready graph in findings/schema.md."},
+        {"title": "Article markup issues", "severity": "Medium", "description": "mainEntityOfPage points at the homepage; author is a Person named Formuland; dateModified does not match the visible date.", "recommendation": "Use the BlogPosting template in findings/schema.md."}
+      ]
+    },
+    {
+      "name": "Performance (CWV)",
+      "score": 30,
+      "weight": 0.10,
+      "what_works": ["TTFB about 250 ms unthrottled, 103 Early Hints sent", "Lab CLS 0.002-0.006", "Product LCP 2.83 s throttled (eager main image, fetchpriority high)", "Images served as WebP/AVIF from Shopify CDN"],
+      "findings": [
+        {"title": "48.5 MB hero video gates LCP, H1 and CTA", "severity": "Critical", "description": "1080p60, about 19 Mbps, moov atom at end of file, no poster; throttled LCP 24.5 s, one run never painted a frame in 30 s.", "recommendation": "Poster image as LCP, <= 2 MB faststart mobile encode, visible H1/CTA at first paint."},
+        {"title": "2.6-3.0 MB compressed JavaScript", "severity": "High", "description": "263-399 requests; long-task total 4.4-5.6 s at 4x CPU.", "recommendation": "Remove or defer app embeds that are not used on each template."},
+        {"title": "Third parties are about 60% of non-video bytes", "severity": "High", "description": "GTM container alone 1.34 MB; Clarity loads via tag manager although commented out in the theme.", "recommendation": "Audit the GTM container; delay non-essential tags until interaction."},
+        {"title": "HTML is about 720 KB (median 687 KB)", "severity": "High", "description": "Over half is inline app JS/JSON (Appstle 97-143 KB); page text starts 230-324 KB into the HTML.", "recommendation": "Scope app embeds to the templates that need them."},
+        {"title": "VWO anti-flicker hides the body for up to 2 s", "severity": "Medium", "description": "Effect not isolated in lab runs.", "recommendation": "Remove the snippet when no test is running, or limit it to tested pages."}
+      ]
+    },
+    {
+      "name": "AI Search Readiness",
+      "score": 57,
+      "weight": 0.10,
+      "what_works": ["robots.txt allows all major AI search, retrieval and training bots", "Key pages are server-rendered", "Shopify-generated llms.txt, agents.md, UCP and WebMCP tools are present"],
+      "findings": [
+        {"title": "YMYL factual errors reduce citability", "severity": "Critical", "description": "AI engines cross-check health claims; the DHA/ARA and allergen statements conflict with authoritative sources.", "recommendation": "Fix the content first (see Content Quality)."},
+        {"title": "No expert entities behind health content", "severity": "High", "description": "No Person authors/reviewers, thin Organization entity (no legal name, address, founders), conflicting About claims.", "recommendation": "Publish credentialed people, one Organization node with sameAs, address and founders."},
+        {"title": "Comparison chart not machine-readable", "severity": "High", "description": "Three images, 5 words.", "recommendation": "Dated HTML tables with brand, protein base, stage, key ingredients and links."},
+        {"title": "WebMCP add_to_cart description tells agents not to ask the user to confirm", "severity": "Medium", "description": "Shopify-owned webmcp script, 12 tools.", "recommendation": "Report to Shopify; confirm checkout still requires explicit user approval."},
+        {"title": "Lighthouse Agentic Browsing not measured", "severity": "Info", "description": "PSI quota exhausted.", "recommendation": "Run npx lighthouse --only-categories=agentic-browsing locally."}
+      ]
+    },
+    {
+      "name": "Images",
+      "score": 68,
+      "weight": 0.05,
+      "what_works": ["WebP/AVIF delivery", "Product gallery images all have alt text", "Main product image eager with fetchpriority=high"],
+      "findings": [
+        {"title": "Desktop hero image downloaded on mobile", "severity": "High", "description": "210 KB image hidden with display:none but loaded eagerly.", "recommendation": "Use one <picture> with media sources."},
+        {"title": "28 eager country-flag images on every page", "severity": "Medium", "description": "57.5% of all images; they account for 92% of empty-alt images (decorative, correct).", "recommendation": "Lazy-render the country selector."},
+        {"title": "Low srcset coverage and missing width/height on some images", "severity": "Medium", "description": "Some blog thumbnails and hero images also lack alt text.", "recommendation": "Use Shopify image_tag with widths and sizes; add alt to link-wrapped thumbnails."}
+      ]
+    }
+  ],
+  "supplementary_scores": {
+    "E-commerce": 63,
+    "Search Experience (SXO gap)": 61,
+    "Agent readiness": 70,
+    "GEO": 49
+  },
+  "action_plan": {
+    "phases": [
+      {"name": "Phase 1: Critical Fixes", "timeframe": "Week 1", "items": [
+        "Correct or unpublish the DHA/ARA, Jovie and allergen passages in the two flagged articles",
+        "Remove the generic feeding chart from all PDP templates (manufacturer chart only)",
+        "Hero: visible H1/CTA at first paint, poster image, <= 2 MB mobile video; fix the -temp CTA link",
+        "Publish one shipping, duties and returns statement and apply it to PDPs, collections, popups and the refund policy",
+        "Check Cloudflare bot settings so verified search and AI bots are not challenged"]},
+      {"name": "Phase 2: High-Impact Improvements", "timeframe": "Weeks 2-3", "items": [
+        "Unconditional canonical in the product template (50 PDPs)",
+        "Disclaimer H1 to H2 (44 PDPs); H1 and meta description on About, Recall, Contact, FAQ",
+        "Merge /pages/our-company into /pages/about-us (301) with one verified set of facts and an address",
+        "Product JSON-LD: one merged node, BreadcrumbList, gtin13, shippingDetails, MerchantReturnPolicy",
+        "Cut JS: audit GTM, scope Appstle and other app embeds, lazy-load flags, one hero image per viewport",
+        "seo.hidden on utility pages; delete Avada HTML sitemaps; rewrite top meta descriptions and titles"]},
+      {"name": "Phase 3: Content & Authority", "timeframe": "Month 2", "items": [
+        "Named author and medical reviewer program with profile pages and schema",
+        "Rebuild the comparison chart as dated HTML tables linking to products",
+        "New page: Is European baby formula legal and safe in the US? (FDA status, import, storage)",
+        "Pillar guide for 'european baby formula'; Stage 1 hub; goat-milk brand comparison",
+        "Rewrite templated Holle/Lebenswert copy; refresh or retire outdated articles"]},
+      {"name": "Phase 4: Monitoring & Iteration", "timeframe": "Ongoing", "items": [
+        "Connect Search Console, CrUX and GA4 to the audit tool for field data",
+        "Capture a drift baseline and re-audit after each release",
+        "Re-crawl the 32 challenged articles and the international storefronts",
+        "Run Lighthouse Agentic Browsing and axe locally"]}
+    ]
+  },
+  "artifacts": {
+    "findings_dir": "findings/",
+    "screenshots_dir": "screenshots/"
+  }
+}
