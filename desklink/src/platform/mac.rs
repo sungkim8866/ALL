@@ -249,6 +249,25 @@ struct TapState {
 }
 
 static STATE: OnceLock<TapState> = OnceLock::new();
+static CURSOR_HIDDEN: AtomicBool = AtomicBool::new(false);
+
+fn hide_cursor() {
+    if !CURSOR_HIDDEN.swap(true, Ordering::SeqCst) {
+        // SAFETY: plain Quartz call.
+        unsafe {
+            CGDisplayHideCursor(CGMainDisplayID());
+        }
+    }
+}
+
+fn show_cursor() {
+    if CURSOR_HIDDEN.swap(false, Ordering::SeqCst) {
+        // SAFETY: plain Quartz call.
+        unsafe {
+            CGDisplayShowCursor(CGMainDisplayID());
+        }
+    }
+}
 
 fn event_mask() -> u64 {
     let mut m = 0u64;
@@ -292,7 +311,12 @@ fn modifier_bits(vk: u16) -> Option<(u64, u64)> {
 }
 
 fn send(st: &TapState, ev: CapEvent) {
-    let _ = st.tx.send(ev);
+    // If the engine is gone (its task ended, e.g. after a panic) nothing
+    // would ever release the grab and the tap would swallow all input
+    // forever: give the mouse and keyboard back to this computer.
+    if st.tx.send(ev).is_err() && st.grab.swap(false, Ordering::SeqCst) {
+        show_cursor();
+    }
 }
 
 unsafe extern "C" fn tap_callback(
@@ -618,6 +642,8 @@ struct Injector {
     last_click: Option<(Button, Instant, CGPoint, i64)>,
     wheel_rest: (f64, f64),
     last_wake: Option<Instant>,
+    /// Reused so repeated wake-ups update one assertion instead of leaking.
+    activity_id: u32,
 }
 
 // SAFETY: the event source is a CF object that may be used from any thread;
@@ -768,6 +794,11 @@ impl Injector {
                 }
                 let Some(vk) = keys::to_mac(code, keyboard_iso()) else { return };
                 let repeat = down && self.keys_down.contains(&code);
+                // Windows auto-repeats modifiers, macOS never does: re-posting
+                // the press would send a stream of flagsChanged events.
+                if repeat && keys::is_modifier(code) {
+                    return;
+                }
                 if down {
                     self.keys_down.insert(code);
                     if keys::is_modifier(code) {
@@ -808,7 +839,6 @@ fn keyboard_iso() -> bool {
 
 pub struct MacPlatform {
     injector: Mutex<Injector>,
-    cursor_hidden: AtomicBool,
 }
 
 impl MacPlatform {
@@ -847,8 +877,8 @@ impl MacPlatform {
                 last_click: None,
                 wheel_rest: (0.0, 0.0),
                 last_wake: None,
+                activity_id: 0,
             }),
-            cursor_hidden: AtomicBool::new(false),
         })
     }
 }
@@ -911,20 +941,10 @@ impl Platform for MacPlatform {
             *st.park.lock().unwrap() = CGPoint { x: park.0, y: park.1 };
             disable_local_event_suppression();
             st.grab.store(true, Ordering::SeqCst);
-            if !self.cursor_hidden.swap(true, Ordering::SeqCst) {
-                // SAFETY: plain Quartz call.
-                unsafe {
-                    CGDisplayHideCursor(CGMainDisplayID());
-                }
-            }
+            hide_cursor();
         } else {
             st.grab.store(false, Ordering::SeqCst);
-            if self.cursor_hidden.swap(false, Ordering::SeqCst) {
-                // SAFETY: plain Quartz call.
-                unsafe {
-                    CGDisplayShowCursor(CGMainDisplayID());
-                }
-            }
+            show_cursor();
         }
     }
 
@@ -978,10 +998,9 @@ impl Platform for MacPlatform {
         }
         inj.last_wake = Some(Instant::now());
         let name = cfstr(c"DeskLink remote input");
-        let mut id = 0u32;
-        // SAFETY: valid CFString and out pointer.
+        // SAFETY: valid CFString and in/out pointer (an existing id is updated).
         unsafe {
-            IOPMAssertionDeclareUserActivity(name, 0, &mut id);
+            IOPMAssertionDeclareUserActivity(name, 0, &mut inj.activity_id);
             CFRelease(name);
         }
     }

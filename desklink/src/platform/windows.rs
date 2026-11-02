@@ -119,6 +119,20 @@ fn hook_thread() {
     }
 }
 
+/// Hands a captured event to the engine. If the engine is gone (its task
+/// ended, e.g. after a panic) nothing would ever release the grab and the
+/// hooks would swallow all input forever: give it back to this computer.
+fn send(st: &HookState, ev: CapEvent) {
+    if st.tx.send(ev).is_err() && st.grab.swap(false, Ordering::SeqCst) {
+        restore_cursors();
+    }
+}
+
+/// While grabbed every movement is an offset from the park point. An event
+/// generated just before the cursor was parked shows up as a jump of half a
+/// screen; no real mouse moves that far in one event, so it is dropped.
+const MAX_GRAB_DELTA: i32 = 400;
+
 fn hiword(v: u32) -> u16 {
     (v >> 16) as u16
 }
@@ -139,13 +153,17 @@ unsafe extern "system" fn mouse_proc(code: i32, wparam: WPARAM, lparam: LPARAM) 
                             let px = st.park_x.load(Ordering::Relaxed);
                             let py = st.park_y.load(Ordering::Relaxed);
                             let (dx, dy) = (x - px, y - py);
-                            if dx != 0 || dy != 0 {
-                                let _ = st.tx.send(CapEvent::Move {
-                                    x: x as f64,
-                                    y: y as f64,
-                                    dx: dx as f64,
-                                    dy: dy as f64,
-                                });
+                            let plausible = dx.abs() < MAX_GRAB_DELTA && dy.abs() < MAX_GRAB_DELTA;
+                            if (dx != 0 || dy != 0) && plausible {
+                                send(
+                                    st,
+                                    CapEvent::Move {
+                                        x: x as f64,
+                                        y: y as f64,
+                                        dx: dx as f64,
+                                        dy: dy as f64,
+                                    },
+                                );
                             }
                             // Swallowed: the cursor stays parked.
                             return 1;
@@ -181,7 +199,7 @@ unsafe extern "system" fn mouse_proc(code: i32, wparam: WPARAM, lparam: LPARAM) 
                     _ => None,
                 };
                 if let Some(ev) = ev {
-                    let _ = st.tx.send(ev);
+                    send(st, ev);
                 }
                 if grab {
                     return 1;
@@ -206,7 +224,7 @@ unsafe extern "system" fn keyboard_proc(code: i32, wparam: WPARAM, lparam: LPARA
                     Some(hid) => {
                         let d = st.filter.lock().unwrap().on_key(hid, down, grab);
                         if d.forward {
-                            let _ = st.tx.send(CapEvent::Key { code: hid, down });
+                            send(st, CapEvent::Key { code: hid, down });
                         }
                         if d.suppress {
                             return 1;
@@ -401,8 +419,17 @@ impl Platform for WinPlatform {
                         GetSystemMetrics(SM_CYVIRTUALSCREEN),
                     )
                 };
-                let nx = ((x - vx as f64) * 65535.0 / ((vw - 1).max(1) as f64)).round() as i32;
-                let ny = ((y - vy as f64) * 65535.0 / ((vh - 1).max(1) as f64)).round() as i32;
+                // Windows maps normalized coordinates back to pixels as
+                // n * size / 65536 (truncating), so aim just past the pixel's
+                // start; p * 65535 / (size - 1) lands one pixel short near
+                // the top-left.
+                let norm = |p: f64, origin: i32, size: i32| -> i32 {
+                    let size = size.max(1);
+                    let px = (p - origin as f64).floor().clamp(0.0, (size - 1) as f64);
+                    ((px * 65536.0 / size as f64).floor() as i32 + 1).min(65535)
+                };
+                let nx = norm(x, vx, vw);
+                let ny = norm(y, vy, vh);
                 send_inputs(&[mouse_input(
                     nx,
                     ny,
