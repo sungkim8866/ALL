@@ -1,16 +1,89 @@
-Score: PARTIAL (in progress, scored in final version)
+Score: 72/100
 
-# Technical SEO - formuland.com (PARTIAL, first-pass written 2026-11-02 ~19:05 UTC)
+Scope: crawlability, robots.txt, XML sitemaps (primary + en/ja/zh-intl + agentic), indexability, canonicals, status codes, hreflang/international, security headers, URL structure, JS rendering, bot-challenge behaviour. Data: raw/crawl.jsonl (500 URLs), raw/crawl-retry.jsonl, raw/pages/*.html, raw/home.headers, raw/robots.txt, raw/sitemaps/*, plus 16 sitemap fetches saved in tmp-technical/sm/. About 20 requests were made to formuland.com (limit ~60). From ~18:59:40 UTC every request from this egress IP was answered with a Cloudflare challenge, so I stopped fetching and did not try to bypass it. A background poll of /robots.txt (tmp-technical/poll.sh) was killed; if it fired once, it is logged in tmp-technical/poll.log.
 
-Status: first analysis pass from local data (raw/, crawl.jsonl, 15 intl sitemap fetches). At ~18:59:40 UTC the
-egress IP started receiving Cloudflare managed-challenge responses (HTTP 403, `cf-mitigated: challenge`) on every
-URL including /robots.txt, so product-head diffs are pending a challenge expiry. No bypass will be attempted.
+Score rationale (judgement, not a formula): fundamentals are strong (server-rendered Liquid, all reachable sitemap URLs 200 with no redirects and no noindex, valid sitemaps, working hreflang, HTTPS headers). Points lost for the bot challenge, 20% of crawled products with no canonical, unreliable lastmod, indexable utility/stale pages in the sitemap, and several checks I could not complete (see Not checked).
 
-## Interim facts (will be reorganised into Findings)
-- Hreflang: product pages carry up to two independent hreflang blocks. Block A (theme, 3 tags: en-US, en-CA ->
-  formulandcanada.com, x-default). Block B (Shopify Markets, 29 tags: x-default, en, 9 countries x en/ja/zh-Hant).
-  Block B appears on 61/61 crawled products that are listed in the /en-intl/ product sitemap (64 products) and on 0 of the
-  188 that are not. Counts in crawl: 142 products have 0 tags, 46 have 3, 57 have 32, 4 have 29.
-- The 32 "0 hreflang" article/blog rows in the crawl are the HTTP 429 challenge pages, not real article templates.
-- 429/403 "Verifying your connection..." is a Cloudflare managed challenge in front of Shopify.
-- Primary + en-intl product sitemap lastmod is a single bulk timestamp; ja-intl/zh-intl lastmod equals the request time.
+## What works
+- Rendering: server-rendered Shopify Liquid. home.html has the H1, 56 product links and JSON-LD in raw HTML; head scripts have no blocking src scripts (0 of 59 lack async/defer/module). Median raw word count for products is ~1,500. No SPA shell found.
+- Status/indexability across the crawl: 468 of 500 URLs returned 200 with `redirects: []`; `meta_robots` and `x_robots` are null on all 500 (no accidental noindex); canonicals present on 199/249 products, 111/111 articles that returned 200, 74/74 collections, 32/32 pages, home. Only 1 canonical differs from its URL (see Low finding). No duplicate canonicals among the 450 that have one.
+- Real 404s: a nonexistent URL returns HTTP 404 (tmp-agentic/fetched/wk_this-page-does-not-exist-xyz123.headers, 18:59:17 UTC), not a soft 404.
+- Sitemaps are valid. All 23 XML files parse (raw/sitemap.xml index + agentic + 5 primary + 15 intl + 1 duplicate). Max 317 URLs per file (limit 50,000), single host formuland.com, W3C-format lastmod, no duplicate URLs. robots.txt declares `Sitemap: https://formuland.com/sitemap.xml`. The helper sitemap_discovery.py returned "URL safety validation failed" for every candidate (no request sent; expected in this sandbox per the brief), so validation was done by curl + manual parse.
+- Sitemap vs crawl: all 500 sitemap URLs fetched were live (468x 200, 32x challenge). Primary products 316 (+home), collections 74, pages 32, articles 142, blogs 1.
+- robots.txt is deliberate: blocks /admin, cart, checkout(s), orders, account, sort_by, multi-filter and `+` tag combos, preview params, /apps/loyalty and /apps/return_prime for `*`; keeps /assets and /cdn/shop crawlable. I tested 36 sample paths against the rules (tmp-technical/robots_test.py).
+- Response speed: median 0.35 s per 200 page, p90 0.455 s, max 0.75 s (crawl `elapsed`, includes transfer).
+- Mobile basics: `<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">`, `<html lang="en">`, charset present. Touch targets not measured.
+- Headers present on home: HSTS, X-Frame-Options DENY, X-Content-Type-Options nosniff, CSP with `frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content`, `content-language: en-US`, HTTP/3 advertised (alt-svc h3).
+
+## Findings
+
+### 1. Cloudflare bot challenge blocks non-browser clients (429, later 403) - Severity: Medium (Googlebot impact not measured)
+Evidence:
+- Crawl: 32 URLs returned HTTP 429 (31 articles under /blogs/parenting-tips/ plus /blogs/parenting-tips). Body ~9.4-9.6 KB, `<title>Verifying your connection...</title>`, H1 "Your connection needs to be verified before you can proceed" (raw/crawl-retry.jsonl). They sit at crawl positions 102, 108-118, 124-143, with 200 runs at 103-107 and 119-123 (5 wide, same as the crawl concurrency). All earlier positions (products, collections, pages) were 200, so it began after roughly the first 100 requests.
+- Slow sequential retry: the same 32 stayed 429, while 10 control articles that had been 200 stayed 200 (raw/crawl-retry.jsonl). So it was not a per-URL block at that time.
+- Today at 19:00:32 UTC my single re-request of /blogs/parenting-tips/baby-feeding-chart returned HTTP 403 with `cf-mitigated: challenge`, `server: cloudflare`, same "Verifying your connection..." page with `<meta http-equiv="refresh" content="360">` and `<noscript>Enable JavaScript and cookies to continue`. A control article that returned 200 earlier, a product page and /robots.txt returned the same 403. Several audit agents were fetching concurrently from this IP (tmp-agentic, tmp-geo, tmp-ecommerce files all show 403 + `cf-mitigated: challenge` from 18:59:44 on), so the escalation 429 -> sitewide 403 is IP/client-level, not specific to the 32 articles. No `Retry-After` header on the 403 I captured; 429 headers were not stored by the crawler.
+- Context only, not a measurement of Googlebot: Cloudflare/Shopify generally allow verified Googlebot and Bingbot, which are verified by IP/reverse DNS rather than by User-Agent string. For what it is worth, another agent's concurrent UA test (file sizes in tmp-geo/fetched/ua: Googlebot/GPTBot/CCBot UAs ~913 KB full page vs "Audit", ClaudeBot, PerplexityBot, bingbot UAs ~8.9 KB challenge page) shows the decision is not only IP-based, but spoofed-UA responses say nothing about real Googlebot.
+- The store's own /agents.md (Shopify-generated, 5,731 bytes) tells automated agents to identify via Web Bot Auth and to "Back off on 429 responses and respect Retry-After". This is text addressed to AI agents; reported, not acted on.
+Recommendation: In Cloudflare/Shopify security events, find the rule behind `cf-mitigated: challenge` for these hosts (Bot Fight Mode / managed challenge / rate rule). Confirm verified bots (Googlebot, Bingbot, AdsBot) and your SEO crawler IPs are allowed. Verify with Search Console URL Inspection (live test) on /blogs/parenting-tips/baby-feeding-chart and check Settings > Crawl stats for 4xx/429 spikes. Re-crawl with a throttled crawler (1-2 req/s, 1 thread) from an allow-listed IP. Verify success when all 142 article URLs return 200 to the allow-listed client.
+
+### 2. 50 of 249 crawled products have no rel=canonical - Severity: Medium
+Evidence:
+- raw/crawl-summary.json `missing_canonical` (50 URLs). Breakdown by title: HiPP Baby Soft/Sun skincare (11), HiPP Extra Soft diapers (3), Earth Mama (9), Weleda (22), LittleOak goat formula (5, incl. formula stages 1-3 and sachets, so it is not tied to non-formula product type).
+- All 50 have 0 hreflang tags, 1 H1, Product schema, og:image; none noindex. They are clustered at sitemap positions 103-248 of 316 (e.g. 103-121, 139-141, 159-162, 170-183, 194-196, 245-248) but interleaved with 92 products that do have canonical and 0 hreflang, so it is not a simple product-ID cutoff. Median HTML size 802 KB vs 684 KB for the canonical-bearing 0-hreflang products (+118 KB), i.e. a heavier or different template.
+- Saved HTML shows the canonical tag is rendered two ways: `<link rel="canonical" href="..." />` (self-closing) on lebenswert-stage-1 vs `<link rel="canonical" href="...">` on hipp/holle, which suggests more than one template path emits it.
+- Not verified: I could not fetch any affected product to diff `<head>` (challenge began before that step). Cause is therefore not established; the template/app hypothesis is an inference from the size and layout difference, not a measured fact.
+Recommendation: View Source on one affected page (e.g. /products/weleda-kids-toothpaste-50ml) and one unaffected (/products/hipp-formula-stage-1); check which product template/section the 50 use (Online Store > Themes > Customize, product template dropdown; look at `templates/product.*.json` and any app block that rewrites `<head>`). Make `<link rel="canonical" href="{{ canonical_url }}">` unconditional in layout/theme.liquid. Verify by re-running the crawl: `missing_canonical` should be 0, and spot-check `/collections/x/products/y` paths canonicalise to /products/y.
+
+### 3. Hreflang is produced by two independent systems; coverage is rule-based, not broken - Severity: Low (duplicate x-default) / Medium (unverified reciprocity)
+Evidence (answers the crawl lead):
+- Block A (theme, 3 tags): `en-US`, `en-CA` -> www.formulandcanada.com (different handles, e.g. hipp-formula-stage-1 -> /products/hipp-formula-first-milk, lebenswert-stage-1 -> /products/lebenswert-formula-bio-stage-1), `x-default`. Block B (Shopify Markets, 29 tags): `x-default`, `en`, plus en/ja/zh-Hant for AE, AU, HK, JP, NZ, SG, PH, QA, SA, pointing to /en-intl/, /ja-intl/, /zh-intl/. Pages with both show 32 (raw/pages/products_holle_formula_stage_1.html, home.html).
+- Crawl counts for products: 142 with 0, 46 with 3, 57 with 32, 4 with 29. Rule verified against the intl sitemaps: all 61 crawled products listed in the en-intl product sitemap (64 products) have 29 or 32 tags; 0 of the 188 crawled products not in it have Block B (3 of the 64 intl products were not crawled). Block A appears only where a Canada counterpart exists. So the 142 products with 0 tags are US-market-only items with no Canada page, which is acceptable.
+- The 174 "0 hreflang" rows in the lead include 32 challenge pages (31 articles + blog index; HTTP 429), which carry no real template. Articles/collections/pages that returned 200 all have 29 or 32 tags (111/111 articles, 74 collections, 32 pages).
+- Defects: `x-default` appears twice with the same URL on the 32-tag pages (both blocks emit it). The intl product sitemaps list 64 products while the US sitemap has 316, consistent with the rule above. ja-intl and zh-intl sitemaps are the same size as each other (e.g. products 25,538 bytes each) and lack the image title/caption that en-intl has (37,644 bytes); I could not confirm whether /ja-intl/ and /zh-intl/ pages are actually translated or are English duplicates.
+Recommendation: Remove the theme-hardcoded `x-default` where the Markets block is present (or suppress Block A for pages that already have Block B). Confirm www.formulandcanada.com pages carry `en-US -> formuland.com` return tags. Fetch one /ja-intl/ and /zh-intl/ product, check `<html lang>` and visible language; if untranslated, drop them from hreflang/sitemaps (Markets > languages) to avoid mislabelled duplicates. Verify with an hreflang validator on 10 sample URLs.
+
+### 4. Sitemap lastmod is unreliable - Severity: Medium
+Evidence: sitemap_products_1.xml: 316 of 316 products share `2026-11-02T10:26:24-08:00` (fetched 18:45 UTC). en-intl products: 64 of 64 share `2026-11-02T09:02:10-08:00`. ja-intl and zh-intl products: lastmod equals the request time (HTTP `date` 18:59:00 GMT / lastmod `10:59:00-08:00`; 18:59:06 GMT / `10:59:06-08:00`). Articles: 62 on 2025-04-21 and 61 on 2026-10-21 (bulk edits). Pages and collections vary.
+Recommendation: Find the app or automation that rewrites every product (inventory, subscription, GWP/loyalty, metafield sync; theme id 177 assets change too) and make it write only when data changes, because Google ignores lastmod once it is shown to be unreliable. Verify by comparing the product sitemap on two days; only changed products should differ.
+
+### 5. Utility, duplicate and thin pages are indexable and listed in the sitemap - Severity: Medium
+Evidence (crawl.jsonl; all `meta_robots`/`x_robots` null): /pages/customer-portal, /pages/froonze-new-customer-account (4 words), /pages/quiz-results and /pages/formuland-quiz (both 280 words, 578 KB, identical), /pages/choose-your-free-gift (83 words), /pages/byob (15), /pages/hipp-byob-bundle (22), /pages/collab (13), /pages/compare (2), /products/shipping-protection-formula (a fee product), the 6 /pages/avada-sitemap* pages, and /agents.md. 13 pages have no meta description (crawl-summary `missing_meta_description`).
+Recommendation: For each, set the Shopify `seo.hidden` metafield (global namespace) to 1, which removes it from the XML sitemap and adds noindex, or add `{% if template.suffix contains 'utility' %}<meta name="robots" content="noindex,follow">{% endif %}`. Verify by checking sitemap_pages_1.xml no longer lists them and the page source shows noindex.
+
+### 6. Avada HTML sitemap pages are stale and leak the myshopify domain - Severity: Medium
+Evidence (raw/pages/pages_avada_sitemap.html, 518,416 bytes; crawl rows for the 6 URLs): 193 body links, of which 120 point to `https://formuland.myshopify.com/...` and 39 to formuland.com. Of 59 product links, 14 handles are absent from the current product sitemap (e.g. /products/shipping, /products/jovie-goat-milk-formula-stage-1-800g, /products/hipp-formula-first-milk); 14 of 39 collection links are absent (/collections/hipp, /collections/hipp-dutch...); 60 of 62 blog links go to /blogs/news/... while the sitemap only has /blogs/parenting-tips. Pages are thin (-blogs 6 words, -pages 18, -collections 44) yet 495-519 KB of HTML each, self-canonical, 29 hreflang tags, and listed in sitemap_pages_1.xml. Status of the stale targets was not fetched.
+Recommendation: Delete the 6 Avada pages and uninstall the app (the XML sitemap and navigation already cover discovery). If kept, noindex them and regenerate with formuland.com links. Verify the 120 myshopify.com links by crawling them for 301/404 first.
+
+### 7. Image-only content on the comparison chart page - Severity: Medium
+Evidence: raw/pages/pages_european_baby_formula_comparison_chart.html: main content is 3 `<img>` tags (alt "European baby formula comparison chart, part 1/2/3"), no `<table>`; crawl shows 5 words. /pages/compare has 2 words (app-rendered, empty in raw HTML); /pages/formuland-reviews has 50 words (Trustpilot widget).
+Recommendation: Publish the comparison as an HTML table with brand, stage, protein source, organic/non-GMO etc.; keep the images as a visual. Verify the table appears in raw View Source.
+
+### 8. robots.txt: AI-agent group does not inherit `*` rules; training bots unrestricted - Severity: Low
+Evidence (tmp-technical/robots_test.py): `ChatGPT-User, OAI-SearchBot, PerplexityBot, Perplexity-User, Claude-User, Claude-SearchBot` share one group, so they ignore the `*` group. For them these are allowed: /admin, /orders/..., /en-intl/checkouts/..., /apps/loyalty, /apps/return_prime, /collections/x?filter.p.vendor=A&filter.v.price.gte=10, /collections/x/a+b. Their `Disallow: /*?sort_by=` is overridden by the longer `Allow: /collections/`, so /collections/hipp-formula?sort_by=price-ascending is allowed for them (disallowed for `*`). GPTBot, ClaudeBot, Google-Extended, CCBot, Applebot-Extended are not named, so they fall under `*` (allowed). For `*`: `/search?type=product&q=x` and `/en-intl/search?q=x` and `/en-intl/cart` (no trailing slash) are not blocked (rules are `Disallow: /search?q=` and `/*/cart/`).
+Recommendation: Copy the missing `Disallow` lines (admin, orders, checkouts, apps/loyalty, apps/return_prime, `/collections/*sort_by*`, `/collections/*+*`, `/search`, `/*/search`) into the AI group, or merge groups. Add named groups for training bots if you want an explicit policy. Verify with a robots.txt tester for each UA.
+
+### 9. Security headers are partial (platform-managed) - Severity: Low
+Evidence (raw/home.headers): `strict-transport-security: max-age=7889238` (~91 days, no includeSubDomains/preload); CSP has no script-src/default-src; no Referrer-Policy or Permissions-Policy on the 200 response (Referrer-Policy: same-origin appears only on the Cloudflare challenge response); `x-xss-protection: 1; mode=block` is deprecated; cache-control `private, max-age=0, must-revalidate` on HTML.
+Recommendation: Shopify limits these; if Cloudflare fronts the domain, add Referrer-Policy `strict-origin-when-cross-origin` and Permissions-Policy via a Transform Rule. Verify with securityheaders.com.
+
+### 10. Very heavy HTML - Severity: Low (Info for SEO crawl limits)
+Evidence: 453 of 468 200-OK pages exceed 500 KB; product median 780 KB, max 913 KB (/products/hipp-formula-stage-1); home 720 KB with 123 script tags and 92 inline scripts totalling 364 KB (largest 97 KB appstle subscription helper, 63 KB `_ALConfig`, 36 KB wpm loader, 34 KB jdgm settings); `<head>` is 145 KB. Below Google's 2 MB per-HTML limit. CWV not measured here.
+Recommendation: Move large inline JSON/app config to deferred external files; remove unused apps. Verify total transfer and DOM size in Lighthouse (perf agent).
+
+### 11. Minor URL/encoding issues - Severity: Low
+Evidence: product handle with emoji `/products/%F0%9F%8D%BC-aptamil-profutura-duoadvance-pre-infant-formula-ready-from-birth-800g` has canonical `.../%f0%9f%8d%bc-...` (lowercase hex; equivalent per RFC 3986 but not string-identical). 4 handles exceed 80 characters (max 108). Handles with `-1` suffix exist (e.g. weleda-baby-calendula-calming-bath-200ml-1), suggesting a duplicate product.
+Recommendation: Rename the emoji handle (add a 301 redirect), and check the `-1` product for a duplicate.
+
+### 12. Agentic discovery sitemap - Severity: Info
+Evidence: sitemap_agentic_discovery.xml lists only https://formuland.com/agents.md (`changefreq weekly`, no lastmod). /agents.md and /llms.txt return 200 `text/markdown`; the `Link: </.well-known/ucp>; rel="ucp"` header is on every response. /.well-known/ucp lists endpoints on formuland.myshopify.com (tmp-agentic/fetched/.well-known_ucp.body). Platform-generated; not editable in the sitemap index.
+Recommendation: Defer to the agentic findings. If you do not want agents.md indexed, exclude via `seo.hidden` is not available for it; leave as is.
+
+## Not checked / limitations
+- http->https, www->apex, trailing-slash and /collections/x/products/y redirect behaviour were not tested (Cloudflare challenge began before I got to them). HSTS and `upgrade-insecure-requests` suggest HTTPS is enforced; not measured.
+- Product `<head>` diff for affected vs unaffected products (lead 1): not done; no affected product HTML exists locally. The 3 saved products are all unaffected. Cause of missing canonicals is not established.
+- /en-intl/, /ja-intl/, /zh-intl/ page content, canonical, `html lang`, return hreflang, and what intl URLs of products not in the intl market return: not fetched. Canada site (formulandcanada.com) return tags: not fetched.
+- /apps/loyalty and /apps/return_prime live responses and noindex status of /search: not fetched. Status of stale Avada link targets (myshopify.com, /blogs/news/...): not fetched.
+- 67 of 316 products and the intl URLs were not crawled; 32 articles/blog index returned only the challenge page, so their canonical, hreflang and content are unknown.
+- Core Web Vitals, structured data validity, touch-target size: out of scope for this file (perf/schema agents); not measured here.
+- The robots.txt matcher is my own implementation of Google's longest-match rule; confirm in Search Console's robots.txt report.
+- Googlebot treatment by Cloudflare was not measured.

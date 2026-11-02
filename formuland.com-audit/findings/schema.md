@@ -2,13 +2,13 @@ Score: 62/100
 
 # Structured data audit: https://formuland.com (Shopify, theme 168377417947)
 
-Audited 2026-11-02. Sources: 17 saved pages in `raw/pages/` (the 18th, the blog index, was a "Verifying your connection" 429 challenge page and was re-fetched), `raw/crawl.jsonl` (500 URLs), 3 extra Chromium loads for the shipping policy, refund policy, `/collections/holle-formula` and the real blog index, and the plugin's `schema_ecommerce_validate.py` and `parse_html.py`. Working files are in `tmp-schema/`.
+Audited 2026-11-02. Sources: 17 saved pages in `raw/pages/` (the 18th, the blog index, was a "Verifying your connection" 429 challenge page and was re-fetched), `raw/crawl.jsonl` (500 URLs), 5 extra Chromium page loads (shipping policy, refund policy, `/collections/holle-formula`, the real blog index, and one `/en-intl/` guess that returned 404), and the plugin's `schema_ecommerce_validate.py` and `parse_html.py`. Working files are in `tmp-schema/`.
 
 ## Detection results
 
 | Template | Pages checked | JSON-LD blocks found | Source (line in saved HTML) |
 |---|---|---|---|
-| Home | 1 | Organization + WebSite (`@graph`) | theme layout, line 2664 (identical 1,565-byte block on all 17 saved pages) |
+| Home | 1 | Organization + WebSite (`@graph`) | theme layout (line 2664 on the HiPP page); identical 1,565-byte block on all 17 usable saved pages |
 | Product (HiPP, Holle, Lebenswert) | 3 | Org/WebSite + **Product (theme)** + **Product (Judge.me)** | theme line 4690; Judge.me `class="jdgm-server-jld"` line 6110 |
 | Collection (hipp, goat-milk, hypoallergenic) | 3 | Org/WebSite + FAQPage (7 Q each) | no CollectionPage, ItemList or BreadcrumbList |
 | Collection `/collections/holle-formula` (extra fetch) | 1 | Org/WebSite + CollectionPage + BreadcrumbList (56 KB, 73 nested Products) + FAQPage | custom block |
@@ -44,7 +44,7 @@ Audited 2026-11-02. Sources: 17 saved pages in `raw/pages/` (the 18th, the blog 
   - The validator marks the Judge.me block High `missing-product-offers`; the theme block alone passes.
 - **Why it matters:** offers and reviews sit on separate Product nodes. A JSON-LD processor merges them because the relative `@id` resolves to one IRI, but Google documents each block as its own item. I could not run the Rich Results Test here, so how Google merges them is not measured.
 - **Recommendation:**
-  1. Preferred: turn off Judge.me's JSON-LD output (Judge.me settings, rich snippets / JSON-LD) and have the theme emit `aggregateRating` and `review` inside the single Product (template below). Check which Judge.me or Shopify review metafield your theme exposes before wiring it. I did not verify metafield names.
+  1. Preferred: turn off Judge.me's own JSON-LD output and have the theme emit `aggregateRating` and `review` inside the single Product (template below). I did not verify the exact Judge.me setting name or which review metafields this theme exposes, so confirm both before wiring it.
   2. Minimum: change the theme `@id` to an absolute URL (`{{ shop.url }}{{ product.url }}#product`).
 - **Verify:** view source on a product page and count `application/ld+json` blocks with `"@type":"Product"` (target 1). Run Google's Rich Results Test on the URL.
 
@@ -89,7 +89,7 @@ Audited 2026-11-02. Sources: 17 saved pages in `raw/pages/` (the 18th, the blog 
   2. When a real pediatric or dietitian author or reviewer exists, add `author` as a `Person` with `name`, `url` (an author page), `jobTitle` and `sameAs`. Put the reviewer on the page's `WebPage` node using `reviewedBy`. Only add this for people who actually reviewed the page.
   3. Make the visible "Updated" date and `dateModified` come from the same field.
 - **Verify:** Rich Results Test shows `mainEntityOfPage` equal to the canonical URL; `dateModified` equals the visible date.
-- **Not measured:** the other 109 articles. The 32 articles that returned 429 in the crawl are also not measured. Pattern is likely template-wide, since both samples match.
+- **Not measured:** the content of the other 141 articles (109 detected by type only in the crawl; 32 returned 429). The pattern is likely template-wide since both samples match, but that is an inference.
 
 ### 6. BreadcrumbList is missing from products, articles and 72 of 74 collections (Medium)
 - **Evidence:** crawl `schema_types`: BreadcrumbList on 2/74 collections (`/collections/holle-formula`, `/collections/kendamil`), 0/249 products, 0/111 articles. The product page does show a visible breadcrumb, `Home / European Stage 1 Baby Formula – HiPP, Holle, Kendamil & Jovie Newborn Nutrition (/collections/stage-1-formula) / HiPP UK Organic Stage 1 from Birth (800g)`. Collections and articles have none.
@@ -114,7 +114,7 @@ Audited 2026-11-02. Sources: 17 saved pages in `raw/pages/` (the 18th, the blog 
 
 ### 10. Offers are an unlabeled array of pack sizes, with `http://` context and availability URLs (Low)
 - **Evidence:** HiPP has 5 offers (1, 2, 4, 6, 12 cans: $49.99, $99.98, $195.96, $287.94, $551.88) with no `name`, so the offers differ only by `sku` and `?variant=` URL. `@context` is `http://schema.org/` and `availability` is `http://schema.org/InStock`. Ratings are strings (`"ratingValue": "4.91"`). `sku` values contain spaces and parentheses, e.g. `HIPP UK 1 (can) x 1 Unit`.
-- **Recommendation:** template adds `name` from the on-page variant title ("4 Cans (UK)"), `itemCondition` NewCondition (the page says "brand-new, undamaged"), `seller`, and `https://` URLs; numeric ratings. I considered `ProductGroup` (the validator suggests it), but Google's `variesBy` list covers size/colour/material/pattern and so on, not pack quantity, so I kept the single Product with labeled Offers. I also tried `includesObject` for the pack quantity and dropped it: the nested `typeOfGood` Product stubs were flagged as extra Products missing `offers` and `image`.
+- **Recommendation:** template adds `name` from the on-page variant title ("4 Cans (UK)"), `itemCondition` NewCondition (the page says "brand-new, undamaged"), `seller`, and `https://` URLs; numeric ratings. I considered `ProductGroup` (the validator suggests it), but the `variesBy` examples in Google's docs are size, colour, material, pattern and similar, not pack quantity (from my reading of the docs, not tested), so I kept the single Product with labeled Offers. I also tried `includesObject` for the pack quantity and dropped it: the nested `typeOfGood` Product stubs were flagged as extra Products missing `offers` and `image`.
 
 ### 11. About pages: duplicate, slightly conflicting Organization entities (Low)
 - **Evidence:** `/pages/about-us` and `/pages/our-company` each emit a second Organization with the same `@id` (`https://formuland.com#organization`) as the global block, but with a shorter description and a `sameAs` that omits Trustpilot. Both AboutPages have the identical `name` "About Us – Formuland". The `our-company` description is cut off ("...ensuring."). The Facebook `sameAs` has a tracking parameter (`...61575078929814/?_rdr`). The claims differ between pages: "Founded in 2014 in California" (about-us); "over 500,000 orders" and "main office... in Europe" (our-company); "over 1 million orders" (product page) and "over 1 million families" (home).
@@ -130,7 +130,7 @@ Audited 2026-11-02. Sources: 17 saved pages in `raw/pages/` (the 18th, the blog 
 - `author.name` is "Anonymous" on 2/20 HiPP and 6/21 Holle reviews. Google's review-snippet guidance asks for a valid author name; I did not confirm in the Rich Results Test whether these are discarded.
 - Only 20 of 107 HiPP reviews are in the markup (Judge.me page size), which is normal.
 - `WebSite.SearchAction` is valid (`https://formuland.com/search?q={search_term_string}`). Google retired the sitelinks search box in November 2024, so there is no SERP effect. Harmless; I did not test that the search URL works.
-- The Organization is hard-coded in the layout (`https://formuland.com#organization`, no trailing slash) and identical on every template, including the `/en-intl/404` page. Fine for a single-locale store.
+- The Organization is hard-coded in the layout (`https://formuland.com#organization`, no trailing slash) and identical on all 17 usable saved pages; an Organization + WebSite pair also appears on the `/en-intl/404` page. Fine for a single-locale store, but check the international sub-folders and the Canada site.
 
 ## Validator output (`schema_ecommerce_validate.py`, extracted Product JSON-LD)
 
