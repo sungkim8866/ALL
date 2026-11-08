@@ -15,7 +15,33 @@
 
 ## 0. 한눈에 보기: 새로 추천하는 것
 
-(VA·군 기지 조사 결과를 받아 최종 순위를 정리할 예정)
+### 지금 바로 (이번 달, 비용 거의 없음)
+
+| 할 일 | 이유 |
+|---|---|
+| **ManuKind 군인 가족 판로 깔기**: RangeMe 프로필(PX 4곳), VA 병원 매점 시범, GovX ID 앱(무료) 설치, Operation Shower 제품 기부, NVBDC 인증 신청(월마트가 비용 지원) | 제품이 이미 있고, 정부 조달 규칙에 걸리지 않습니다(1장) |
+| **기존 회사로 인증이 가능한지 확인 + SAM.gov 등록** | 아래 '고치는 사업' 대부분이 SAM 등록을 요구하고, 일부는 SDVOSB 인증까지 필요합니다 |
+
+### 고치는 사업 (1~6개월) — 사장님 강점에 맞는 순서
+
+| 순위 | 고칠 것 | 근거 | 사장님 강점 | 인증 필요 |
+|---|---|---|---|---|
+| 1 | **VA 보급창고 재고 실사·유효기간 지난 물품 정리** | 휴스턴 재고 82% 불일치, 오거스타 수술실 4번 폐쇄와 유효기간 지남·과잉·파손 물품 50팔레트. 캘리포니아 VA 약국 실사 $1.1만~2.7만 발주 | 군 보급 경력, Claude Code 재고 대조 자동화 | 소액은 불필요 |
+| 2 | **막사 습기 키트(제습기 + 습도계) + 습기 센서 대시보드** | 곰팡이 관련 새 법(2026 국방수권법), 육군 막사 예산(리모델링 $4억 500만, 자가수리 $6,500만), 포트 스튜어트 600대 등 반복 구매 | OEM 소싱, 자동화(대시보드) | 소기업 전용·$35만 이하는 불필요 |
+| 3 | **CalVet 재향군인 요양원 입고·보관 관리** | 주 감사관: 새 매트리스 6개월, 침대 프레임 4년 넘게 야외 방치 | 보급 경력, 재향군인 | 캘리포니아 SB 또는 DVBE |
+| 4 | **한국어 번역 (AI 초안 + 사람 검수)** | 주 기관 소기업 전용 번역 견적(DFPI 등), LA 카운티 통번역 계약은 2028년 9월까지 상시 신청 | 한국어·영어, 자동화 | SB 인증이 있으면 유리 |
+| 5 | **안 쓰는 통신 회선 감사** | 고용개발국(EDD)이 안 쓰는 단말기 요금으로 $460만 이상 낭비 | 자동화 | SB 인증이 있으면 유리 |
+| 6 | **VA 화장실 여성용품 디스펜서·재고 보충** | VA 정책상 무료 비치 의무인데 고장·결품 지적 | 위생용품 소싱 | 소액은 불필요 |
+| 7 | **막사 세탁기 정비** (현지 수리 업체와 팀) | 포트 포크 연 3,000건 수리, 캘리포니아 프레시디오·벤투라 발주 | 관리 운영 | 소기업 전용 |
+
+### 인증을 받은 뒤
+- VA 수술기구 택배(LA·북가주 공고가 지금 열려 있음)
+- 레지오넬라 필터 교체
+- VA 길 안내 표지판 하청
+- VA 보관 캐비닛 재판매
+
+### 하지 말 것
+건물 공사(냉난방·엘리베이터), 막사 와이파이 직접 시공, 이사(PCS) 사업, 개원 지원(IOTA), VA 전화·IT 시스템.
 
 ---
 
@@ -80,7 +106,33 @@ PX 입점([업로드 보고서 검토](review-uploaded-reports-manukind.md) 4장
 
 ## 4. VA 시설의 고장 난 곳
 
-(조사 결과 반영 예정)
+### 4.1 근거
+
+- **보급·재고 관리 실패 (근거가 가장 강함):**
+  - 휴스턴 VA 병원: 표본 60개 품목 중 49개(82%)의 재고 수량이 틀렸고, 창고에 유효기간이 지난 물품 1,568개(약 $10.9만)가 있었습니다([VA 감사관실 24-00166-35, 2025년 3월](https://www.oversight.gov/sites/default/files/documents/reports/2025-04/vaoig-24-00166-35.pdf)).
+  - 오거스타 VA 병원: 2025년 10월부터 2026년 2월까지 **수술실이 4번 문을 닫았습니다**(한 번은 27일). 원인은 불완전한 물품 카트와 키트, 유효기간 지난 물품, 들쭉날쭉한 보충이었습니다. 감사관이 유효기간 지남·과잉·파손 표시가 된 물품 **50팔레트**를 발견했습니다. VA는 무게 기반 재고 시스템에 $320만, 재고 감사 계약에 약 $22.3만을 썼습니다([VA 감사관실 26-02023-176, 2026년 9월](https://www.vaoig.gov/sites/default/files/reports/2026-09/vaoig-26-02023-176-final.pdf)).
+- **수술기구 멸균:** 조지아주 더블린과 앨버커키 VA가 반복 지적을 받았습니다. VA 그레이터 LA 공고에 따르면 새 규정으로 기구를 밤새 담가 둘 수 없어서 당일 차량으로 돌려보내야 합니다.
+- **화장실 여성용품:** VA 정책상 공공 화장실에 여성용품을 무료로 비치해야 합니다. 그런데 빌록시(2025년 12월) 등에서 디스펜서가 고장 나 있었고, 미니애폴리스와 리치먼드도 재고를 유지하라는 지적을 받았습니다(검색 요약 기준, 원문 미확인).
+- **전화:** 15개 시설 중 13곳이 전문진료 전화 약 210만 건 중 100만 건을 추적하지 못했습니다([GovExec, 2026년 2월](https://www.govexec.com/management/2026/02/va-doesnt-know-how-many-calls-its-answering-or-how-long-veterans-are-waiting-get-through/411545)). 다만 VA 전화·IT를 고치려면 보안 승인이 필요해서 소기업이 팔기는 어렵습니다.
+- **수질(레지오넬라균)과 엘리베이터:** LA 시설들이 2026년에도 정수 필터와 검사를 구매하고 있습니다. 엘리베이터는 공사 규모입니다.
+
+### 4.2 고칠 수 있는 일 (순위)
+
+| # | 고칠 것 | 팔 것 | 사는 곳·경로 | 실제 구매 | 장벽 | 첫 단계 |
+|---|---|---|---|---|---|---|
+| 1 | **보급창고 재고 실사·유효기간 지난 물품 정리** (군 보급 경력과 직결) | 전수 재고 실사, 유효기간 점검, 적정 재고·라벨 재정비, 재고 대조 자동화(Claude Code) | 그레이터 LA, 롱비치, 로마린다의 보급·약제 부서. 구매카드($1만 5천 이하)와 소액 견적 | 약국 전수 실사: 로마린다 $1.1만([링크](https://www.usaspending.gov/award/CONT_AWD_36C26225C0086_3600_-NONE-_-NONE-)), 북가주 $2.7만([링크](https://www.usaspending.gov/award/CONT_AWD_36C26125P0423_3600_-NONE-_-NONE-)), 남가주 $1.3만(2024년). 오거스타 재고 감사 약 $22.3만 | 임시 실사 인력, 약국 실사 경험, 신원 조회 | 남가주 VA 조달사무소(NCO 22)에 재발주 시기를 묻고, 그레이터 LA 보급 부서에 $1만 5천 이하 하루짜리 '유효기간 지난 물품 정리'를 제안 |
+| 2 | **수술기구 택배** (인증 후) | 클리닉에서 멸균실까지 정기 차량 운행과 인수인계 기록 | SDVOSB 전용 | **지금 열림:** 그레이터 LA(36C26227Q0067, 기사 6명·차량 6대, 11/16), 북가주(36C26127Q0045, 12/2). **과거:** FG Management $323만(SDVOSB, 2020~26), Crosstown Courier $89.9만(샌디에이고) | 입찰 때 VetCert 필요, 인건비 50% 이상 직접 수행, 연방 서비스 임금, 차량·보험·혈액 매개 감염 교육 | 인증을 받고, 낙찰 업체에 예비·하청 역량을 제안 |
+| 3 | **어지러운 보급·멸균 보관실** | 미국 소기업이 만든 캐비닛, 카트, 보관함 재판매 | 보급·멸균 부서 | **지금 열림:** 그레이터 LA 멸균 보관 캐비닛 정보요청(**11/9 오후 3시 태평양**, [공고](https://sam.gov/opp/3f67b33d63444ce58edfc8cda4c8248a/view)) | 재판매자 규칙(미국 소기업 제조사), 특정 브랜드 '또는 동등품' 규격 | 정보요청에 답하고 제조사 대리점 계약 |
+| 4 | **LA 국립묘지 드라이클리닝** (빠른 첫 실적) | 주 2회 수거·배달, 세탁은 지역 소규모 세탁소에 하청 | 국립묘지관리청, 소기업 전용 | **지금 열림:** 36C78627Q0029(11/13). 이전 계약은 SDVOSB가 2년 $30,984 | 금액이 작음. 소기업 전용이라 소기업 세탁소에 하청을 줘도 하도급 한도 계산에서 인정됩니다. **입찰 시점에 SAM.gov 등록이 살아 있어야 합니다** | 이번 주 견적. SAM 등록이 없으면 다음 회차를 준비 |
+| 5 | **화장실 여성용품 디스펜서·재고 보충** (위생용품 소싱 경험과 직결) | 무료 배출 디스펜서, 미국산 패드·탐폰, 정기 보충 | 시설 청소 부서, 구매카드 $1만 5천 이하 | 캘리포니아 구매 기록은 못 찾았고 수요 규모도 미확인 | AbilityOne 목록 확인, 금액이 작음 | 그레이터 LA 청소 부서장과 여성 재향군인 프로그램 담당에게 건물 1동 시범 제안 |
+| 6 | 레지오넬라 필터 교체·제빙기 소독 (인증 후) | 정기 서비스와 디지털 기록 | 남가주 VA, SDVOSB 전용 | SDVOSB 업체가 LA에서 $34.4만(2026~27) 수주. 검사 입찰(SDVOSB, 11/10) | 검사는 공인 실험실 하청, 필터는 대형 제조사 | 기존 수주 업체의 업무 범위를 확보하고 필터 유통사와 협력 |
+| 7 | 넓은 캠퍼스 길 안내 표지판 (웨스트LA: 388에이커, 104개 건물) | 미국 소규모 간판 업체 제품과 설치 | 남가주 VA SDVOSB 계약 | SDV Office Systems $122만(2025~27), AML $83.1만(LA, 2026) | 기존 계약자가 있음, 설치 면허(C-45) 필요 가능성(미확인) | 현 계약자에게 하청 제안 |
+
+**함정:**
+- **ManuKind 제품은 VA 입찰에 맞지 않습니다.** 뉴질랜드산이기 때문이고, 물티슈·기저귀는 VA 일괄공급(MSPV) 쪽으로 흐릅니다. 캘리포니아 VA의 2025~26 회계연도 물티슈·기저귀 계약은 찾지 못했습니다.
+- **특정 제조사 장비는 쫓지 마세요.** 간호사 호출 장비 정비는 제조사(Hill-Rom)가 $26.9만에 소기업 우대 없이 가져갔습니다.
+- **자동화를 VA에 'IT'로 팔 수는 없습니다.** 보안 승인이 필요합니다. 내부 작업 도구로만 쓰세요.
+- **건물(냉난방, 엘리베이터, 증기)은 면허와 보증이 필요한 다른 사업입니다.**
 
 ---
 
@@ -134,6 +186,22 @@ PX 입점([업로드 보고서 검토](review-uploaded-reports-manukind.md) 4장
 
 ## 출처
 
+### VA
+- [VA 감사관실 24-00166-35 (휴스턴 재고)](https://www.oversight.gov/sites/default/files/documents/reports/2025-04/vaoig-24-00166-35.pdf) · [VA 감사관실 26-02023-176 (오거스타 수술실 폐쇄)](https://www.vaoig.gov/sites/default/files/reports/2026-09/vaoig-26-02023-176-final.pdf)
+- [VA 전화 추적 실패 — GovExec](https://www.govexec.com/management/2026/02/va-doesnt-know-how-many-calls-its-answering-or-how-long-veterans-are-waiting-get-through/411545)
+- [그레이터 LA 장비 운송(36C26227Q0067)](https://sam.gov/opp/275a7249361c46a4847f2042d30273ef/view) · [북가주 멸균물품 택배(36C26127Q0045)](https://sam.gov/opp/4e546581bd9f44c68c6b726bd2507877/view) · [그레이터 LA 멸균 보관 캐비닛 정보요청](https://sam.gov/opp/3f67b33d63444ce58edfc8cda4c8248a/view) · [LA 국립묘지 드라이클리닝](https://sam.gov/opp/63585d6e79304119840966a94fda8de6/view)
+- [로마린다 약국 실사 계약](https://www.usaspending.gov/award/CONT_AWD_36C26225C0086_3600_-NONE-_-NONE-) · [북가주 약국 실사 계약](https://www.usaspending.gov/award/CONT_AWD_36C26125P0423_3600_-NONE-_-NONE-) · [FG Management 택배 계약](https://www.usaspending.gov/award/CONT_AWD_36C26120P1636_3600_-NONE-_-NONE-)
+- [VA 매점 PatriotMart](https://vacanteen.va.gov/VACANTEEN/PatriotMart_Concessionaire.asp)
+
+### 군 기지
+- [IICRC: 2026 국방수권법 곰팡이 기준](https://iicrc.org/wp-content/uploads/2025/12/IICRC-Mold-Remediation-Standard-Cited-in-2026-National-Defense-Authorization-Act-Establishing-Uniform-Mold-Remediation-Guidelines-for-Military-Housing-and-Facilities.pdf) · [육군 곰팡이 방지 제품 공모](https://sam.gov/opp/ae694e03c59a4128a56328c61e70b997/view)
+- [포트 스튜어트 제습기 400대](https://sam.gov/opp/dadca05e099945db99e7f11af5f363ec/view) · [포트 드럼 제습기](https://sam.gov/opp/e01a6c3c9c3248f08e678eaef36cd1f2/view)
+- [육군 막사 태스크포스 예산 — Army.mil](https://www.army.mil/article/289408) · [공군 막사 수리 예산 — DVIDS](https://www.dvidshub.net/news/printable/557062)
+- [국방부 감사관실 DODIG-2026-048 (키웨스트 관사 곰팡이)](https://www.oversight.gov/sites/default/files/documents/reports/2026-02/DODIG-2026-048_Redacted_Final_SECURE.pdf)
+- [프레시디오 세탁기 정비](https://sam.gov/opp/0d9917fdf0b04ee9a2e1a5c52c83f010/view) · [벤투라 카운티 해군기지 세탁](https://sam.gov/opp/dbec997f9c6144a9bb4ec5173c161131/view) · [반덴버그 기숙사 와이파이](https://sam.gov/opp/8eeff2f1ec1e4216b87811f13a0b8e25/view)
+- [GAO-24-106155 (식당 접근성)](https://gao.gov/assets/gao-24-106155-highlights.pdf) · [HomeSafe 이사 계약 해지 — Military Times](https://www.militarytimes.com/news/pentagon-congress/2025/06/20/dod-terminates-troubled-homesafe-contract-for-military-moves/)
+
+### 캘리포니아와 ManuKind 판로
 - [주 감사관 I2024-1 (CalVet 매트리스 방치)](https://www.auditor.ca.gov/reports/i2024-1/) · [주 감사관 I2025-1 (EDD 미사용 단말기)](https://www.auditor.ca.gov/reports/i2025-1/) · [주 감사관 2024-115 (Cal/OSHA)](https://www.auditor.ca.gov/reports/2024-115/) · [주 감사관 2025-128 (LA 카운티 보건국 번역)](https://www.auditor.ca.gov/reports/2025-128/)
 - [HACLA 영어 전용 안내 — 미주중앙일보](https://en.koreadaily.com/?p=30552) · [LA 기관 한국어 제공 조사 — 미주중앙일보](https://en.koreadaily.com/?p=33103)
 - [DFPI 필수 문서 번역 견적 요청(집계 사이트)](https://samsearch.co/gov-explore/sled/small-business-sb-only-option-request-for-offer-rfo-2025-hew-089356/1701-0000037819) · [LA 카운티 ISD 통번역 계약](https://lacobids.lacounty.gov/api/v1/opensolicitations/420239230866) · [LA 카운티 보건 언어 계약(이사회 문서)](https://file.lacounty.gov/SDSInter/bos/supdocs/208233.pdf)
