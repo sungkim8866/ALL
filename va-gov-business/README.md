@@ -352,7 +352,7 @@
 - [ ] HIPAA 정책과 BAA(업무제휴계약) 준비, SOC 2 Type I 준비(자동화 도구 활용)
 - [ ] 무료 또는 저가 시범 운영 1~3곳 → 레퍼런스 확보
 - [ ] SAM.gov의 RFI(정보요청)·Sources Sought(업체 수요조사)에 응답하기. VA가 SDVOSB 전용 입찰로 할지 결정할 때 근거가 됩니다. VA 조달 예측(Forecast)도 꾸준히 확인하세요.
-- [ ] Challenge.gov의 VA 상금 대회 확인하기. 2024년 Tech Sprint 수상자들은 실제로 수의계약을 받았습니다.
+- [ ] VA 상금 대회(Tech Sprint 등) 공지 확인하기. 2024년 Tech Sprint 수상자들은 실제로 수의계약을 받았습니다. (정정: 상금 대회 모음 사이트인 Challenge.gov는 2026년 3월 30일 문을 닫았고, 대회 정보는 USA.gov 등 다른 정부 사이트로 옮겨졌습니다.)
 
 ### 4.4 9~24개월
 
@@ -523,4 +523,4 @@
 - [VA SDVOSB set-asides not required for prosthetics (GAO) — SmallGovCon](https://smallgovcon.com/tag/sdvosb-set-asides/page/4/)
 
 ### 공식 사이트 (바로가기)
-- [SAM.gov](https://sam.gov) · [SBA VetCert](https://veterans.certify.sba.gov) · [APEX Accelerators](https://www.apexaccelerators.us) · [VA 개발자 포털](https://developer.va.gov) · [Challenge.gov](https://www.challenge.gov) · [FedRAMP](https://www.fedramp.gov) · [USAspending](https://www.usaspending.gov) · [DLA DIBBS](https://www.dibbs.bsm.dla.mil)
+- [SAM.gov](https://sam.gov) · [SBA VetCert](https://veterans.certify.sba.gov) · [APEX Accelerators](https://www.apexaccelerators.us) · [VA 개발자 포털](https://developer.va.gov) · [Challenge.gov(2026.3.30 종료, 이전 안내)](https://www.challenge.gov) · [FedRAMP](https://www.fedramp.gov) · [USAspending](https://www.usaspending.gov) · [DLA DIBBS](https://www.dibbs.bsm.dla.mil)
