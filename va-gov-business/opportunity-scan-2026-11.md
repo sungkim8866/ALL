@@ -22,7 +22,7 @@
 | 2 | **군인용 생활·위생 키트 브랜드** (여군 야전 위생, 막사 습기, 한파·폭염 대비) → PX·VA 매점·부대 행사 | 여군 751명 중 약 70%가 야전훈련 중 깨끗한 물이 '거의 또는 전혀' 없었다고 답했습니다. 의회 감사(GAO)는 막사 곰팡이 문제를 지적했습니다. PX는 무료 온라인 신청(RangeMe)으로 30일 안에 회신합니다 | ○ (재고 부담) | 불필요 |
 | 3 | **LA 의류 공장과 국방물류청(DLA) 피복 납품 연결** (한인 업체의 연방 조달 진출 도우미) | 국방부가 캘리포니아에서 생산된 피복·개인장비를 약 3억 달러어치 계약했습니다(2년, 상위 300건). LA 업체가 다수이고, LA 봉제업체의 1/3 이상이 한인 소유로 추정됩니다. 한국어로 된 연방 조달 지원은 찾지 못했습니다 | ○ | 불필요(장기적으로는 유리) |
 | 4 | **국방물류청 위생 키트(HCP) 구성품 공급 또는 차기 입찰** | 지난 입찰이 소기업 전용(2024년)이었고, 2023~2026년에 반복 발주가 있었습니다 | △ (기업 간 거래) | 불필요 |
-| 5 | **병원 침대패드·린넨** | 6장 참고 (조사 결과 반영 예정) | — | — |
+| 5 | **병원 침대패드·린넨** (작은 경로만: 국방물류청 소액 견적, 남가주 VA 린넨 재입찰, CalVet 요양원) | VA 병원은 Medline이 20개 권역 중 19곳을 잡고 있어서 직접 납품은 어렵습니다. 다만 국방물류청의 침대 방수 패드 소액 견적은 작은 소기업들이 수주하고 있고, 남가주 VA 린넨 계약이 2027년 1월 만료됩니다 | ○ | 소액 견적은 불필요 |
 | 6 | **캘리포니아 주·지방 입찰** (LA 카운티 통번역 상시 계약, 주정부 쓰레기봉투 계약, 지방정부 청소용품 견적, 청소업체에 소모품을 대는 DVBE 하도급) | 지금 열려 있는 건이 여러 개 확인됐습니다(9장). 통번역은 상시 모집이라 1순위와 바로 연결됩니다 | ○ | 입찰 자체는 불필요(우대를 받으려면 인증 필요) |
 
 **지금은 보류할 것:**
@@ -170,7 +170,45 @@
 
 ## 6. 병원 침대패드·린넨
 
-(조사 결과 반영 예정)
+**결론: VA 병원에 직접 납품하는 건 당분간 현실적이지 않습니다. 작은 경로만 있습니다.**
+
+### 6.1 VA는 어떻게 사나
+
+- **병원·요양시설(CLC)의 일회용 언더패드와 기저귀:** 의료소모품 일괄 공급 계약(MSPV) 카탈로그로 주문합니다. 2025년 2월 Medline이 VA 20개 권역 중 19곳을 수주했습니다(5년, 연 10억 달러 이상, [Medline](https://newsroom.medline.com/releases/veterans-administration-awards-medline-medical-surgical-prime-vendor-contract/)).
+- **카탈로그에 제품을 올리는 법:** VA 동부 조달사무소가 공개 견적 요청을 냅니다. 최근 회차는 2026년 10월 15일 마감이었습니다([공고](https://sam.gov/opp/b1b590da28f645f091497d8374cbbf44/view)).
+  - 평가 순서가 정해져 있습니다: SDVOSB → VOSB → 소기업 → 대기업.
+  - 제조사 품번만 받고, 임상의가 평가합니다.
+  - 2026년 9월 섬유류 수요조사는 제조사 공급 승인서, 원산지, SBA 인증을 받은 SDVOSB·VOSB 자격을 요구했습니다.
+- **이미 들어가 있는 업체:** Principle Business Enterprises(Tranquility 브랜드), Encompass Group, Phoenix Textile, Grand Strategy(SDVOSB 유통업체). 계약이 2030년까지입니다.
+- **재향군인 가정 배송용:**
+  - 우편 배송(CMOP)은 Medline이 단독으로 맡고 있습니다.
+  - 북가주 VA는 지역 가정배송 계약을 따로 둡니다. 샌프란시스코는 425만 달러에 3곳 응찰, 팰로앨토는 500만 달러에 1곳 응찰이었습니다. 다만 배송·재고 운영 능력이 필요합니다.
+- **린넨:** 재사용 린넨은 '세탁 서비스'로 삽니다. 공인 세탁 공장이 필요합니다.
+- **AbilityOne:** 의무 구매 목록에 매트리스 커버, 폴리에스터 매트리스 패드, 베갯잇, 침대보, 매트리스가 있습니다. 하지만 **언더패드, 성인용 기저귀, 환자복은 없습니다.** 이 품목은 경쟁할 수 있습니다.
+
+### 6.2 지출 데이터 (2024~2026 회계연도)
+
+| 조회 | 결과 |
+|---|---|
+| VA 언더패드·기저귀 | 품목별로는 거의 0입니다. MSPV 월 단위 일괄 기록이라 품목이 보이지 않습니다 |
+| 국방부 언더패드 | 611건, 약 $27.6만. Cardinal, Owens & Minor 등이 국방물류청 온라인 카탈로그(ECAT)로 판매합니다 |
+| **국방물류청 DIBBS '침대 방수 패드'** | **27건, 약 $1.9만. 수주 업체가 모두 소기업이고, 소기업 전용 지정도 없습니다.** $5,926짜리 한 건에 5곳이 응찰했습니다 |
+| VA 세탁·린넨 서비스 | 연 3,500만~5,900만 달러. SDVOSB 전용은 연 110만~230만 달러 |
+
+### 6.3 현실적인 경로 (작지만 실제로 가능한 것)
+
+1. **국방물류청 DIBBS 소액 견적:** 언더패드와 침대 방수 패드 견적에 응찰합니다. **인증 없는 작은 소기업이 지금 실제로 수주하는 유일한 채널**로 확인됐습니다. Tranquility 같은 미국 소기업 제조사 제품을 공식 공급받아 쓰세요.
+2. **남가주 VA(VISN 22) 병원 린넨 계약 재입찰:** 현재 계약(36C26222D0013, Grand Strategy, 소기업 전용, 70만 달러)이 **2027년 1월 3일 만료**되므로 곧 재입찰될 가능성이 높습니다([USAspending](https://www.usaspending.gov/award/CONT_IDV_36C26222D0013_3600)). 35만 달러를 넘으면 재판매자 규칙이 적용돼서 미국 소기업 제조사 린넨이 필요합니다.
+3. **CalVet 재향군인 요양원:** CALPIA 품목을 제외하면 SB/DVBE 옵션 수의계약이 가능합니다. 캘리포니아 SB나 DVBE 인증이 필요합니다.
+4. **장기:** SDVOSB 인증을 받으면 VA 소모품 카탈로그(MSPV) 견적에서 1순위 평가를 받습니다.
+
+**참고 가격(소매):** 일회용 언더패드 장당 약 $0.29~0.37(고급형 약 $0.63), 재사용형 $4~15(고급형 $16~80).
+
+**같이 하기 좋은 미국 소기업 제조사:** Principle Business Enterprises(Tranquility, 오하이오, VA 공급계약 보유), Encompass Group(조지아, 재사용 섬유).
+
+**함정:**
+- LA 카운티 보건국과 민간 병원은 Vizient·Premier 같은 공동구매 조직으로 사서 신규 유통업체가 들어가기 어렵습니다.
+- Medi-Cal은 기저귀 같은 요실금 용품을 제조사·유통사와 직접 계약합니다.
 
 ---
 
@@ -296,6 +334,8 @@ Cal eProcure(주정부 입찰 사이트, 열린 공고 385건), LA 카운티 입
 - [ ] RangeMe 프로필 등록(AAFES, NEXCOM, MCX, CGX)
 - [ ] HCP 규격 확보와 현 공급업체 연락
 - [ ] DIBBS 등록
+- [ ] DIBBS 언더패드·침대 방수 패드 소액 견적에 응찰. Tranquility 같은 미국 소기업 제조사 제품을 공식 공급받아 씁니다
+- [ ] 남가주 VA(VISN 22) 병원 린넨 재입찰 공고 지켜보기(현 계약 2027년 1월 3일 만료)
 - [ ] Claude Code로 내 품목·지역 입찰 모니터 만들기
 
 **12주 후 판단:** 반응이 있는 트랙만 남기세요. 풀타임 전환을 검토할 때 VetCert와 DVBE 인증을 신청합니다.
@@ -347,6 +387,15 @@ Cal eProcure(주정부 입찰 사이트, 열린 공고 385건), LA 카운티 입
 - [법원 공인 통역사 되는 법](https://languageaccess.courts.ca.gov/court-interpreters-resources/become-court-interpreter/certified-spoken-language-interpreter)
 - [LA County 2026 선거 언어 안내](https://content.lavote.gov/docs/rrcc/documents/2026-general-ewr-news-release_v1.pdf) · [OC 선거 이중언어](https://ocvote.gov/community/bilingual-outreach-info) · [LA DMH 언어 접근 계획](https://dmh.lacounty.gov/language-access-plan/)
 - [GSA CALC 단가](https://api.gsa.gov/acquisition/calc/v3/api/ceilingrates/?keyword=interpreter)
+
+### 병원 침대패드·린넨
+- [Medline MSPV 수주 발표](https://newsroom.medline.com/releases/veterans-administration-awards-medline-medical-surgical-prime-vendor-contract/)
+- [MSPV 공개 견적 요청 (2026 4분기)](https://sam.gov/opp/b1b590da28f645f091497d8374cbbf44/view) · [MSPV 섬유류 수요조사 (2026.9)](https://sam.gov/opp/4f4fc6a59e9f4929bac5bd6086bd9fa2/view)
+- [VISN 22 병원 린넨 계약 (2027.1.3 만료)](https://www.usaspending.gov/award/CONT_IDV_36C26222D0013_3600)
+- [VA 샌프란시스코 가정배송 계약](https://www.usaspending.gov/award/CONT_IDV_36C26126D0008_3600) · [VA 팰로앨토 가정배송 계약](https://www.usaspending.gov/award/CONT_IDV_36C26123D0059_3600)
+- [DIBBS 침대 방수 패드 수주 예](https://www.usaspending.gov/award/CONT_AWD_SPE2DH26P1020_9700_-NONE-_-NONE-)
+- [AbilityOne 의무 구매 목록 검색 (PLIMS)](https://plims.abilityone.gov/search-products/)
+- [Principle Business Enterprises VA 공급계약](https://www.usaspending.gov/award/CONT_IDV_36F79726D0014_3600)
 
 ### 캘리포니아 주·지방 입찰
 - [Cal eProcure](https://caleprocure.ca.gov) · [LA County Bids](https://camisvr.co.la.ca.us/LACoBids/BidLookUp/OpenBidList) · [Covered California 입찰](https://hbex.coveredca.com/solicitations/)
