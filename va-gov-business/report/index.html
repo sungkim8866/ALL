@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VA·정부 사업 기회 조사</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  /* 브리핑 문서: 왼쪽 목차, 오른쪽 본문. 표 중심. 청록은 추천, 황동은 마감과 인증 */
+  --paper: #f2f4f5;
+  --surface: #ffffff;
+  --ink: #14202a;
+  --muted: #566572;
+  --line: #d5dce1;
+  --accent: #0d5c60;
+  --accent-soft: #e1eeee;
+  --brass: #855a0d;
+  --brass-soft: #f5ead4;
+  --ok: #2b764a;
+  --ok-soft: #e1f1e6;
+  --bad: #a33232;
+  --bad-soft: #f7e3e3;
+  --font-display: "Noto Serif KR", "Nanum Myeongjo", "AppleMyungjo", "Batang", serif;
+  --font-body: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0e1418;
+    --surface: #151d23;
+    --ink: #e4eaee;
+    --muted: #9aa9b5;
+    --line: #2a353e;
+    --accent: #59b9b4;
+    --accent-soft: #17302f;
+    --brass: #dcab55;
+    --brass-soft: #33280f;
+    --ok: #67c38c;
+    --ok-soft: #142c1d;
+    --bad: #e27b7b;
+    --bad-soft: #351919;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1418;
+  --surface: #151d23;
+  --ink: #e4eaee;
+  --muted: #9aa9b5;
+  --line: #2a353e;
+  --accent: #59b9b4;
+  --accent-soft: #17302f;
+  --brass: #dcab55;
+  --brass-soft: #33280f;
+  --ok: #67c38c;
+  --ok-soft: #142c1d;
+  --bad: #e27b7b;
+  --bad-soft: #351919;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px 20px 96px;
+  display: grid;
+  grid-template-columns: 236px minmax(0, 1fr);
+  gap: 44px;
+}
+header.top { grid-column: 1 / -1; display: grid; gap: 10px; padding-bottom: 20px; border-bottom: 3px double var(--line); }
+nav.toc {
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.5;
+}
+nav.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+nav.toc a { display: block; padding: 5px 10px; border-left: 2px solid var(--line); color: var(--muted); text-decoration: none; }
+nav.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+nav.toc a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+nav.toc .toc-title { font-weight: 600; color: var(--ink); margin: 0 0 8px; }
+@media (max-width: 980px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  nav.toc { position: static; max-height: none; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+  nav.toc ol { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+}
+main { min-width: 0; }
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.2vw, 42px);
+  line-height: 1.25;
+  margin: 0;
+  text-wrap: balance;
+}
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.35;
+  margin: 60px 0 14px;
+  padding-top: 14px;
+  border-top: 2px solid var(--ink);
+  text-wrap: balance;
+  scroll-margin-top: 12px;
+}
+section:first-of-type h2 { margin-top: 0; }
+h3 { font-size: 19px; line-height: 1.45; margin: 30px 0 8px; text-wrap: balance; }
+h4 { font-size: 16px; margin: 20px 0 6px; }
+p, li { max-width: 74ch; }
+p { margin: 8px 0; }
+ul, ol { padding-left: 22px; margin: 8px 0; }
+li { margin: 4px 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+.lede { font-size: 18px; max-width: 70ch; margin: 0; }
+.meta { color: var(--muted); font-size: 14px; margin: 0; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; margin: 12px 0 22px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; line-height: 1.55; }
+th, td { text-align: left; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid var(--line); }
+th { background: var(--accent-soft); font-weight: 600; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.n, .date, .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.pill.now { background: var(--ok-soft); color: var(--ok); }
+.pill.cert { background: var(--brass-soft); color: var(--brass); }
+.pill.hold { background: var(--bad-soft); color: var(--bad); }
+.pill.check { border: 1px solid var(--muted); color: var(--muted); }
+.pill.team { border: 1px solid var(--accent); color: var(--accent); }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; font-size: 14px; color: var(--muted); }
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+.callout.warn { border-left-color: var(--bad); }
+.callout.brass { border-left-color: var(--brass); }
+.callout p { max-width: 80ch; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; margin: 14px 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+.card h4 { margin-top: 0; }
+.card p, .card li { font-size: 15px; }
+.kicker { font-size: 13px; font-weight: 600; color: var(--brass); letter-spacing: 0.02em; margin: 0 0 4px; }
+.src ul { columns: 2 320px; column-gap: 28px; padding-left: 18px; }
+.src li { font-size: 14px; max-width: none; break-inside: avoid; }
+footer { margin-top: 56px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <p class="meta">기준일 2026년 11월 9일 · 조사 기간 2026년 11월 8~9일</p>
+  <h1>VA·정부 사업 기회 종합 조사</h1>
+  <p class="lede">상이군인 사업가가 VA, 군, 캘리포니아 정부에 팔 수 있는 것을 처음 아이디어부터 실제 공고, 지출 데이터, 감사 보고서까지 한곳에 정리했습니다.</p>
+  <p class="meta">조사 방법: SAM.gov 실시간 공고 직접 조회(키워드 검색으로 전국 880건, 캘리포니아 전체 507건), USAspending 지출 분석, GAO·VA 감사관실·국방부 감사관실·캘리포니아 주 감사관 보고서, 기관 공식 사이트, 언론 보도. 법률·세무 자문이 아닙니다. 공고와 금액은 원문에서 다시 확인하세요.</p>
+  <div class="legend" aria-label="상태 표시 설명">
+    <span><span class="pill now">지금</span> 인증 없이 지금 시작 가능</span>
+    <span><span class="pill cert">인증 후</span> SDVOSB·DVBE 등 인증 필요</span>
+    <span><span class="pill team">협력 필요</span> 파트너·인력 필요</span>
+    <span><span class="pill check">검증 필요</span> 수요나 조건 미확인</span>
+    <span><span class="pill hold">보류</span> 하지 않는 것을 권함</span>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <p class="toc-title">목차</p>
+  <ol>
+    <li><a href="#summary">1. 핵심 결론과 추천 순위</a></li>
+    <li><a href="#deadlines">2. 다가오는 마감</a></li>
+    <li><a href="#questions">3. 답이 필요한 질문</a></li>
+    <li><a href="#idea">4. 원래 아이디어 평가</a></li>
+    <li><a href="#rules">5. 제도와 규칙</a></li>
+    <li><a href="#manukind">6. ManuKind와 군인 가족 판로</a></li>
+    <li><a href="#fixit">7. 고장 난 곳을 고치는 사업</a></li>
+    <li><a href="#bids">8. 지금 열린 공고</a></li>
+    <li><a href="#spending">9. 지출 데이터로 본 시장</a></li>
+    <li><a href="#services">10. 통번역·서비스·소프트웨어</a></li>
+    <li><a href="#bedpads">11. 병원 침대패드·린넨</a></li>
+    <li><a href="#garment">12. LA 의류와 군 피복</a></li>
+    <li><a href="#factcheck">13. 다른 조사 팩트체크</a></li>
+    <li><a href="#corrections">14. 정정 기록</a></li>
+    <li><a href="#roadmap">15. 실행 계획</a></li>
+    <li><a href="#sources">16. 출처</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<section id="summary">
+<h2>1. 핵심 결론과 추천 순위</h2>
+<div class="callout warn">
+  <p><strong>원래 아이디어</strong>(진료를 AI가 녹음·정리해서 기록하고, 약 오더를 자동으로 작성하고, 옛 CPRS 같은 화면을 주는 VA 시스템)는 <strong>추천하지 않습니다.</strong></p>
+  <ul>
+    <li>VA가 2025년 10월부터 같은 기능(Ambient Scribe)을 깔기 시작해 2026년 9월 전국 1차진료·정신건강·전문과로 넓혔고, 5년짜리 계약(상한 $7억 7,572만)도 맺었습니다.</li>
+    <li>VA가 옮겨가는 EHR 회사 Oracle은 2026년 2월 약·검사 오더 초안 기능을 이미 출시했습니다.</li>
+    <li>CPRS는 2031년까지 Oracle로 교체되며 퇴역합니다.</li>
+  </ul>
+</div>
+<div class="callout">
+  <p><strong>사장님 상황(대화로 추정):</strong> 상이군인, 캘리포니아 거주(아마 LA), 군 보급·구매 경력, OEM 소싱 경험, 한국어·영어, Claude Code로 자동화 경험, 그리고 <strong>ManuKind(뉴질랜드산 아기 물티슈·기저귀)와 Formuland 운영.</strong></p>
+  <p>판단을 가르는 질문은 하나입니다. <strong>운영 중인 회사를 사장님이 51% 이상 소유하고 풀타임으로 경영하는가.</strong> 그렇다면 새 회사 없이 기존 회사로 SDVOSB(연방)·DVBE(캘리포니아) 인증을 받을 수 있고, 아래 '인증 후' 항목이 모두 열립니다.</p>
+</div>
+
+<h3>추천 순위 (모든 조사를 합친 결과)</h3>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th>기회</th><th>근거</th><th>사장님 강점</th><th>상태</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td><strong>ManuKind 군인 가족 판로</strong>: PX 4곳(RangeMe), VA 병원 매점, GovX ID, 구호단체 출산 지원, Operation Shower, NVBDC 인증→월마트</td><td>제품이 이미 있고, 소매 재판매라 정부 조달 규칙(원산지·소기업 제조)이 걸리지 않습니다</td><td>브랜드, 재향군인 이야기</td><td><span class="pill now">지금</span></td></tr>
+<tr><td class="n">2</td><td><strong>인증 기반 다지기</strong>: SAM.gov 등록, 기존 회사로 VetCert·DVBE 가능 여부 확인</td><td>정부 사업 대부분의 입장권입니다. SAM 등록은 몇 주 걸립니다</td><td>상이군인 신분</td><td><span class="pill now">지금</span></td></tr>
+<tr><td class="n">3</td><td><strong>VA 보급창고 재고 실사·유효기간 지난 물품 정리</strong></td><td>오거스타 VA 수술실 4번 폐쇄, 휴스턴 VA 재고 82% 불일치. 캘리포니아 VA 약국 실사 $1.1만~2.7만 발주</td><td>군 보급 경력, 재고 대조 자동화</td><td><span class="pill now">지금(소액)</span></td></tr>
+<tr><td class="n">4</td><td><strong>막사 습기 키트(제습기+습도계) + 습기 센서 대시보드</strong></td><td>2026 국방수권법 곰팡이 지침, 육군 막사 예산(리모델링 $4억 500만, 자가수리 $6,500만), 포트 스튜어트 제습기 600대</td><td>OEM 소싱, 대시보드 자동화</td><td><span class="pill now">지금(소기업 전용)</span></td></tr>
+<tr><td class="n">5</td><td><strong>한국어 번역</strong>(AI 초안 + 사람 검수), 통번역 회사 하도급, 법원 통역 자격</td><td>캘리포니아 법원 공인 한국어 통역사 54명뿐, LA권 요청 연 10,214건. 주 기관 소기업 전용 번역, LA 카운티 상시 계약</td><td>한국어·영어, 자동화</td><td><span class="pill now">지금</span></td></tr>
+<tr><td class="n">6</td><td><strong>캘리포니아 재향군인 요양원 창고 관리</strong></td><td>주 감사관: 새 매트리스 6개월, 침대 프레임 4년 넘게 야외 방치($23,500 손해)</td><td>보급 경력</td><td><span class="pill cert">CA 인증 후</span></td></tr>
+<tr><td class="n">7</td><td><strong>안 쓰는 통신 회선 감사</strong></td><td>고용개발국(EDD)이 미사용 단말기 6,200여 대 요금으로 $460만 이상 낭비</td><td>청구서 분석 자동화</td><td><span class="pill cert">CA 인증 후</span></td></tr>
+<tr><td class="n">8</td><td><strong>VA 화장실 여성용품 디스펜서·보충</strong></td><td>VA 정책상 무료 비치 의무, 고장·결품 지적(빌록시 등)</td><td>위생용품 소싱</td><td><span class="pill check">검증 필요</span></td></tr>
+<tr><td class="n">9</td><td><strong>막사 세탁기 정비</strong></td><td>포트 포크 세탁기 약 4,000대에 수리 연 3,000건, 캘리포니아 프레시디오·벤투라 발주</td><td>운영 관리</td><td><span class="pill team">협력 필요</span></td></tr>
+<tr><td class="n">10</td><td><strong>LA 의류 공장 × 국방물류청 피복 연결</strong></td><td>캘리포니아 생산 군 피복·개인장비 약 $2억 9,700만(2년, 상위 300건), LA 업체 다수</td><td>한국어, OEM, 보급</td><td><span class="pill team">협력 필요</span></td></tr>
+<tr><td class="n">11</td><td><strong>국방물류청 위생 키트(HCP)·DIBBS 소액 견적</strong>(침대 방수 패드 등)</td><td>HCP 지난 입찰이 소기업 전용, DIBBS 침대 방수 패드는 작은 소기업들이 수주</td><td>보급, 소싱</td><td><span class="pill now">지금(소액)</span></td></tr>
+<tr><td class="n">12</td><td><strong>VA SDVOSB 서비스·유통</strong>(수술기구 택배, 정수 필터, 표지판 하청, SDVOSB 전용 물품)</td><td>LA·북가주 택배 공고가 지금 열려 있음, 과거 SDVOSB 택배 $323만</td><td>보급, 물류</td><td><span class="pill cert">인증 후</span></td></tr>
+<tr><td class="n">13</td><td><strong>보훈상담관(VSO)용 AI 청구 준비 도구</strong></td><td>기존 업체(Tyler VetraSpec 등)에 생성형 AI 기능 미확인</td><td>청구 경험</td><td><span class="pill team">협력 필요</span></td></tr>
+</tbody></table></div>
+
+<h3>하지 말 것</h3>
+<div class="tbl"><table>
+<thead><tr><th>하지 말 것</th><th>이유</th></tr></thead>
+<tbody>
+<tr><td><span class="pill hold">보류</span> VA용 AI 스크라이브·CPRS 화면</td><td>이미 전국 도입, 대기업 경쟁, CPRS 퇴역, 환자안전·보안 인증 장벽</td></tr>
+<tr><td><span class="pill hold">보류</span> 위생·청소용품 정부 직접 입찰</td><td>캘리포니아 VA·국방부 계약 건당 중간값 $185~450로 작고, 연방 AbilityOne·주 CALPIA 의무 구매처와 겹침</td></tr>
+<tr><td><span class="pill hold">보류</span> ManuKind 제품의 소기업 전용 정부 입찰(FEMA 키트 등)</td><td>소기업 전용 물품은 미국 소기업이 미국에서 만든 제품이어야 함(비제조업체 규칙). 뉴질랜드산은 해당 안 됨</td></tr>
+<tr><td><span class="pill hold">보류</span> AI 입찰 도우미 소프트웨어, DVBE 매칭 사이트</td><td>투자받은 경쟁사 다수(GovDash $3,000만 등), DVBE 검색은 주정부가 무료 제공</td></tr>
+<tr><td><span class="pill hold">보류</span> 건물 공사, 엘리베이터, 와이파이 시공, 이사 사업, VA 개원 지원(IOTA)</td><td>면허·보증·전문 인력이 필요한 다른 사업</td></tr>
+<tr><td><span class="pill hold">보류</span> 다른 주 현장 서비스(창문 청소 등)</td><td>서비스 계약은 인건비 50% 이상을 직접 수행해야 함</td></tr>
+<tr><td><span class="pill hold">보류</span> 명의대여, 재향군인에게 청구 대행료 받기</td><td>허위청구법 처벌($2,130만 합의 사례), VA 인가·수수료 규정 위반</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="deadlines">
+<h2>2. 다가오는 마감 (2026년 11월 9일 기준)</h2>
+<div class="tbl"><table>
+<thead><tr><th>날짜</th><th>건</th><th>기관·지역</th><th>대상</th><th>메모</th></tr></thead>
+<tbody>
+<tr><td class="date">11/9 15:00 PT</td><td><a href="https://sam.gov/opp/3f67b33d63444ce58edfc8cda4c8248a/view">멸균 보관 캐비닛 정보요청</a></td><td>VA 그레이터 LA</td><td>정보요청</td><td>오늘 마감. 입찰이 아니라 의견 제출</td></tr>
+<tr><td class="date">11/10</td><td><a href="https://sam.gov/opp/790c357f647a4dbca902d6ac8aa14597/view">통역 서비스 수요조사(한국어 포함)</a></td><td>VA 뉴욕</td><td>수요조사</td><td>정오(동부). 응답하면 담당자가 회사를 알게 됨</td></tr>
+<tr><td class="date">11/13 17:00 PT</td><td><a href="https://sam.gov/opp/63585d6e79304119840966a94fda8de6/view">LA 국립묘지 드라이클리닝·수선</a></td><td>VA, LA</td><td>소기업</td><td>소기업 세탁소 하청 가능. SAM 등록이 살아 있어야 함</td></tr>
+<tr><td class="date">11/13</td><td><a href="https://sam.gov/opp/41d5bc73e0154224b7c270eebd13b5e4/view">식품용 니트릴 장갑</a></td><td>육군</td><td>소기업</td><td>물품 재판매형</td></tr>
+<tr><td class="date">11/16 10:00 PT</td><td><a href="https://sam.gov/opp/275a7249361c46a4847f2042d30273ef/view">장비 운송(수술기구 등)</a></td><td>VA 그레이터 LA</td><td>SDVOSB</td><td>기사 6명·차량 6대. 인증 필요</td></tr>
+<tr><td class="date">11/17</td><td><a href="https://sam.gov/opp/7941a2b1592748568b908acbe2f703d3/view">안전장갑</a></td><td>국방물류청, 캘리포니아 트레이시</td><td>소기업</td><td>$35만 이하면 재판매자 규칙 면제. 원산지 확인</td></tr>
+<tr><td class="date">11/17</td><td>번역·통역 입찰(IFB 26-E0016)</td><td>캘리포니아 환경보건위해평가국</td><td>주정부</td><td>한국어 요구 여부 확인</td></tr>
+<tr><td class="date">11/19</td><td><a href="https://hbex.coveredca.com/solicitations/">Covered California 전화 통역 입찰 질문 마감</a></td><td>캘리포니아</td><td>주정부</td><td>제안서는 12/28</td></tr>
+<tr><td class="date">11/23</td><td>주정부 쓰레기봉투 계약 · 청소용품 견적 · EDD 전화 통역</td><td>캘리포니아 DGS 등</td><td>주·지방</td><td>Cal eProcure·BidNet에서 원문 확인</td></tr>
+<tr><td class="date">11/24</td><td>청소·위생용품 견적(교도소·진료소 등)</td><td>카운티로 보임</td><td>지방</td><td>BidNet 무료 로그인으로 기관 확인</td></tr>
+<tr><td class="date">11/25</td><td><a href="https://sam.gov/opp/527a014ac96349ebb181a1b56543b62f/view">남성 셔츠</a></td><td>국방물류청 피복</td><td>제한 없음</td><td>LA 의류 공장용</td></tr>
+<tr><td class="date">12/2 10:00 PT</td><td><a href="https://sam.gov/opp/4e546581bd9f44c68c6b726bd2507877/view">멸균물품 택배</a></td><td>VA 북가주</td><td>SDVOSB</td><td>착수 2027년 6월. 인증 필요</td></tr>
+<tr><td class="date">12/2</td><td><a href="https://sam.gov/opp/0d82482cbd384e9ca16dca23082d2a27/view">24시간 전화 통역</a></td><td>FBI</td><td>소기업</td><td>규모가 커서 참고용</td></tr>
+<tr><td class="date">12/8~9</td><td><a href="https://www.va.gov/osdbu/nvsbe/">NVSBE 2026</a></td><td>오하이오 클리블랜드</td><td>행사</td><td>VA 최대 재향군인 기업 행사</td></tr>
+<tr><td class="date">12/28</td><td>Covered California 전화 통역 제안서</td><td>캘리포니아</td><td>주정부</td><td>최대 $320만. 응찰 회사의 한국어 파트너로</td></tr>
+<tr><td class="date">2026/12/31</td><td>C&amp;P 장애검사 위탁 계약 만료(최대 6개월 연장)</td><td>VA</td><td>재입찰</td><td>DBQ 품질검사 도구 기회</td></tr>
+<tr><td class="date">2027/1/3</td><td><a href="https://www.usaspending.gov/award/CONT_IDV_36C26222D0013_3600">남가주 VA 병원 린넨 계약 만료</a></td><td>VA VISN 22</td><td>재입찰 예상</td><td>현재 소기업 전용 $70만</td></tr>
+<tr><td class="date">2027 (미정)</td><td>커미서리 기저귀 카테고리 심사</td><td>DeCA</td><td>소매</td><td>2025년 2월, 2026년 5월에 열림</td></tr>
+<tr><td class="date">2028/9/11까지</td><td><a href="https://lacobids.lacounty.gov/api/v1/opensolicitations/420239230866">LA 카운티 통번역 일괄계약</a></td><td>LA 카운티 ISD</td><td>상시</td><td>자격을 얻으면 작업 주문 수주</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="questions">
+<h2>3. 답이 필요한 질문</h2>
+<div class="cards">
+  <div class="card"><p class="kicker">질문 1</p><p>ManuKind·Formuland를 운영하는 회사는 LLC인가요, 주식회사인가요? 사장님 지분은 몇 %이고 다른 주주나 투자자가 있나요?</p><p class="meta">DVBE는 LLC면 100% 상이군인 소유여야 합니다.</p></div>
+  <div class="card"><p class="kicker">질문 2</p><p>그 회사에서 풀타임으로 일하시나요? 다른 직장이 있나요?</p><p class="meta">SBA 규정은 정상 영업시간 풀타임 경영을 요구합니다.</p></div>
+  <div class="card"><p class="kicker">질문 3</p><p>VA 장애등급이 10% 이상인가요? 개인실업수당(TDIU)을 받고 있나요?</p><p class="meta">DVBE는 10% 이상. TDIU는 순소득 약 $1만 6천을 넘으면 위험합니다.</p></div>
+  <div class="card"><p class="kicker">질문 4</p><p>어느 카운티에 사시나요? 초기 재고·샘플 예산은 얼마인가요?</p><p class="meta">LA 카운티면 15% 가격 우대가 있습니다.</p></div>
+</div>
+</section>
+
+<section id="idea">
+<h2>4. 원래 아이디어 평가: AI 진료 기록 + CPRS 화면 + 약 오더 자동화</h2>
+<h3>VA AI 스크라이브 진행 경과</h3>
+<div class="tbl"><table>
+<thead><tr><th>시점</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td class="date">2024</td><td>VA AI Tech Sprint(상금 대회): 150개 이상 팀, 1등 $30만. 진료 기록 부문 1위 Abridge, Nuance(Microsoft). Knowtex·DeepScribe·Commure 등도 수상</td></tr>
+<tr><td class="date">2025</td><td>수상자 수의 시범 계약(Abridge, Carahsoft). Knowtex 약 $1,500만(2025년 7월 시작, 2차 출처)</td></tr>
+<tr><td class="date">2025/10</td><td>10개 VA 병원 시범 운영 시작</td></tr>
+<tr><td class="date">2026/1</td><td>VA 감사관실 예비 경고: 생성형 AI(VA GPT, M365 Copilot Chat)에 환자안전 관리 체계 없음</td></tr>
+<tr><td class="date">2026/2</td><td>Oracle Clinical AI Agent가 약·검사·영상 오더 초안 기능 출시(의사가 승인)</td></tr>
+<tr><td class="date">2026/4</td><td>국방부 보건청(DHA)이 Oracle AI 에이전트를 군 의료 전체로 확산</td></tr>
+<tr><td class="date">2026/6</td><td>약 4,000명 임상의 사용. 감사관실 최종보고서(고위험 분류·거버넌스 강화 권고)</td></tr>
+<tr><td class="date">2026/9</td><td>1차진료·정신건강·재활·내외과 전문과로 확대. 5년 IDIQ(상한 $7억 7,572만): Knowtex, Carahsoft(Abridge 유통). Abridge는 CPRS와 Oracle 양쪽 연동, 75개 이상 병원(회사 발표)</td></tr>
+<tr><td class="date">병행</td><td>Rise8(SDVOSB)+Thoughtworks가 10곳→130곳 이상 확산 플랫폼 작업(약 $490만, 2차 출처). SBIR Phase III 방식</td></tr>
+</tbody></table></div>
+<h3>요소별로 이미 하는 곳</h3>
+<div class="tbl"><table>
+<thead><tr><th>아이디어 요소</th><th>이미 하는 곳</th><th>끼어들 여지</th></tr></thead>
+<tbody>
+<tr><td>진료 대화 녹음→노트</td><td>VA Ambient Scribe(Abridge, Knowtex), Microsoft Dragon Copilot, Oracle</td><td>거의 없음</td></tr>
+<tr><td>EHR 자동 입력</td><td>Abridge: CPRS(VistA)와 Oracle 양쪽</td><td>거의 없음</td></tr>
+<tr><td>약 오더 초안→의사 승인</td><td>Oracle Clinical AI Agent(2026년 2월)</td><td>거의 없음</td></tr>
+<tr><td>옛 CPRS 화면</td><td>CPRS 퇴역 중: 2026년 13곳, 2027 회계연도 26곳 전환, 2031년 완료 목표</td><td>수명이 짧음</td></tr>
+<tr><td>모든 VA 시스템 연동</td><td>VA가 통제(병원별 VistA, Oracle, VBMS, HSRM)</td><td>VA 후원 필요</td></tr>
+</tbody></table></div>
+<h3>진입장벽</h3>
+<ul>
+  <li><strong>경쟁사 체급:</strong> Abridge 기업가치 약 $53억(2025년 중반). 시장 약 $6억 중 Microsoft 33%, Abridge 30%(Menlo 추정, 2차 인용). Epic 자체 스크라이브, Commure의 Augmedix 인수($1.39억).</li>
+  <li><strong>보안·인증:</strong> VA 운영승인(ATO), FedRAMP(2026년 20x 개편으로 빨라지는 중), Section 508, 기술참조모델(TRM), PIV 로그인, 개인정보영향평가.</li>
+  <li><strong>환자안전:</strong> 감사관실 지적(2026년 1월·6월). 마약류 처방은 처방자가 2단계 인증으로 서명해야 하므로 AI는 초안까지만 가능.</li>
+  <li><strong>품질 논란:</strong> VHA 지원 연구에서 AI 노트 품질 점수가 사람 노트보다 낮음.</li>
+  <li><strong>VA AI 사용 사례:</strong> 2025년 367건, 그중 215건이 고위험(high-impact).</li>
+</ul>
+<p><strong>살릴 수 있는 것:</strong> "녹음·문서 → 구조화 → 양식 자동 작성 → 사람이 최종 확인"이라는 흐름은 가치가 있습니다. 대기업이 보지 않는 양식(DBQ 검사서, 보훈 청구서, 커뮤니티 케어 서류)과 VA 본부가 아닌 고객(검사 위탁업체, 카운티, 민간 병원)으로 옮기면 쓸 수 있습니다.</p>
+</section>
+
+<section id="rules">
+<h2>5. 제도와 규칙</h2>
+<h3>숫자로 본 상이군인 기업 시장</h3>
+<div class="tbl"><table>
+<thead><tr><th>항목</th><th>값</th><th>메모</th></tr></thead>
+<tbody>
+<tr><td>VA의 SDVOSB 계약 (2025 회계연도)</td><td class="num">$101억 · 21.6%</td><td>VA 내부 목표 약 15%</td></tr>
+<tr><td>연방 전체 SDVOSB 계약 (2025 회계연도)</td><td class="num">$325억 · 5.01%</td><td>법정 목표 5%(2024 국방수권법으로 3%→5%)</td></tr>
+<tr><td>소액구매 기준</td><td class="num">$15,000</td><td>2025년 10월 1일부터, 구매카드</td></tr>
+<tr><td>간이구매 기준(SAT)</td><td class="num">$350,000</td><td>2025년 10월 1일부터</td></tr>
+<tr><td>VA SDVOSB 수의계약 상한</td><td class="num">$5,000,000</td><td>제조는 $850만(의회조사국)</td></tr>
+<tr><td>SBIR 재승인</td><td class="num">2026/4/13</td><td>2031년 9월 30일까지. Phase III는 어느 기관이든 수의계약</td></tr>
+</tbody></table></div>
+
+<h3>연방 규칙</h3>
+<div class="tbl"><table>
+<thead><tr><th>규칙</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>VA Vets First</td><td>적격 SDVOSB가 2곳 이상이고 합리적 가격이 예상되면 VA는 SDVOSB끼리만 경쟁(2016 Kingdomware 판결). 우선순위 SDVOSB → VOSB → 소기업</td></tr>
+<tr><td>SBA VetCert</td><td>자기인증은 실적 인정 안 됨. 무료, 3년 유효. 상이군인이 51% 이상 무조건 소유, 최고 직위, 일상 경영 통제</td></tr>
+<tr><td>풀타임 요건 (13 CFR 128.203(i))</td><td>정상 영업시간 풀타임 경영. 근무시간이 짧으면 통제하지 않는 것으로 간주, 반대 증거는 회사가 제출. 다른 직장으로 자격을 잃은 심판 사례 있음</td></tr>
+<tr><td>하도급 제한(LOS)</td><td>서비스는 받은 돈의 50% 넘게 비적격 업체에 하청 불가(같은 자격 업체 하청은 인정). 물품은 비제조업체 규칙 적용</td></tr>
+<tr><td>비제조업체 규칙(NMR)</td><td>소기업·SDVOSB 전용 물품은 미국 소기업이 미국에서 만든 제품. <strong>일반 소기업 전용은 $1만 5천~$35만 구간 면제, SDVOSB 전용은 금액 무관 적용</strong></td></tr>
+<tr><td>의무 구매처 AbilityOne</td><td>연방기관은 SKILCRAFT 3,000여 품목(청소·위생·개인관리·매트리스·베개·담요·수건·치약·선크림·구급함 등)을 먼저 사야 함. 언더패드·성인 기저귀·환자복은 목록에 없음</td></tr>
+<tr><td>Berry 수정조항</td><td>국방부 섬유·의류·식품은 $35만 초과 시 100% 미국산(옛 $15만 기준은 폐지)</td></tr>
+<tr><td>무역협정법·미국산 우선법</td><td>GSA 스케줄 등은 중국산 불가. 뉴질랜드·한국은 무역협정국. 미국산 부품 비율 2024~2028년 65%, 2029년부터 75%</td></tr>
+<tr><td>GSA 스케줄 개인위생용품</td><td>2025년 4월(Refresh 26) SIN 335210 폐지, 개인위생품은 범위 밖</td></tr>
+<tr><td>PX 거래 금지(AR 215-8)</td><td>현역 군인, 연방공무원(매점 직원 포함), 그 가족과는 거래하지 않음</td></tr>
+<tr><td>청구 대행 수수료</td><td>비인가자가 재향군인에게 청구 대가를 받으면 문제(38 U.S.C. 5904). 형사처벌 법안(GUARD Act)은 계류 중</td></tr>
+<tr><td>명의대여 단속</td><td>2026년 6월 $2,130만 합의(내부고발자 $367만)</td></tr>
+</tbody></table></div>
+
+<h3>캘리포니아와 LA 카운티</h3>
+<div class="tbl"><table>
+<thead><tr><th>제도</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td>DVBE 인증</td><td>상이 10% 이상, 상이군인이 캘리포니아 거주. 51% 이상 소유(<strong>LLC는 100%</strong>), 일상 경영을 상이군인이 통제(관리자는 소유자와 달라도 됨). 본사는 미국 안. 무료. 주 계약 3% 목표</td></tr>
+<tr><td>캘리포니아 SB 인증</td><td>본사 캘리포니아, 독립 소유, 매출 기준(DGS 확인). 상이군인 요건 없음</td></tr>
+<tr><td>SB/DVBE 옵션</td><td>주 기관이 $5,000.01~$249,999.99 물품·서비스·IT를 인증 SB 또는 DVBE 견적 2곳으로 바로 계약(SB와 DVBE 견적 혼합 불가, 이의제기 없음, 전체 기간 기준). 공공공사는 $48만 4천. $35만 상향 법안(SB 70, SB 1044)은 미확정</td></tr>
+<tr><td>DVBE 참여 요건</td><td>요건이 있는 공고에서 못 맞추면 부적격. 인센티브는 공고마다 다름. 실제 일을 해야 함(CUF)</td></tr>
+<tr><td>CALPIA 의무 구매</td><td>주 기관은 교도소 산업청 제품(비누, 청소·세탁·주방 화학제품, Green Seal 세제 등)을 먼저 사야 함. 카운티·시는 해당 없음</td></tr>
+<tr><td>LA 카운티 DVBE·LSBE</td><td>입찰가 최대 15% 우대(상한 $15만, 건설 7%), 중복 불가. 카운티 DVBE는 DGS DVBE나 SDVOSB 인증이 먼저 필요. LSBE는 LA 카운티 사업장 12개월, 직원 100명 미만, 매출 $1,600만 이하</td></tr>
+<tr><td>대금</td><td>주정부 약 45일. 연방 Prompt Payment Act. 다만 2025년 10~11월 43일 셧다운 때 계약업체 대금 지연</td></tr>
+</tbody></table></div>
+
+<h3>개인이 받을 수 있는 지원</h3>
+<ul>
+  <li><strong>VR&amp;E 자영업 트랙(Chapter 31):</strong> 사업계획, 교육, 일부 창업비용. $2만 5천 이상 계획은 VR&amp;E 본부 승인.</li>
+  <li><strong>APEX Accelerator:</strong> 무료 정부조달 컨설팅. <strong>VBOC:</strong> SBA 재향군인 창업센터.</li>
+  <li><strong>VA OSDBU:</strong> 조달사무소마다 소기업 담당자. <strong>NVSBE 2026:</strong> 12월 8~9일 클리블랜드.</li>
+  <li><strong>주의(TDIU):</strong> 사업 순소득이 1인 빈곤선(2026년 약 $1만 6천, 출처마다 다름)을 넘으면 TDIU가 위험. 일반 등급 보상금은 소득과 무관.</li>
+</ul>
+<h3>연방 환경 변화</h3>
+<ul>
+  <li>행정명령 14240(2025년 3월): 공통 물품·IT 구매를 GSA로 통합. GSA 스케줄과 SDVOSB 전용 GWAC(Polaris SDVOSB, VETS 2) 보유 업체와의 협력이 중요해짐.</li>
+  <li>FedRAMP 20x: 2026년 6월 새 규칙(CR26), 8월부터 접수. 그래도 1인 비개발자에게는 무거움.</li>
+  <li>OMB 지침: 고위험 AI는 배포 전 테스트·영향평가·모니터링 의무(2026년 4월 기한). VBA는 2027 회계연도 자동화·AI에 $1.3억 요청.</li>
+  <li>Challenge.gov(정부 상금 대회 사이트)는 2026년 3월 30일 문을 닫음.</li>
+</ul>
+</section>
+
+<section id="manukind">
+<h2>6. ManuKind와 군인 가족 판로</h2>
+<p>ManuKind 공식 사이트 기준: 마누카꿀·산양유 아기 물티슈(물 99.4%, 대나무 원단 100%, 독일 Dermatest), 마누카꿀 기저귀(1~5단계). <strong>뉴질랜드 제조.</strong> Amazon, Formuland, Granola Baby에서 판매.</p>
+
+<h3>경로별 적합성</h3>
+<div class="tbl"><table>
+<thead><tr><th>경로</th><th>적합</th><th>이유</th></tr></thead>
+<tbody>
+<tr><td>PX(AAFES·NEXCOM·MCX·CGX)</td><td><span class="pill now">맞음</span></td><td>소매 재판매라 원산지·소기업 제조 규칙 없음</td></tr>
+<tr><td>VA 병원 매점(PatriotMart)</td><td><span class="pill now">맞음</span></td><td>지역 매점 책임자 승인, 재향군인 소유 우대, 2025년 8월에도 업체 모집</td></tr>
+<tr><td>커미서리(DeCA)</td><td><span class="pill check">나중에</span></td><td>소매 실적 필요, 안 팔리면 회수(판매 보증), 유통업체 필요</td></tr>
+<tr><td>FEMA 영유아 키트(소기업 전용)</td><td><span class="pill hold">어려움</span></td><td>미국 소기업 제조 요건. 최근 주문은 RCG of North Carolina 약 $133만, Asset Group 약 $40만</td></tr>
+<tr><td>GSA 스케줄</td><td><span class="pill hold">불가</span></td><td>개인위생용품 품목 폐지</td></tr>
+<tr><td>군 어린이집</td><td><span class="pill hold">불가</span></td><td>기저귀·물티슈는 부모가 가져옴</td></tr>
+<tr><td>캘리포니아 신생아 무료 기저귀(Golden State Start)</td><td><span class="pill check">낮음</span></td><td>2026년 5월 8일 발표, 첫해 65~75개 병원, 'Baby2Baby 기저귀' 400개 무료 배포, 예산 $740만+$1,250만(제안)</td></tr>
+</tbody></table></div>
+
+<h3>PX 입점 절차</h3>
+<ol>
+  <li><strong>VA 병원 매점 시범:</strong> 웨스트 LA·롱비치 매점 책임자나 VCSRSS@med.va.gov에 제품 목록·가격·사진.</li>
+  <li><strong>RangeMe 무료 프로필:</strong> AAFES·NEXCOM·MCX·CGX 모두 RangeMe로 받습니다. AAFES는 30일 안에 회신. AAFES 유아용품 담당 바이어(Creams, Suncare, Baby Care)는 (214) 312-3177로 공개돼 있지만 RangeMe가 원칙.</li>
+  <li><strong>AAFES 온라인 마켓플레이스:</strong> 초기비 $1,500 + 월 사용료 + 거래·판매 수수료, 군인 전용 혜택가 필요(MarketplaceTeam@aafes.com).</li>
+  <li><strong>매장 입점 준비물:</strong> GS1 바코드, EDI(MCX는 SPS Commerce), 대금 Net 30, 보험(업로드 보고서 기준 MCX 일반배상 $1M/$2M + 제조물책임 $2M, 확인 필요), 강제노동 금지 서약, "Made in New Zealand" 표시. 오류마다 차지백(예: MCX 보험증서 만료 $200).</li>
+  <li><strong>그다음 커미서리:</strong> 기저귀 심사가 2025년 2월, 2026년 5월에 열렸으니 다음은 2027년 예상. 담당 Rebekah Fine(유아용품·유아 위생·기저귀).</li>
+</ol>
+
+<h3>가격 위치 (PX 온라인, 업로드 보고서 조사)</h3>
+<div class="tbl"><table>
+<thead><tr><th>브랜드</th><th>1매당</th></tr></thead>
+<tbody>
+<tr><td>Exchange Select (PX 자체 브랜드)</td><td class="num">약 $0.03</td></tr>
+<tr><td>Pampers Sensitive</td><td class="num">약 $0.05</td></tr>
+<tr><td>The Honest Company</td><td class="num">약 $0.08</td></tr>
+<tr><td><strong>ManuKind</strong></td><td class="num"><strong>약 $0.11~0.13</strong></td></tr>
+<tr><td>WaterWipes</td><td class="num">약 $0.18</td></tr>
+</tbody></table></div>
+<p>PX 도매가는 소비자가의 절반 이하, 원가는 소비자가의 20~25% 이하가 일반적입니다. 첫 재고 $1만~3만, 매장 진열까지 6~12개월(추정). 경쟁 사례: Bravo Sierra(PX 약 144곳, $1,200만 투자), 재향군인 브랜드 Caisson Shaving(2022년 AAFES 입점).</p>
+
+<h3>군인 가족에게 닿는 다른 경로</h3>
+<div class="tbl"><table>
+<thead><tr><th>경로</th><th>확인한 내용</th><th>할 일</th></tr></thead>
+<tbody>
+<tr><td>공군 구호단체 Bundles for Babies</td><td>출산 교육을 들은 현역 가족에게 아기용품 구매비 $150(2025·2026 안내문)</td><td>PX에 입점해 있어야 이 돈이 ManuKind로 옴</td></tr>
+<tr><td>해군·해병대 구호단체 Budget for Baby</td><td>수업 참가 가족에게 Junior Seabag(담요, 상품권 등, 지역마다 다름)</td><td>지역 사무소에 기부·구성품 협력 제안</td></tr>
+<tr><td>Operation Shower</td><td>군인 예비 엄마 단체 베이비샤워(2026년 5월 250번째). 제품 기부 받음</td><td>샘플·제품 기부</td></tr>
+<tr><td>GovX ID</td><td>군인 인증 할인 Shopify 앱, 설치 무료. 장바구니 버튼은 모든 요금제, 결제 화면 연동은 Shopify Plus</td><td>ManuKind·Formuland에 설치, partnersupport@govx.com</td></tr>
+<tr><td>NVBDC 인증</td><td>월마트가 상이군인·재향군인 기업 인증 비용을 지원. 아마존 비즈니스도 협력</td><td>민간 대형 유통 공급업체 다양성 프로그램용으로 신청</td></tr>
+</tbody></table></div>
+
+<h3>규제 주의</h3>
+<ul>
+  <li><strong>물티슈는 FDA 화장품:</strong> MoCRA(제조시설 등록·제품 리스팅, 연매출 100만 달러 미만 소기업 면제 여부 확인), 이상사례 보고, 영어 성분 표시. '항균', '발진 치료' 같은 효능 문구는 의약품이 됨(공식 사이트 첫 화면·소개·FAQ에는 이런 문구가 보이지 않음).</li>
+  <li><strong>기저귀는 소비자제품:</strong> 어린이용 제품 규정(CPSC) 적용 범위는 시험소에 확인.</li>
+  <li>캘리포니아 Prop 65 경고문, FTC 'Made in USA' 표기 기준, 군 명칭·휘장은 상표 라이선스.</li>
+</ul>
+
+<h3>군인이 실제로 불편해하는 것과 제품 아이디어</h3>
+<div class="tbl"><table>
+<thead><tr><th>아이디어</th><th>근거</th><th>판로</th><th>주의</th></tr></thead>
+<tbody>
+<tr><td>여군 야전 위생 키트(패드, 냄새 차단 파우치, 소변 보조기구, 약산성 물티슈)</td><td>여군 751명 중 약 70%가 야전훈련 중 깨끗한 물이 거의 없었다고 응답(Military Medicine 2023). 영국군은 2024년 지급 시작</td><td>PX, 가족 구매, 나중에 HCP 2형</td><td>탐폰은 FDA 허가 대상</td></tr>
+<tr><td>막사 습기 키트(한국식 제습제, 습도계, 속건 수건, 건조 가방)</td><td>GAO-23-105797 막사 곰팡이·해충</td><td>PX, 기지 행사</td><td>살균 문구는 EPA 등록</td></tr>
+<tr><td>한파 키트(한국 핫팩, 입술·피부 보호)</td><td>2026년 알래스카 훈련 하루 3명 이상 한랭 손상</td><td>알래스카·주한미군 PX</td><td>자외선 차단 문구는 의약품</td></tr>
+<tr><td>30일 물 없는 위생 키트</td><td>훈련장 물 부족</td><td>포트 어윈(캘리포니아) PX</td><td>치약 등은 정부 구매 시 AbilityOne</td></tr>
+<tr><td>막사 수면 키트(빈대 방지 커버, 규격 시트, 암막)</td><td>GAO-24-105917 수면 부족</td><td>PX, 부모 선물</td><td>정부 구매 매트리스·베개는 AbilityOne</td></tr>
+</tbody></table></div>
+<p class="meta">부대 예산으로 개인용품을 사는 것은 원칙적으로 제한되므로 소매가 주력입니다. 폭염: 2025년 열사병 발생률 6.9% 증가, 약 40%가 신병 교육 중(MSMR 2026).</p>
+</section>
+
+<section id="fixit">
+<h2>7. 고장 난 곳을 고치는 사업</h2>
+
+<h3>7-1. VA 시설</h3>
+<ul>
+  <li><strong>보급·재고 실패:</strong> 휴스턴 VA 표본 60개 중 49개(82%) 재고 수량 오류, 유효기간 지난 물품 1,568개(약 $10.9만)(감사관실 24-00166-35, 2025년 3월). 오거스타 VA 수술실 4번 폐쇄(2025년 10월~2026년 2월, 한 번은 27일), 유효기간 지남·과잉·파손 물품 50팔레트, 무게 기반 재고 시스템 $320만, 재고 감사 약 $22.3만(감사관실 26-02023-176, 2026년 9월).</li>
+  <li><strong>수술기구 멸균:</strong> 더블린·앨버커키 반복 지적. VA 그레이터 LA는 새 규정으로 당일 차량 반송 필요.</li>
+  <li><strong>화장실 여성용품:</strong> VA 정책상 무료 비치인데 빌록시(2025년 12월) 등에서 디스펜서 고장(검색 요약 기준).</li>
+  <li><strong>전화:</strong> 15개 시설 중 13곳이 전문진료 전화 210만 건 중 약 100만 건을 추적 못 함. 다만 VA 전화·IT는 보안 승인이 필요해 소기업이 팔기 어려움.</li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th>고칠 것</th><th>실제 구매</th><th>장벽</th><th>상태</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>보급창고 재고 실사·유효기간 정리, 재고 대조 자동화</td><td>약국 전수 실사: 로마린다 $1.1만, 북가주 $2.7만, 남가주 $1.3만(2024). 오거스타 감사 $22.3만</td><td>실사 인력, 신원 조회</td><td><span class="pill now">지금(소액)</span></td></tr>
+<tr><td class="n">2</td><td>수술기구 택배(인수인계 기록 포함)</td><td>그레이터 LA(11/16), 북가주(12/2) 공고. 과거 FG Management $323만(SDVOSB), Crosstown Courier $89.9만</td><td>VetCert, 직원 50% 직접 수행, 서비스 임금, 차량·보험</td><td><span class="pill cert">인증 후</span></td></tr>
+<tr><td class="n">3</td><td>보급·멸균 보관실 캐비닛·카트 재판매</td><td>그레이터 LA 정보요청(11/9)</td><td>미국 소기업 제조사 대리점</td><td><span class="pill team">협력 필요</span></td></tr>
+<tr><td class="n">4</td><td>LA 국립묘지 드라이클리닝(첫 실적용)</td><td>36C78627Q0029(11/13). 이전 SDVOSB 계약 2년 $30,984</td><td>소액, SAM 등록 필요</td><td><span class="pill now">지금</span></td></tr>
+<tr><td class="n">5</td><td>화장실 여성용품 디스펜서·보충</td><td>캘리포니아 구매 기록 미발견</td><td>AbilityOne 확인</td><td><span class="pill check">검증 필요</span></td></tr>
+<tr><td class="n">6</td><td>레지오넬라 필터 교체·제빙기 소독</td><td>SDVOSB 업체 LA $34.4만(2026~27), 검사 입찰(SDVOSB)</td><td>공인 실험실 하청</td><td><span class="pill cert">인증 후</span></td></tr>
+<tr><td class="n">7</td><td>캠퍼스 길 안내 표지판(웨스트LA 388에이커, 104개 건물)</td><td>SDV Office Systems $122만, AML $83.1만</td><td>기존 계약자, 설치 면허(미확인)</td><td><span class="pill team">하청</span></td></tr>
+</tbody></table></div>
+
+<h3>7-2. 군 기지</h3>
+<ul>
+  <li><strong>곰팡이 관련 새 법:</strong> 2026 국방수권법(2025년 12월)이 국방부에 180일 안에 곰팡이 제거 지침과 정기 독립 점검을 요구(업계는 IICRC S520 인용으로 설명, 조항 번호 미확인).</li>
+  <li><strong>육군 곰팡이 방지 상용 제품 공모</strong>(W91QEY26SMOLD, 2026년 7월 24일 마감): 낙찰 결과 확인 필요.</li>
+  <li><strong>제습기 반복 구매(소기업 전용):</strong> 포트 스튜어트 4월 200대·9월 400대, 포트 드럼 9월, 포트 브래그 7월. 하와이 곰팡이 제거 계약(5월).</li>
+  <li><strong>예산:</strong> 육군 막사 태스크포스 리모델링 $4억 500만, 자가수리 $6,500만, 지휘관 재량 $5,000만. 공군 빠른 수리 $4,150만, 대형 공사 $1억 500만.</li>
+  <li><strong>관사 곰팡이:</strong> 국방부 감사관실 키웨스트(DODIG-2026-048), 상원 보고서(2026년 7월, 스튜어트·베닝).</li>
+  <li><strong>세탁기:</strong> 포트 포크 약 4,000대 수리 연 3,000건, 블리스 2,827대, 프레시디오 528대(소기업 전용), 벤투라 해군기지 $164,617(밴나이스 소기업). 정비 계약 1건 연 $29만~76만.</li>
+  <li><strong>와이파이:</strong> 2025 국방수권법이 막사 무료 와이파이 승인. 반덴버그 $684,958(소기업).</li>
+  <li><strong>식사:</strong> 대부분 식당이 오후 6시에 닫음(GAO-24-106155). <strong>이사:</strong> 2025년 6월 HomeSafe 계약 해지, 배상 미해결.</li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th>팔 것</th><th>경로</th><th>장벽</th><th>상태</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>막사 습기 키트(50파인트 이상 제습기, 배수 호스, 습도계, 방별 라벨)</td><td>기지 계약사무소(MICC) 소기업 전용($35만 이하 재판매 가능), 자가수리·지휘관 예산 구매카드</td><td>제습기 대부분 중국산(원산지), UL 인증, 보증, 운송</td><td><span class="pill now">지금</span></td></tr>
+<tr><td class="n">2</td><td>습기 조기경보 센서 + 대시보드(휴대전화망)</td><td>막사 관리자, 공병대 시범</td><td>사이버 승인, 무료 시범도 계약 담당관 승인 필요</td><td><span class="pill check">시범</span></td></tr>
+<tr><td class="n">3</td><td>막사 세탁기 정비(재향군인 원청 + 지역 기술자)</td><td>육·해·공군 소기업 전용</td><td>직원 50% 직접 수행, 서비스 임금, 출입증</td><td><span class="pill team">협력 필요</span></td></tr>
+<tr><td class="n">4</td><td>자가수리 소모품(문풍지, 부속, 곰팡이 방지 커튼)</td><td>자가수리 매장, 부대 구매카드, 아마존 비즈니스</td><td>청소용품은 AbilityOne</td><td><span class="pill now">지금</span></td></tr>
+<tr><td class="n">5</td><td>빈대 방지 침구(매트리스 커버 등)</td><td>기지 계약사무소(포트 드럼 1,125개, 2025)</td><td>Berry($35만 초과), AbilityOne·UNICOR, 방염 기준</td><td><span class="pill check">검증 필요</span></td></tr>
+</tbody></table></div>
+<p class="meta">한국 쪽: 2026년 육군이 주한미군 쪽으로 보이는 업체에 제습기 정비·냉난방 수리를 발주(업체 위치 미확인). 곰팡이가 심한 곳은 남동부·하와이라 제습기는 전국 영업이 필요하고, 캘리포니아는 세탁·기숙사 가구(빌 공군기지 $656,551)·카메라·와이파이 건이 많습니다.</p>
+
+<h3>7-3. 캘리포니아 주·지방</h3>
+<ul>
+  <li><strong>CalVet 요양원:</strong> 새 매트리스 약 6개월, 침대 프레임 4년 넘게 야외 방치, 약 $23,500 손해(주 감사관 I2024-1).</li>
+  <li><strong>EDD:</strong> 4개월 이상 미사용 단말기 6,200여 대 월정액 $460만 이상(2020년 11월~2025년 4월). 미사용 보고서가 있었는데도 몰랐음(I2025-1).</li>
+  <li><strong>번역 누락:</strong> LA 카운티 보건국 매립지 건강평가 미번역(2025-128). LA시 주택청 영어 전용 안내로 한인 노인 바우처 상실(2023). LA 기관 380곳 중 한국어 제공 109곳(2024).</li>
+  <li><strong>종이 서류:</strong> Cal/OSHA 종이 기반, 결원율 32%(2024-115).</li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th>#</th><th>기회</th><th>사는 곳·경로</th><th>규모(추정)</th><th>상태</th></tr></thead>
+<tbody>
+<tr><td class="n">1</td><td>주 기관 필수 문서 번역(AI 초안+검수, 기관 AI 번역 교정)</td><td>금융보호혁신국(DFPI) 소기업 전용(한국어 포함 5개 언어, 이미 AI 번역 사용), 세무청, 보건국, 독성물질관리국, 대기자원위원회</td><td>연 $5천~25만</td><td><span class="pill now">지금</span></td></tr>
+<tr><td class="n">2</td><td>LA 카운티 언어 접근</td><td>ISD 통번역 계약(2028년 9월 11일까지 상시), 보건국 2024-012(업체 29곳, 2030년 6월까지)</td><td>고정 단가 작업 주문</td><td><span class="pill now">지금</span></td></tr>
+<tr><td class="n">3</td><td>요양원 입고·보관 관리(바코드 입고, 보관 지도, 최소 재고, 분기 실사)</td><td>CalVet 웨스트LA·랭커스터·벤투라, SB/DVBE 옵션</td><td>$5천~5만 시범</td><td><span class="pill cert">CA 인증 후</span></td></tr>
+<tr><td class="n">4</td><td>미사용 통신 회선 감사</td><td>EDD 등 주 기관, LA 카운티, 시</td><td>기관당 $1만~10만</td><td><span class="pill cert">CA 인증 후</span></td></tr>
+<tr><td class="n">5</td><td>카운티 보훈상담 사무소 행정 지원(홍보물, 디지털 접수, 업무량 보고)</td><td>LA 카운티 군·재향군인국</td><td>$5천~7.5만</td><td><span class="pill check">검증 필요</span></td></tr>
+<tr><td class="n">6</td><td>종이 서류 디지털화</td><td>Cal/OSHA 등</td><td>$2.5만~15만</td><td><span class="pill team">협력 필요</span></td></tr>
+<tr><td class="n">7</td><td>LA시 주택청 한국어 접근</td><td>HACLA</td><td>$5천~5만(공고 미발견)</td><td><span class="pill check">검증 필요</span></td></tr>
+</tbody></table></div>
+<p class="meta">AI 번역은 싼 부분이고 기관이 돈을 내는 건 책임지는 사람의 검수입니다. 개인·건강정보는 일반 소비자용 AI에 넣지 마세요. 대형 시스템 교체(EDD, 복지 시스템, DMV)는 피하세요.</p>
+</section>
+
+<section id="bids">
+<h2>8. 지금 열린 공고 (조사 시점)</h2>
+<h3>연방 (SAM.gov 직접 조회)</h3>
+<div class="tbl"><table>
+<thead><tr><th>공고</th><th>기관·지역</th><th>대상</th><th>마감</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td><a href="https://sam.gov/opp/63585d6e79304119840966a94fda8de6/view">LA 국립묘지 드라이클리닝·수선</a></td><td>VA, LA</td><td>소기업</td><td class="date">11/13</td><td>지역 소액 건의 예. 세탁소와 함께</td></tr>
+<tr><td><a href="https://sam.gov/opp/7941a2b1592748568b908acbe2f703d3/view">안전장갑</a></td><td>국방물류청 트레이시</td><td>소기업</td><td class="date">11/17</td><td>재판매형</td></tr>
+<tr><td><a href="https://sam.gov/opp/41d5bc73e0154224b7c270eebd13b5e4/view">식품용 니트릴 장갑</a></td><td>육군</td><td>소기업</td><td class="date">11/13</td><td>재판매형</td></tr>
+<tr><td><a href="https://sam.gov/opp/275a7249361c46a4847f2042d30273ef/view">장비 운송</a></td><td>VA 그레이터 LA</td><td>SDVOSB</td><td class="date">11/16</td><td>인증 필요</td></tr>
+<tr><td><a href="https://sam.gov/opp/4e546581bd9f44c68c6b726bd2507877/view">멸균물품 택배</a></td><td>VA 북가주</td><td>SDVOSB</td><td class="date">12/2</td><td>인증 필요</td></tr>
+<tr><td><a href="https://sam.gov/opp/790c357f647a4dbca902d6ac8aa14597/view">통역 수요조사(한국어)</a></td><td>VA 뉴욕</td><td>수요조사</td><td class="date">11/10</td><td>VA 한국어 수요 증거</td></tr>
+<tr><td><a href="https://sam.gov/opp/a1a8b4e8f72a45af801d8d9f755d4a4c/view">번역·통역 일괄구매협정</a></td><td>해군, 메릴랜드</td><td>소기업</td><td class="date">2028까지</td><td>수어 역량·추천서 3개 요구</td></tr>
+<tr><td><a href="https://sam.gov/opp/0d82482cbd384e9ca16dca23082d2a27/view">24시간 전화 통역</a></td><td>FBI</td><td>소기업</td><td class="date">12/2</td><td>참고용</td></tr>
+<tr><td><a href="https://sam.gov/opp/527a014ac96349ebb181a1b56543b62f/view">남성 셔츠</a></td><td>국방물류청 피복</td><td>제한 없음</td><td class="date">11/25</td><td>의류 공장용</td></tr>
+<tr><td><a href="https://sam.gov/opp/4a8041a3553c4a4c8509984ee373c306/view">산타마리아 클리닉 개원 지원(IOTA)</a></td><td>VA</td><td>SDVOSB</td><td class="date">11/30</td><td>전문 인력 필요, 비추천</td></tr>
+</tbody></table></div>
+<p class="meta">캘리포니아에서 수행되는 열린 연방 공고 507건을 모두 훑은 결과, 대부분 건설·수리(면허·보증), 국방 부품, 연구개발, 국립묘지 조경·경비, 제조사 장비 정비였습니다.</p>
+
+<h3>캘리포니아 주·지방</h3>
+<div class="tbl"><table>
+<thead><tr><th>공고</th><th>마감</th><th>의미</th></tr></thead>
+<tbody>
+<tr><td>LA 카운티 ISD 통번역 일괄계약(ITS-I10800-S)</td><td class="date">상시</td><td>한국어 번역의 최고 출발점</td></tr>
+<tr><td>LA 카운티 보건국 언어 지원 자격 모집(2024-012)</td><td class="date">상시</td><td>보안 요건(다중인증, VPN)</td></tr>
+<tr><td>Covered California 전화 통역(RFP 2026-03, 한국어 포함 13개 언어)</td><td class="date">12/28</td><td>2년 최대 $320만, 응찰 회사의 파트너로</td></tr>
+<tr><td>EDD 전화 통역(IFB 132760)</td><td class="date">11/23</td><td>팀 구성·하청</td></tr>
+<tr><td>환경보건위해평가국 번역·통역(IFB 26-E0016)</td><td class="date">11/17</td><td>소규모 기관</td></tr>
+<tr><td>주정부 쓰레기봉투 계약(DGS)</td><td class="date">11/23</td><td>제조사 단가·공급 능력 필요</td></tr>
+<tr><td>청소·위생용품 견적 2건(카운티로 보임)</td><td class="date">11/23, 11/24</td><td>CALPIA 의무가 없는 지방정부 물품</td></tr>
+<tr><td>주정부 청소 서비스 입찰 여러 건(고속도로순찰대, 수자원국, DMV)</td><td class="date">11/10~12/1</td><td>응찰 청소업체에 소모품을 대는 DVBE 하청(직접 재고·배송)</td></tr>
+</tbody></table></div>
+<p><strong>반복 패턴:</strong> 주정부 구매는 대부분 서비스(청소, 유니폼·린넨 임대)이고 물품만 사는 입찰은 CALPIA 때문에 드뭅니다. 통번역은 끊이지 않고(한국어는 Medi-Cal 13개 필수 언어), SB/DVBE 옵션 수의계약은 공고 없이 진행되는 경우가 많아 구매 담당자에게 직접 영업해야 합니다. LA 카운티 ISD는 1~2주짜리 소액 물품 견적을 자주 올립니다.</p>
+<p><strong>등록할 곳:</strong> Cal eProcure(공급업체·품목 코드, SB·DVBE 인증), LA 카운티 WebVen과 인증 포털, LA시 RAMP LA(LABAVN 대체), 오렌지카운티 OpenGov, 샌디에이고 BuyNet, BidNet Direct, 도시별 PlanetBids, 연방 SAM.gov와 국방물류청 DIBBS.</p>
+</section>
+
+<section id="spending">
+<h2>9. 지출 데이터로 본 시장 (USAspending)</h2>
+<h3>캘리포니아에서 수행된 VA·국방부 계약 (2025~2026 회계연도)</h3>
+<div class="tbl"><table>
+<thead><tr><th>품목</th><th>상위 업체 합계</th><th>건당 중간값</th><th>해석</th></tr></thead>
+<tbody>
+<tr><td>비누·면도·치약류(8520)</td><td class="num">약 $6.2만</td><td class="num">$185</td><td>매우 작음</td></tr>
+<tr><td>화장지류(8540)</td><td class="num">약 $52만</td><td class="num">$450</td><td>작음</td></tr>
+<tr><td>세정제(7930)</td><td class="num">약 $52만</td><td class="num">$216</td><td>Ecolab 등 대기업</td></tr>
+<tr><td>가정용 가구·침구(7210)</td><td class="num">약 $1,240만</td><td class="num">$915</td><td>대부분 가구</td></tr>
+<tr><td><strong>피복·개인장비(8405~8475)</strong></td><td class="num"><strong>약 $2억 9,700만</strong></td><td>-</td><td>상위 300건 중 226건이 국방물류청</td></tr>
+</tbody></table></div>
+<ul>
+  <li>USAspending에서 VA '위생 키트' 계약을 키워드로 검색하면 2년간 0건(기부·구매카드·의무 구매처로 해결되는 것으로 보임, 누락 가능).</li>
+  <li><strong>국방물류청 위생 키트(HCP):</strong> 해외 전방 부대용 3종(남녀공용 10명 30일분, 여성용, 바디 물티슈). 마지막 입찰 SPE3S124R0013(2024년 10월)은 소기업 전용(비누·화장품 제조 업종). Plum Select LLC가 2023~2026년 반복 수주. GSA도 2025년 2월 구매.</li>
+  <li><strong>VA 언어 서비스:</strong> SDVOSB 전용 입찰에 응찰 1~3곳(VBA 피츠버그 번역 $247만 2곳, VA LA 수어 통역 $31.5만 3곳).</li>
+  <li><strong>VA가 SDVOSB에서 산 물품 순위(업로드 보고서 기준, 미검증):</strong> 의료·수술 장비 $4.67억, IT 단말 $3.87억, 저장장치 $1.64억, 사무 가구 $1.31억, 소프트웨어 $1.08억, 포장재 $0.30억.</li>
+</ul>
+</section>
+
+<section id="services">
+<h2>10. 통번역·서비스·소프트웨어</h2>
+<h3>한국어 통번역 근거</h3>
+<ul>
+  <li><strong>법원:</strong> 캘리포니아 공인 한국어 통역사 54명(2025년, 전체 1,791명의 약 3%). LA·벤투라·산타바버라 한국어 요청 10,214건(스페인어·중국어 다음 3위), 오렌지·리버사이드·샌디에이고·샌버나디노 2,808건. 공인 통역사 32%가 65세 이상.</li>
+  <li><strong>법원 통역료:</strong> 2024~25 회계연도 한국어 계약 통역사 1지역 평균 하루 $762, 반나절 $387. 2027년 1월부터 연방 단가 상한 안 있음(SP26-05).</li>
+  <li><strong>자격:</strong> 필기 80% 이상 후 구술시험. 2026년 7월부터 시험 방식 변경, 수수료 $150·$380(변경 가능).</li>
+  <li><strong>법원 번역 일괄계약:</strong> Cal Interpreting &amp; Translation(LA 밴나이스), Avantpage, Lingualinx. DVBE 하청 제안 대상.</li>
+  <li><strong>선거·보건:</strong> LA 카운티 2026년 11월 선거 고수요 언어에 한국어 포함, 오렌지카운티 연방법상 한국어 의무, LA 정신건강국 필수 언어.</li>
+  <li><strong>단가:</strong> GSA 계약 단가 중간값 통역 시간당 약 $119, 번역 약 $108.</li>
+  <li><strong>기타:</strong> 육군 한국어 훈련 역할연기자·평가 계약(캘리포니아 발주 있음).</li>
+</ul>
+<h3>다른 서비스</h3>
+<ul>
+  <li>우편실, 문서 스캔·기록 관리, 청소, 기지 보급센터, 창고 업무는 AbilityOne 지정이 많아 먼저 목록을 확인해야 합니다.</li>
+  <li>유해폐기물 운송, 구급차, 건설, 경비는 무거운 면허·보험이 필요합니다.</li>
+  <li><strong>C&amp;P 장애검사(DBQ):</strong> 검사의 85% 이상을 4개 업체(Leidos QTC, Maximus VES, OptumServe, Loyal Source)가 수행. 1~4지역 최대 900만 건. 계약 2026년 12월 31일 만료 후 재입찰. 의회가 DBQ 품질을 감독 중이고 VA는 DBQ 부정 탐지 AI 추진(DAV 우려). DBQ 품질검사 보조 도구가 틈새입니다.</li>
+  <li><strong>커뮤니티 케어:</strong> 차세대 계약 10년 최대 $7,000억. 민간 병원은 30일 안에 기록을 VA에 돌려줘야 하나 자주 지연, 11개 시설은 기록 반영률 60% 미만, 팩스 의존. 민간 클리닉용 서류 자동화(VA 인증 불필요)가 가능합니다.</li>
+</ul>
+<h3>소프트웨어 현실</h3>
+<div class="tbl"><table>
+<thead><tr><th>분야</th><th>현실</th></tr></thead>
+<tbody>
+<tr><td>AI 입찰 도우미</td><td>GovDash $3,000만(2026년 1월), Procurement Sciences $3,000만, NationGraph $1,800만(2026년 3월), pWin.ai $1,000만, GovSignals $550만, Cleatus $400만(2026년 6월), GovEagle $250만. 그 밖에 HigherGov, Govly 등 다수</td></tr>
+<tr><td>DVBE 매칭</td><td>Cal eProcure 검색, CSCR 무료 하청 광고, Caltrans 입찰자 목록이 무료로 있음</td></tr>
+<tr><td>SBIR</td><td>연구책임자가 회사에 주로 고용돼야 함. 국방부 2027 1차(10/28~11/25)에 맞는 주제 없음, 해군 2차(12/2~2027/1/6)는 AI 주제지만 엔지니어링 필요</td></tr>
+<tr><td>보훈상담관(VSO) 도구</td><td>Tyler VetraSpec(30개 이상 주, 300개 이상 카운티, VSO 4,500명 이상), VetPro, Concourse. 생성형 AI 기능 미확인. VA API 운영 접근은 심사 필요. 기술 파트너가 생긴 뒤의 장기 과제</td></tr>
+<tr><td>현실적인 길</td><td>소프트웨어를 파는 대신 서비스를 효율화: 번역 파이프라인, 내 품목 입찰 모니터, 재고 대조, 통신 청구서 분석, PX용 EDI·바코드 자동화</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="bedpads">
+<h2>11. 병원 침대패드·린넨</h2>
+<p><strong>결론: VA 병원 직접 납품은 당분간 어렵고, 작은 경로만 있습니다.</strong></p>
+<ul>
+  <li>VA 병원·요양시설은 언더패드·기저귀를 의료소모품 일괄공급(MSPV) 카탈로그로 주문합니다. 2025년 2월 Medline이 20개 권역 중 19곳 수주(5년, 연 10억 달러 이상). 카탈로그 진입 견적은 SDVOSB → VOSB → 소기업 → 대기업 순 평가, 제조사 품번·승인서 필요. 기존 공급업체(Principle Business Enterprises, Encompass Group, Phoenix Textile, Grand Strategy) 계약은 2030년까지.</li>
+  <li>재향군인 가정 배송: 우편 배송은 Medline 단독. 북가주 지역 계약(샌프란시스코 $425만 3곳 응찰, 팰로앨토 $500만 1곳 응찰).</li>
+  <li>재사용 린넨은 세탁 서비스로 구매(공인 세탁 공장 필요).</li>
+  <li>국방부 언더패드 611건 약 $27.6만(ECAT·일괄공급). <strong>국방물류청 DIBBS '침대 방수 패드' 27건 약 $1.9만을 모두 작은 소기업이 수주</strong>, 소기업 전용 지정 없음, $5,926짜리에 5곳 응찰.</li>
+  <li>AbilityOne 목록에 매트리스 커버·패드는 있지만 언더패드·성인 기저귀·환자복은 없음.</li>
+  <li>소매 가격: 일회용 언더패드 장당 약 $0.29~0.37(고급 $0.63), 재사용 $4~15(고급 $16~80).</li>
+</ul>
+<p><strong>현실적 경로:</strong> DIBBS 소액 견적(미국 소기업 제조사 Tranquility 등 공식 공급) → 남가주 VA 병원 린넨 재입찰(현 계약 2027년 1월 3일 만료, $35만 초과면 미국 소기업 제조 린넨) → CalVet 요양원(SB/DVBE 옵션) → 인증 후 MSPV 1순위 평가.</p>
+</section>
+
+<section id="garment">
+<h2>12. LA 의류 공장과 군 피복</h2>
+<ul>
+  <li>국방부가 캘리포니아에서 생산된 피복·개인장비를 약 $2억 9,700만어치 계약(2년, 상위 300건). LA권 수주 업체: Sawasawa(90001, 셔츠·체력단련 반바지), American Polymers(90058 버논, 방한 바지), String King Lacrosse(90248 가데나, 장갑), Pacific Continental Clothing(카슨·롱비치, 후드티), ABX Group(롱비치, 각반), Vinyl Technology(먼로비아, 수면 매트), Califashions(여군 정장), L.A. Brands(전술 티셔츠), Casual Performance(방한 내의).</li>
+  <li>한미의류협회 추정으로 LA 봉제 지구 업체의 1/3 이상이 한인 소유, 한인 의류 제조업체 약 1,400~1,800곳(오래된 추정).</li>
+  <li>2025년 LA시 조달 서밋에 750곳 등록, 2026년 3월 LA한인회·상공회의소 LA시 조달 워크숍. <strong>한국어로 된 연방(국방물류청·VA) 조달 지원은 찾지 못함.</strong></li>
+  <li>규칙: DIBBS 등록(몇 주), Berry($35만 초과 100% 미국산), 제조사 전용 입찰과 초도품 검사 많음, $1만 5천 넘는 물품 계약은 Walsh-Healey 노동기준. LA 봉제업은 임금 체불 문제와 2025년 이민 단속이 있었으니 노동법을 지키는 공장만.</li>
+  <li>역할: 조달 도우미(고정 수수료가 안전, 성공보수는 FAR 3.4 정상 영업대리인 요건), 미국 소기업 공장 제품 유통(제조사 전용 공고 확인), 장기적으로 SDVOSB 합작.</li>
+</ul>
+</section>
+
+<section id="factcheck">
+<h2>13. 다른 조사 팩트체크</h2>
+<h3>다른 Claude 대화</h3>
+<div class="tbl"><table>
+<thead><tr><th>주장</th><th>판정</th><th>실제</th></tr></thead>
+<tbody>
+<tr><td>직장 다니면서 VetCert 받고 6개월 시험</td><td><span class="pill hold">위험</span></td><td>풀타임 요건(13 CFR 128.203(i)). 그 직장이 본인 회사라면 문제없음</td></tr>
+<tr><td>위생·세정 소모품 2~3개 품목 집중</td><td><span class="pill hold">누락</span></td><td>AbilityOne(연방)·CALPIA(주) 의무 구매처와 겹침</td></tr>
+<tr><td>브랜드 장비 재판매부터</td><td><span class="pill hold">모순</span></td><td>SDVOSB 전용은 금액 무관 재판매자 규칙. 일반 소기업 전용 $35만 이하만 면제</td></tr>
+<tr><td>DVBE는 본사가 캘리포니아</td><td><span class="pill hold">틀림</span></td><td>상이군인 본인이 캘리포니아 거주, 본사는 미국 안. LLC는 100% 소유</td></tr>
+<tr><td>정부는 돈 떼일 일 없음</td><td><span class="pill check">과장</span></td><td>2025년 43일 셧다운 때 대금 지연, 계약업체 소급 보장 없음</td></tr>
+<tr><td>DVBE 매칭 툴, AI 입찰 도우미</td><td><span class="pill hold">약함</span></td><td>무료 정부 도구, 투자받은 경쟁사 다수</td></tr>
+<tr><td>CA 3% DVBE, 부적격 처리, 인센티브, 무료 인증, SBIR 재승인, FedRAMP 20x</td><td><span class="pill now">맞음</span></td><td>원문 확인</td></tr>
+</tbody></table></div>
+<h3>업로드된 보고서 (기회 지도 v2, 입찰 후보, CSV 419건)</h3>
+<div class="tbl"><table>
+<thead><tr><th>주장</th><th>판정</th><th>실제</th></tr></thead>
+<tbody>
+<tr><td>FEMA 영유아 키트 소기업 전용, GSA 개인위생 폐지, DEVCOM BAA 상시, 빵 납품 SDVOSB·면제 없음</td><td><span class="pill now">맞음</span></td><td>공고 원문 확인</td></tr>
+<tr><td>ManuKind를 FEMA 키트에 공급 제안</td><td><span class="pill hold">가능성 낮음</span></td><td>뉴질랜드산은 미국 소기업 제조 요건 불충족</td></tr>
+<tr><td>지금 인증 신청하고 창문 청소(11/19, 11/27) 노리기</td><td><span class="pill hold">비현실적</span></td><td>SAM 등록 수 주, 제출 시점 인증 필요, 다른 주 현장 50% 직접 수행</td></tr>
+<tr><td>산타마리아 IOTA 추천</td><td><span class="pill check">부적합</span></td><td>의료장비 기획·이전 전문 서비스</td></tr>
+<tr><td>SB/DVBE 옵션 '3월 18일 시행'</td><td><span class="pill check">혼동</span></td><td>3월 18일 조정은 공공공사 기준액. 물품·서비스 한도는 그대로</td></tr>
+<tr><td>Golden State Start 15개→203개 병원, $620만</td><td><span class="pill check">다름</span></td><td>첫해 65~75개 병원, $740만+$1,250만(제안)</td></tr>
+<tr><td>유아용품은 CPSIA·CPC</td><td><span class="pill check">품목별</span></td><td>물티슈는 FDA 화장품, 기저귀는 소비자제품</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="corrections">
+<h2>14. 정정 기록 (이번 조사 중 고친 것)</h2>
+<ol>
+  <li>DVBE 회사 형태: 처음에 "LLC 51% 이상"이라고 썼으나, 캘리포니아 DVBE는 LLC면 100% 상이군인 소유여야 합니다.</li>
+  <li>Challenge.gov를 추천했으나 2026년 3월 30일 문을 닫았습니다.</li>
+  <li>Berry 수정조항 기준을 '$15만 초과'라고 썼으나 2025년 10월부터 $35만 초과입니다.</li>
+  <li>'직장 병행' 전제: 사장님이 ManuKind·Formuland 운영자라면 기존 회사로 인증이 가능할 수 있어 판단이 바뀝니다.</li>
+  <li>VA 위생 키트 계약 0건은 키워드 검색 결과라 누락이 있을 수 있습니다.</li>
+</ol>
+</section>
+
+<section id="roadmap">
+<h2>15. 실행 계획</h2>
+<div class="cards">
+  <div class="card">
+    <p class="kicker">이번 주</p>
+    <ul>
+      <li>3장 질문 답하기(회사 지분·풀타임·등급·지역)</li>
+      <li>SAM.gov 등록 시작(무료, UEI·CAGE)</li>
+      <li>ManuKind RangeMe 프로필(PX 4곳)</li>
+      <li>GovX ID 앱 설치(ManuKind·Formuland)</li>
+      <li>웨스트 LA·롱비치 VA 매점에 제품 목록 메일</li>
+      <li>APEX Accelerator 상담 예약, NVSBE 참가 결정</li>
+    </ul>
+  </div>
+  <div class="card">
+    <p class="kicker">30일</p>
+    <ul>
+      <li>조건이 맞으면 VetCert·DVBE·캘리포니아 SB 신청</li>
+      <li>NVBDC 인증 신청(월마트 비용 지원)</li>
+      <li>번역 샘플 묶음, LA 카운티 ISD 통번역 계약 신청, Covered California 응찰사에 파트너 제안</li>
+      <li>VA 보급 부서에 $1만 5천 이하 유효기간 정리 시범 제안</li>
+      <li>제습기 공급처(원산지 확인), 포트 스튜어트·드럼 낙찰가 조회</li>
+      <li>Operation Shower, 해군·공군 구호단체 접촉</li>
+    </ul>
+  </div>
+  <div class="card">
+    <p class="kicker">90일</p>
+    <ul>
+      <li>막사 습기 키트 첫 견적, 센서 10개 시연품</li>
+      <li>CalVet 요양원 창고 관리 시범 제안(DVBE 후)</li>
+      <li>DIBBS 등록, 침대 방수 패드 소액 견적</li>
+      <li>HCP 규격 확보, 현 공급업체 접촉</li>
+      <li>2027 커미서리 기저귀 심사 준비</li>
+      <li>(선택) LA 의류 공장 3곳 인터뷰</li>
+    </ul>
+  </div>
+  <div class="card">
+    <p class="kicker">판단 기준</p>
+    <ul>
+      <li>12주 뒤 반응이 있는 트랙만 남깁니다.</li>
+      <li>인증이 나오면 VA 택배·정수 필터·표지판 하청·SDVOSB 유통을 추가합니다.</li>
+      <li>TDIU를 받고 있다면 사업 전에 VSO나 인가 변호사와 상의합니다.</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<section id="sources" class="src">
+<h2>16. 출처</h2>
+<h3>VA AI 스크라이브·EHR</h3>
+<ul>
+  <li><a href="https://www.nextgov.com/artificial-intelligence/2026/09/va-gradually-expand-medical-ai-scribe-following-successful-pilots/415971/">VA AI 스크라이브 확대 — Nextgov</a></li>
+  <li><a href="https://nextgov.com/artificial-intelligence/2026/09/va-selects-abridge-ambient-scribe-under-new-enterprise-contract/416140">Abridge VA 계약 — Nextgov</a></li>
+  <li><a href="https://www.healthcareitnews.com/news/abridge-ambient-ai-now-available-all-va-medical-centers">Abridge VA 전 병원 — Healthcare IT News</a></li>
+  <li><a href="https://www.executivebiz.com/articles/rise8-thoughtworks-va-ambient-scribe-ai-contract">Rise8·Thoughtworks — ExecutiveBiz</a></li>
+  <li><a href="https://fedscoop.com/va-awards-ai-tech-sprint-winners-pilot-contracts-for-ambient-medical-transcription-services/">AI Tech Sprint 시범 계약 — FedScoop</a></li>
+  <li><a href="https://www.oracle.com/news/announcement/oracle-health-adds-order-creation-capabilities-to-clinical-ai-agent-2026-02-02/">Oracle 오더 생성 기능</a></li>
+  <li><a href="https://dha.mil/News/2026/04/23/15/23/AI-Scribe-technology-for-medical-professionals-reduces-notetaking">DHA AI 스크라이브</a></li>
+  <li><a href="https://www.nextgov.com/modernization/2026/04/va-resumes-ehr-rollouts-four-michigan-medical-sites/412807/">VA EHR 미시간 재개 — Nextgov</a></li>
+  <li><a href="https://www.vaoig.gov/reports/preliminary-result-advisory-memorandum/review-vhas-use-generative-artificial-intelligence">VA 감사관실 생성형 AI 검토</a></li>
+  <li><a href="https://www.militarytimes.com/veterans/2026/06/23/va-inventory-report-reveals-367-ai-systems-operating-in-healthcare-benefits-and-services/">VA AI 367건 — Military Times</a></li>
+</ul>
+<h3>제도·규칙</h3>
+<ul>
+  <li><a href="https://www.everycrsreport.com/reports/IF13309.html">SDVOSB 프로그램 — CRS</a></li>
+  <li><a href="https://www.everycrsreport.com/files/2026-09-08_IF12853_1e52e52e6b1bbb89888dc2346415d62257b05b95.html">소기업 수의계약 — CRS</a></li>
+  <li><a href="https://www.federalregister.gov/documents/2025/08/27/2025-16412/federal-acquisition-regulation-inflation-adjustment-of-acquisition-related-thresholds">FAR 기준액 조정 — Federal Register</a></li>
+  <li><a href="https://www.law.cornell.edu/cfr/text/13/128.203">13 CFR 128.203</a></li>
+  <li><a href="https://smallgovcon.com/service-disabled-veteran-owned-small-businesses/sba-full-time-devotion-still-matters-for-sdvosbs/">풀타임 요건 사례 — SmallGovCon</a></li>
+  <li><a href="https://smallgovcon.com/sba-size-protests/back-to-basics-the-nonmanufacturer-rule/">비제조업체 규칙 — SmallGovCon</a></li>
+  <li><a href="https://www.sheppard.com/insights/blogs/a-recent-21-3-million-settlement-to-resolve-alleged-sdvosb-fraud-scheme-signals-a-renewed-focus-on-protecting-veterans-and-small-businesses">$2,130만 합의 — Sheppard</a></li>
+  <li><a href="https://www.crowell.com/en/insights/client-alerts/sbirsttr-programs-reauthorized-after-six-month-lapse">SBIR 재승인 — Crowell</a></li>
+  <li><a href="https://www.abilityone.gov/procurement_list/product_skilcraft.html">AbilityOne SKILCRAFT</a></li>
+  <li><a href="https://www.dgs.ca.gov/PD/Resources/SCM/TOC/5/5-2">CALPIA 의무 구매 — DGS</a></li>
+  <li><a href="https://www.dgs.ca.gov/-/media/Divisions/PD/OSDS/Certification/DVBE/DVBE_CertificationRequirements.pdf">DVBE 인증 요건 — DGS</a></li>
+  <li><a href="https://www.dgs.ca.gov/-/media/Divisions/PD/OSDS/Outreach/Resources/2026/SB_DVBE_Option.pdf">SB/DVBE 옵션 — DGS</a></li>
+  <li><a href="https://dpw.lacounty.gov/core-service-areas/municipal-services/contracts/la-county-business-preference-programs/">LA 카운티 우대 제도</a></li>
+  <li><a href="https://info.winvale.com/blog/gsa-retire-32-sins-multiple-award-schedule-solicitation-refresh-26">GSA Refresh 26 폐지 품목 — Winvale</a></li>
+  <li><a href="https://www.va.gov/osdbu/nvsbe/">NVSBE 2026</a></li>
+  <li><a href="https://cck-law.com/blog/what-are-the-new-tdiu-income-limits-in-2026/">TDIU 소득 기준 — CCK</a></li>
+  <li><a href="https://www.challenge.gov/">Challenge.gov 종료 안내</a></li>
+  <li><a href="https://fortune.com/2025/11/13/trump-government-shutdown-over-43-days-historic-length/">43일 셧다운 — Fortune</a></li>
+</ul>
+<h3>ManuKind·PX·군인 가족</h3>
+<ul>
+  <li><a href="https://manukind.com">ManuKind 공식 사이트</a></li>
+  <li><a href="https://www.aafes.com/about-exchange/doing-business/prospective.htm">AAFES 신규 공급업체</a></li>
+  <li><a href="https://www.aafes.com/about-exchange/doing-business/retail-sales.htm">AAFES 소매 바이어</a></li>
+  <li><a href="https://www.aafes.com/Images/doingbusiness/supply.pdf">AAFES 공급업체 요건</a></li>
+  <li><a href="https://www.shopmyexchange.com/assets/pdfs/marketplacebrochure2024.pdf">AAFES 마켓플레이스</a></li>
+  <li><a href="https://www.mymcx.com/about/partnerships">MCX 파트너십</a></li>
+  <li><a href="https://vacanteen.va.gov/VACANTEEN/PatriotMart_Concessionaire.asp">VA 매점 PatriotMart</a></li>
+  <li><a href="https://corp.commissaries.com/sites/default/files/2026-03/NTT_26-97_Category_Review_Notification-Diapers.pdf">커미서리 기저귀 심사 공지</a></li>
+  <li><a href="https://afas.org/wp-content/uploads/2026/01/Bundles-for-Babies-Flyer.2026.pdf">공군 구호단체 Bundles for Babies</a></li>
+  <li><a href="https://www.nmcrs.org/get-help/financial-education/budget-for-baby">해군·해병대 구호단체 Budget for Baby</a></li>
+  <li><a href="https://apps.shopify.com/govx-id">GovX ID Shopify 앱</a></li>
+  <li><a href="https://nvbdc.org/supplier-diversity/kickstart-your-path-to-becoming-a-walmart-supplier/">월마트·NVBDC</a></li>
+  <li><a href="https://pubmed.ncbi.nlm.nih.gov/36852858/">여군 야전 위생 연구</a></li>
+  <li><a href="https://www.gao.gov/products/gao-23-105797">GAO 막사 보고서</a></li>
+  <li><a href="https://www.gao.gov/products/gao-24-105917">GAO 수면 보고서</a></li>
+  <li><a href="https://sam.gov/opp/7b36e6a5d9b84dad868700a9825ea9bd/view">HCP 입찰</a></li>
+  <li><a href="https://sam.gov/opp/af9dd4ddfd324993bf388a7618ca3d8d/view">FEMA 영유아 키트 입찰</a></li>
+  <li><a href="https://baby2baby.org/goldenstatestart/">Golden State Start</a></li>
+</ul>
+<h3>고치는 사업</h3>
+<ul>
+  <li><a href="https://www.vaoig.gov/sites/default/files/reports/2026-09/vaoig-26-02023-176-final.pdf">VA 감사관실: 오거스타 수술실 폐쇄</a></li>
+  <li><a href="https://www.oversight.gov/sites/default/files/documents/reports/2025-04/vaoig-24-00166-35.pdf">VA 감사관실: 휴스턴 재고</a></li>
+  <li><a href="https://www.usaspending.gov/award/CONT_AWD_36C26225C0086_3600_-NONE-_-NONE-">로마린다 약국 실사 계약</a></li>
+  <li><a href="https://www.govexec.com/management/2026/02/va-doesnt-know-how-many-calls-its-answering-or-how-long-veterans-are-waiting-get-through/411545">VA 전화 추적 — GovExec</a></li>
+  <li><a href="https://sam.gov/opp/dadca05e099945db99e7f11af5f363ec/view">포트 스튜어트 제습기 400대</a></li>
+  <li><a href="https://sam.gov/opp/ae694e03c59a4128a56328c61e70b997/view">육군 곰팡이 방지 제품 공모</a></li>
+  <li><a href="https://www.army.mil/article/289408">육군 막사 예산 — Army.mil</a></li>
+  <li><a href="https://www.dvidshub.net/news/printable/557062">공군 막사 예산 — DVIDS</a></li>
+  <li><a href="https://www.oversight.gov/sites/default/files/documents/reports/2026-02/DODIG-2026-048_Redacted_Final_SECURE.pdf">국방부 감사관실 관사 곰팡이</a></li>
+  <li><a href="https://sam.gov/opp/0d9917fdf0b04ee9a2e1a5c52c83f010/view">프레시디오 세탁기 정비</a></li>
+  <li><a href="https://gao.gov/assets/gao-24-106155-highlights.pdf">GAO 식당 접근성</a></li>
+  <li><a href="https://www.auditor.ca.gov/reports/i2024-1/">주 감사관: CalVet 매트리스</a></li>
+  <li><a href="https://www.auditor.ca.gov/reports/i2025-1/">주 감사관: EDD 미사용 단말기</a></li>
+  <li><a href="https://www.auditor.ca.gov/reports/2025-128/">주 감사관: LA 카운티 보건국 번역</a></li>
+  <li><a href="https://en.koreadaily.com/?p=33103">LA 기관 한국어 제공 — 미주중앙일보</a></li>
+  <li><a href="https://en.koreadaily.com/?p=30552">HACLA 영어 전용 안내 — 미주중앙일보</a></li>
+</ul>
+<h3>통번역·침대패드·의류</h3>
+<ul>
+  <li><a href="https://en.koreadaily.com/?p=65567">법원 한국어 통역사 부족 — 미주중앙일보</a></li>
+  <li><a href="https://courts.ca.gov/system/files/itc/sp26-05.pdf">법원 통역료 SP26-05</a></li>
+  <li><a href="https://languageaccess.courts.ca.gov/court-interpreters-resources/become-court-interpreter/certified-spoken-language-interpreter">법원 공인 통역사 되는 법</a></li>
+  <li><a href="https://lacobids.lacounty.gov/api/v1/opensolicitations/420239230866">LA 카운티 통번역 계약</a></li>
+  <li><a href="https://hbex.coveredca.com/solicitations/">Covered California 입찰</a></li>
+  <li><a href="https://siliconangle.com/2026/01/15/govdash-secures-30m-expand-ai-driven-government-contracting-software/">GovDash 투자 — SiliconANGLE</a></li>
+  <li><a href="https://www.tylertech.com/solutions/health-human-services/disability-benefits/veterans-benefits">Tyler VetraSpec</a></li>
+  <li><a href="https://newsroom.medline.com/releases/veterans-administration-awards-medline-medical-surgical-prime-vendor-contract/">Medline MSPV 수주</a></li>
+  <li><a href="https://www.usaspending.gov/award/CONT_IDV_36C26222D0013_3600">남가주 VA 린넨 계약</a></li>
+  <li><a href="https://www.usaspending.gov/award/CONT_AWD_SPE2DH26P1020_9700_-NONE-_-NONE-">DIBBS 침대 방수 패드 예</a></li>
+  <li><a href="https://plims.abilityone.gov/search-products/">AbilityOne 목록 검색</a></li>
+  <li><a href="https://www.dla.mil/Small-Business/Resource-Center/Training-Resources/Details/Article/4408730/dla-troop-support-clothing-textiles-supplier-pathway/">국방물류청 피복 공급업체 안내</a></li>
+  <li><a href="https://metropolitics.org/Paving-the-Silk-Road-Rethinking-Ethnic-Solidarity-in-Los-Angeles-Korean-Garment.html">LA 한인 봉제업 — Metropolitics</a></li>
+  <li><a href="https://ewdd.lacity.gov/index.php/about/stories/2025-procurela-summit">2025 ProcureLA 서밋</a></li>
+  <li><a href="https://sam.gov">SAM.gov</a> · <a href="https://www.usaspending.gov">USAspending</a> · <a href="https://caleprocure.ca.gov">Cal eProcure</a></li>
+</ul>
+</section>
+
+<footer>
+  <p>이 페이지는 2026년 11월 8~9일 조사한 내용을 정리한 것입니다. 저장소의 va-gov-business 폴더에 보고서 원문(README, 팩트체크, 기회 탐색, 업로드 보고서 검토, 고치는 사업)이 있습니다. 공고 마감과 조건은 바뀔 수 있으니 링크에서 원문을 확인하세요.</p>
+</footer>
+
+</main>
+</div>
+</body>
+</html>
